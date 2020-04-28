@@ -1,18 +1,16 @@
-import { connect } from 'react'
+import { connect } from 'react-redux'
 import SignUp from './signup'
-import { logout, login } from '../../actions/session_actions'
+import { signup, clearSessionErrors } from '../../actions/session_actions'
 
 const mSTP = state => {
     return({
-        currentUser: state.entities.users[state.session.id]
-        //this whole function is a placeholder
+        errors: state.errors.session,
     }) 
 }
 
 const mDTP = dispatch => ({
-    logout: () => dispatch(logout()),
-    login: user => dispatch(login(user))
-    //this whole function is a placeholder
+    signup: user => dispatch(signup(user)),
+    clearSessionErrors: () => dispatch(clearSessionErrors())
 })
 
 export default connect(mSTP, mDTP)(SignUp);

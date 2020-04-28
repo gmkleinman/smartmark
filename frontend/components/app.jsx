@@ -1,8 +1,10 @@
 import React from 'react'
 import NavBarContainer from './navbar/navbar_container'
-// import NavBar from './navbar/navbar'
 import {Route} from 'react-router-dom'
-// import SignupContainer from '../signup/signup_container'
+import SignUpContainer from './signup/signup_container'
+import SignInContainer from './signin/signin_container'
+import AuthRoute from '../util/route_util'
+// import IndexContainer from './index/index_container'
 
 const App = () => {
     return (
@@ -11,8 +13,9 @@ const App = () => {
             {console.log('App renders!')}
             <NavBarContainer/>
             </header>
-
-            {/* <Route path="/signup" component={SignupContainer} /> */}
+            <Route exact path="/" />
+            <AuthRoute path="/signup" component={SignUpContainer} />
+            <AuthRoute path="/signin" component={SignInContainer} />
         </div>
     )
 }

@@ -1,0 +1,16 @@
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+}
+
+header {
+    /* display: flex; */
+    /* justify-content: center;
+    align-content: center; */
+}
+
+.greeting {
+    min-width: 20%;
+    display: flex;
+    align-content: center;
+}
