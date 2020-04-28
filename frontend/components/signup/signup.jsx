@@ -63,25 +63,20 @@ class SignUp extends React.Component {
         )
     }
 
-    signupRender() {
-        return(
-            this.props.currentUser ? (
-                <div>
-                    THIS IS THE SIGN UP FORM, BUT THE USER IS LOGGED IN. IT SHOULD REDIRECT.
-                </div>
-            ) : (
-                <div>
-                    {this.signupForm()}
-                    <p>Already have an account? <Link className="button" to="/signin">Sign in here.</Link></p>
-                </div>
-            )
-        )
-    }
-
     render(){
         return(
             <div>
-                {this.signupRender()}
+               {this.props.currentUser ? (
+                    <div>
+                        THIS WOULD BE THE SIGN UP FORM, BUT THE USER IS LOGGED IN. IT SHOULD REDIRECT.
+                    </div>
+                ) : (
+                    <div>
+                        {this.signupForm()}
+                        <p>Already have an account? <Link className="button" to="/signin">Sign in here.</Link></p>
+                    </div>
+                )
+            }
             </div>
         )
     }

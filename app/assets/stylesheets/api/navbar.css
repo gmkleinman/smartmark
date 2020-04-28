@@ -3,7 +3,7 @@
     min-height: 50px;
     align-items: center;
     justify-content: space-between;
-    background-color: #8ee4af;
+    background-color: #2B7A78;
 }
 
 .nav-container {
@@ -20,7 +20,7 @@
 
 .greeting-text {
     text-decoration: none;
-    color: #05386B;
+    color: #DEF2F1;
     padding-right: 7px;
     padding-left: 7px
 }
@@ -40,13 +40,26 @@
 .home-text {
     text-decoration: none;
     text-justify: center;
+    color: #DEF2F1;
+
 }
 
-/* COLOR SCHEME, Darkest at the top
+
+
+
+/* COLOR SCHEME OPTION 1,
+
+#17252A (dark)
+#2B7A78 (dark teal)
+#3AAFA9 (mid teal)
+#DEF2F1 (almost white)
+#FEFFFF (white) */
+
+/* COLOR SCHEME OPTION 2,
 
 #05386B (dark blue)
-#379683 (teal)
-#5CDB95 (light green)
+#379683 (darkish teal)
+#5CDB95 (bright green)
 #8EE4AF (lighter green)
 #EDF5E1 (almost white) */
 
