@@ -9,19 +9,19 @@ class NavBar extends React.Component {
     loginRender() {
         return(
             this.props.currentUser ? (
-                <div className='greeting'>
-                    <p>Hello, {this.props.currentUser.username}!</p>
-                    <button onClick={this.props.logout}>Log Out</button>
-                </div>
+                <span id='nav-left-container' className='nav-container'>
+                    <span className='greeting-text'>Hello, {this.props.currentUser.username}!</span>
+                    <button className='greeting-text' onClick={this.props.logout}>LOG OUT</button>
+                </span>
             ) : (
-                <div className='greeting'>
-                    <p>
-                        <Link className="button" to="/signup">Sign Up</Link><br />
-                    </p>
-                    <p>
-                         <Link className="button" to="/signin">Sign In</Link><br />
-                    </p>        
-                 </div>
+                <span id='nav-right-container' className='nav-container'>
+                    <span>
+                        <Link className="greeting-text" to="/signup">SIGN UP</Link>
+                    </span>
+                    <span>
+                         <Link className="greeting-text" to="/signin">SIGN IN</Link>
+                    </span>    
+                 </span>
             )
         )
     }
@@ -30,7 +30,12 @@ class NavBar extends React.Component {
         console.log('Navbar renders!')
         return(
             <div className='nav-bar'>
-                <Link className="button" to="/"><h1>SmartMark</h1></Link>
+                <span id='nav-left-container' className='nav-container'>
+
+                </span>
+                <span id='nav-mid-container' className='nav-container'>
+                    <Link className="home-text" to="/">S M A R T M A R K</Link>
+                </span>
                 {this.loginRender()}
             </div>
         )

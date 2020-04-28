@@ -1,16 +1,52 @@
 .nav-bar {
     display: flex;
+    min-height: 50px;
+    align-items: center;
     justify-content: space-between;
+    background-color: #8ee4af;
 }
 
-header {
-    /* display: flex; */
-    /* justify-content: center;
-    align-content: center; */
-}
-
-.greeting {
-    min-width: 20%;
+.nav-container {
+    min-width: 200px;
     display: flex;
-    align-content: center;
+    justify-content: center;
 }
+
+#nav-right-container {
+    display: flex;
+    /* text-justify: center;
+    justify-content: end; */
+}
+
+.greeting-text {
+    text-decoration: none;
+    color: #05386B;
+    padding-right: 7px;
+    padding-left: 7px
+}
+
+#nav-mid-container {
+    display: flex;
+    /* align-items: center;
+    text-justify: center;
+    justify-content: center; */
+}
+
+#nav-left-container {
+    display: flex;
+    /* justify-content: left; */
+}
+
+.home-text {
+    text-decoration: none;
+    text-justify: center;
+}
+
+/* COLOR SCHEME, Darkest at the top
+
+#05386B (dark blue)
+#379683 (teal)
+#5CDB95 (light green)
+#8EE4AF (lighter green)
+#EDF5E1 (almost white) */
+
