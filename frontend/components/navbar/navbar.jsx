@@ -27,7 +27,7 @@ class NavBar extends React.Component {
     }
 
     render() {
-        console.log('Navbar renders!')
+        // console.log('Navbar renders!')
         return(
             <div className='nav-bar'>
                 <span id='nav-left-container' className='nav-container'>

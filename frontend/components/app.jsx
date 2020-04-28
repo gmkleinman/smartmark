@@ -10,7 +10,7 @@ const App = () => {
     return (
         <div>
             <header>
-            {console.log('App renders!')}
+            {/* {console.log('App renders!')} */}
             <NavBarContainer/>
             </header>
             <Route exact path="/" />

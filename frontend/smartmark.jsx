@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     //tests
-    console.log("Entry file found!");
+    // console.log("Entry file found!");
     // window.login = SessionApiUtil.login;
     // window.logout = SessionApiUtil.logout;
     // window.signup = SessionApiUtil.signup;
