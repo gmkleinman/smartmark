@@ -1,10 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-// class NavBar extends React.Component {
-//     constructor(props){
-//         super(props)
-//     }
 const NavBar = ({ currentUser, logout }) => {
 
     const display = currentUser ? (
@@ -14,7 +10,7 @@ const NavBar = ({ currentUser, logout }) => {
             </div>
         ) : (
             <div>
-                <p>(INSERT LOGIN FORM HERE) <Link className="button" to="/login">Log In</Link> </p>
+                <p>(USERNAME:)(PASSWORD: ) (SUBMIT BUTTON)) </p>
                 <p>Don't have an account? <Link className="button" to="/signup">Sign Up</Link></p>
                 <p>or (USE DEMO ACCOUNT)</p>
             </div>
