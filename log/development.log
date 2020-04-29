@@ -12628,3 +12628,739 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 416ms (Views: 412.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2020-04-28 23:54:25 -0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/tril/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 1914ms (Views: 1896.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session/" for ::1 at 2020-04-28 23:54:45 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"EnderWiggin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "EnderWiggin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "EnderWiggin"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "speakerforthedead@formics.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "j30NnRmfSpJGCPByr1Lowg"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Update (1.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "j30NnRmfSpJGCPByr1Lowg"], ["updated_at", "2020-04-29 06:54:45.668134"], ["id", 1]]
+  ↳ app/models/user.rb:30
+  [1m[35m (24.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:30
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered api/users/show.json.jbuilder (4.4ms)
+Completed 200 OK in 390ms (Views: 39.3ms | ActiveRecord: 42.3ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-04-28 23:54:49 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "j30NnRmfSpJGCPByr1Lowg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (2.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "EnderWiggin"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "speakerforthedead@formics.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "l3Dz_YHHOXjozjldezkzrA"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "l3Dz_YHHOXjozjldezkzrA"], ["updated_at", "2020-04-29 06:54:49.341622"], ["id", 1]]
+  ↳ app/models/user.rb:30
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:30
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (2.0ms)
+Completed 200 OK in 28ms (Views: 11.0ms | ActiveRecord: 8.1ms)
+
+
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1125028727833133025)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreatePassages (20200429162622)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (101.5ms)[0m  [1m[35mCREATE TABLE "passages" ("id" bigserial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "body" text NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20200429162622_create_passages.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200429162622"]]
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (3.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(1125028727833133025)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "EnderWiggin"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "speakerforthedead@formics.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "r4AwYzg_u0BESqDPIi8sqg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Zelda"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "princess@hyrule.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Ceir6KDiLRhmePzKZIJnYg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "G"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "gmkleinman@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "W9zeGpo_d4rJO2Y0_iyucg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mPassage Create (1.2ms)[0m  [1m[32mINSERT INTO "passages" ("title", "author", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "The Raven"], ["author", "Edgar Allan Poe"], ["body", "Once upon a midnight dreary..."], ["created_at", "2020-04-29 17:27:33.530127"], ["updated_at", "2020-04-29 17:27:33.530127"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mPassage Create (0.5ms)[0m  [1m[32mINSERT INTO "passages" ("title", "author", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Sonnets from the Portuguese No. 43"], ["author", "Elizabeth Barrett Browning"], ["body", "How do I love thee? Let me count the ways..."], ["created_at", "2020-04-29 17:27:33.535167"], ["updated_at", "2020-04-29 17:27:33.535167"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mPassage Create (0.4ms)[0m  [1m[32mINSERT INTO "passages" ("title", "author", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Kerpluckit"], ["author", "Grant Kleinman"], ["body", "There once was a man from Kerpluckit..."], ["created_at", "2020-04-29 17:27:33.539765"], ["updated_at", "2020-04-29 17:27:33.539765"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[36mPassage Load (0.8ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/api/passages" for ::1 at 2020-04-29 11:08:15 -0700
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/tril/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by Api::PassagesController#create as JSON
+Completed 400 Bad Request in 10ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: passage:
+  app/controllers/api/passages_controller.rb:45:in `passage_params'
+  app/controllers/api/passages_controller.rb:17:in `create'
+
+Started POST "/api/passages" for ::1 at 2020-04-29 11:10:13 -0700
+Processing by Api::PassagesController#create as JSON
+Completed 500 Internal Server Error in 135ms (ActiveRecord: 0.0ms)
+
+
+
+NameError - undefined local variable or method `passage_params' for #<Api::PassagesController:0x00007fb788dcab58>:
+  app/controllers/api/passages_controller.rb:17:in `create'
+
+Started GET "/api/passages" for ::1 at 2020-04-29 11:10:47 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.8ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (0.4ms)
+  Rendered api/passages/_passage.json.jbuilder (0.1ms)
+  Rendered api/passages/_passage.json.jbuilder (0.1ms)
+  Rendered api/passages/index.json.jbuilder (25.8ms)
+Completed 200 OK in 46ms (Views: 29.4ms | ActiveRecord: 12.2ms)
+
+
+Started GET "/api/passage?id[1]" for ::1 at 2020-04-29 11:11:36 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/api/passage"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/passage?id=1" for ::1 at 2020-04-29 11:11:56 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/api/passage"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/passage?passage[id]=1" for ::1 at 2020-04-29 11:12:02 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/api/passage"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/passage?id" for ::1 at 2020-04-29 11:13:19 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/api/passage"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/passages?id=1" for ::1 at 2020-04-29 11:13:39 -0700
+Processing by Api::PassagesController#index as JSON
+  Parameters: {"id"=>"1"}
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (1.1ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (0.4ms)
+  Rendered api/passages/_passage.json.jbuilder (0.1ms)
+  Rendered api/passages/_passage.json.jbuilder (0.1ms)
+  Rendered api/passages/index.json.jbuilder (48.6ms)
+Completed 200 OK in 86ms (Views: 84.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/passages/1" for ::1 at 2020-04-29 11:14:03 -0700
+Processing by Api::PassagesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/passages_controller.rb:8
+  Rendering api/passages/show.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (1.0ms)
+  Rendered api/passages/show.json.jbuilder (2.6ms)
+Completed 200 OK in 35ms (Views: 15.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/passages/1?passage[title]=Tomato" for ::1 at 2020-04-29 11:15:52 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/api/passages/1"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started PATCH "/api/passages/1?passage[title]=Tomato" for ::1 at 2020-04-29 11:16:16 -0700
+Processing by Api::PassagesController#update as JSON
+  Parameters: {"passage"=>{"title"=>"Tomato"}, "id"=>"1"}
+  [1m[36mPassage Load (0.6ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/passages_controller.rb:26
+  Rendering api/passages/show.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (0.6ms)
+  Rendered api/passages/show.json.jbuilder (2.0ms)
+Completed 200 OK in 48ms (Views: 10.6ms | ActiveRecord: 16.2ms)
+
+
+  [1m[36mPassage Load (0.8ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+Started PATCH "/api/passages/1?passage[title]=Tomato" for ::1 at 2020-04-29 11:17:03 -0700
+Processing by Api::PassagesController#update as JSON
+  Parameters: {"passage"=>{"title"=>"Tomato"}, "id"=>"1"}
+  [1m[36mPassage Load (0.4ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/passages_controller.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/passages_controller.rb:27
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/passages_controller.rb:27
+  Rendering api/passages/show.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (0.3ms)
+  Rendered api/passages/show.json.jbuilder (2.7ms)
+Completed 200 OK in 36ms (Views: 11.9ms | ActiveRecord: 9.4ms)
+
+
+Started PATCH "/api/passages/1?passage[title]=Tomato" for ::1 at 2020-04-29 11:17:05 -0700
+Processing by Api::PassagesController#update as JSON
+  Parameters: {"passage"=>{"title"=>"Tomato"}, "id"=>"1"}
+  [1m[36mPassage Load (1.3ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/passages_controller.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/passages_controller.rb:27
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/passages_controller.rb:27
+  Rendering api/passages/show.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (0.5ms)
+  Rendered api/passages/show.json.jbuilder (2.4ms)
+Completed 200 OK in 21ms (Views: 12.3ms | ActiveRecord: 4.7ms)
+
+
+Started PATCH "/api/passages/1?passage[title]=Tomato" for ::1 at 2020-04-29 11:17:07 -0700
+Processing by Api::PassagesController#update as JSON
+  Parameters: {"passage"=>{"title"=>"Tomato"}, "id"=>"1"}
+  [1m[36mPassage Load (5.5ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/passages_controller.rb:26
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/passages_controller.rb:27
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/passages_controller.rb:27
+  Rendering api/passages/show.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (0.7ms)
+  Rendered api/passages/show.json.jbuilder (2.7ms)
+Completed 200 OK in 26ms (Views: 11.4ms | ActiveRecord: 10.2ms)
+
+
+  [1m[36mPassage Load (0.8ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+Started PATCH "/api/passages/1?passage[title]=Tomato&title=potato" for ::1 at 2020-04-29 11:17:51 -0700
+Processing by Api::PassagesController#update as JSON
+  Parameters: {"passage"=>{"title"=>"Tomato"}, "title"=>"potato", "id"=>"1"}
+  [1m[36mPassage Load (14.9ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/passages_controller.rb:26
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/passages_controller.rb:27
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/passages_controller.rb:27
+  Rendering api/passages/show.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (0.5ms)
+  Rendered api/passages/show.json.jbuilder (2.4ms)
+Completed 200 OK in 32ms (Views: 13.5ms | ActiveRecord: 15.4ms)
+
+
+Started PATCH "/api/passages/1?passage[title]=Tomato&title=potato" for ::1 at 2020-04-29 11:19:58 -0700
+Processing by Api::PassagesController#update as JSON
+  Parameters: {"passage"=>{"title"=>"Tomato"}, "title"=>"potato", "id"=>"1"}
+  [1m[36mPassage Load (0.3ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/passages_controller.rb:26
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/passages_controller.rb:27
+  [1m[36mPassage Update (0.9ms)[0m  [1m[33mUPDATE "passages" SET "title" = $1, "updated_at" = $2 WHERE "passages"."id" = $3[0m  [["title", "Tomato"], ["updated_at", "2020-04-29 18:19:58.313972"], ["id", 1]]
+  ↳ app/controllers/api/passages_controller.rb:27
+  [1m[35m (8.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/passages_controller.rb:27
+  Rendering api/passages/show.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (0.7ms)
+  Rendered api/passages/show.json.jbuilder (7.4ms)
+Completed 200 OK in 85ms (Views: 22.6ms | ActiveRecord: 41.4ms)
+
+
+Started PATCH "/api/passages/1?title=potato" for ::1 at 2020-04-29 11:20:13 -0700
+Processing by Api::PassagesController#update as JSON
+  Parameters: {"title"=>"potato", "id"=>"1"}
+  [1m[36mPassage Load (53.4ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/passages_controller.rb:26
+Completed 400 Bad Request in 58ms (ActiveRecord: 53.4ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: passage:
+  app/controllers/api/passages_controller.rb:45:in `passage_params'
+  app/controllers/api/passages_controller.rb:27:in `update'
+
+Started PATCH "/api/passages/1?passage[titie]=Edgar%20Potato&passage[body]=potato" for ::1 at 2020-04-29 11:20:37 -0700
+Processing by Api::PassagesController#update as JSON
+  Parameters: {"passage"=>{"titie"=>"Edgar Potato", "body"=>"potato"}, "id"=>"1"}
+  [1m[36mPassage Load (15.6ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/passages_controller.rb:26
+Unpermitted parameter: :titie
+  [1m[35m (30.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/passages_controller.rb:27
+  [1m[36mPassage Update (36.2ms)[0m  [1m[33mUPDATE "passages" SET "body" = $1, "updated_at" = $2 WHERE "passages"."id" = $3[0m  [["body", "potato"], ["updated_at", "2020-04-29 18:20:37.866003"], ["id", 1]]
+  ↳ app/controllers/api/passages_controller.rb:27
+  [1m[35m (7.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/passages_controller.rb:27
+  Rendering api/passages/show.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (0.5ms)
+  Rendered api/passages/show.json.jbuilder (4.9ms)
+Completed 200 OK in 115ms (Views: 14.8ms | ActiveRecord: 90.1ms)
+
+
+Started PATCH "/api/passages/1?passage[author]=Edgar%20Potato&passage[body]=potato&passage[title]=Stacy%27s%20Mom" for ::1 at 2020-04-29 11:21:04 -0700
+Processing by Api::PassagesController#update as JSON
+  Parameters: {"passage"=>{"author"=>"Edgar Potato", "body"=>"potato", "title"=>"Stacy's Mom"}, "id"=>"1"}
+  [1m[36mPassage Load (1.0ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/passages_controller.rb:26
+  [1m[35m (12.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/passages_controller.rb:27
+  [1m[36mPassage Update (44.5ms)[0m  [1m[33mUPDATE "passages" SET "title" = $1, "author" = $2, "updated_at" = $3 WHERE "passages"."id" = $4[0m  [["title", "Stacy's Mom"], ["author", "Edgar Potato"], ["updated_at", "2020-04-29 18:21:04.249156"], ["id", 1]]
+  ↳ app/controllers/api/passages_controller.rb:27
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/passages_controller.rb:27
+  Rendering api/passages/show.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (0.6ms)
+  Rendered api/passages/show.json.jbuilder (5.7ms)
+Completed 200 OK in 98ms (Views: 22.1ms | ActiveRecord: 63.1ms)
+
+
+  [1m[36mPassage Load (0.9ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+Started POST "/api/passages/1?passage[author]=Britney&passage[title]=Work%20Bitch&passage[body]=ya%20gotta" for ::1 at 2020-04-29 11:22:51 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/api/passages/1"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/api/passages/passage[author]=Britney&passage[title]=Work%20Bitch&passage[body]=ya%20gotta" for ::1 at 2020-04-29 11:23:12 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/api/passages/passage[author]=Britney&passage[title]=Work%20Bitch&passage[body]=ya%20gotta"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/api/passages/?passage[title]=10000%20Angry%20Dwarves&passage[body]=Check%20the%20papers&passage[author]=Ben%20Folds" for ::1 at 2020-04-29 11:24:32 -0700
+Processing by Api::PassagesController#create as JSON
+  Parameters: {"passage"=>{"title"=>"10000 Angry Dwarves", "body"=>"Check the papers", "author"=>"Ben Folds"}}
+  [1m[35m (12.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/passages_controller.rb:18
+  [1m[36mPassage Create (1.9ms)[0m  [1m[32mINSERT INTO "passages" ("title", "author", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "10000 Angry Dwarves"], ["author", "Ben Folds"], ["body", "Check the papers"], ["created_at", "2020-04-29 18:24:32.382842"], ["updated_at", "2020-04-29 18:24:32.382842"]]
+  ↳ app/controllers/api/passages_controller.rb:18
+  [1m[35m (39.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/passages_controller.rb:18
+  Rendering api/passages/show.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (0.3ms)
+  Rendered api/passages/show.json.jbuilder (1.9ms)
+Completed 200 OK in 71ms (Views: 11.8ms | ActiveRecord: 53.8ms)
+
+
+Started POST "/api/passages/?passage[title]=2000%20Angry%20Dwarves&passage[body]=Check%20the%20papers&passage[author]=Ben%20Folds" for ::1 at 2020-04-29 11:24:46 -0700
+Processing by Api::PassagesController#create as JSON
+  Parameters: {"passage"=>{"title"=>"2000 Angry Dwarves", "body"=>"Check the papers", "author"=>"Ben Folds"}}
+  [1m[35m (3.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/passages_controller.rb:18
+  [1m[36mPassage Create (0.6ms)[0m  [1m[32mINSERT INTO "passages" ("title", "author", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "2000 Angry Dwarves"], ["author", "Ben Folds"], ["body", "Check the papers"], ["created_at", "2020-04-29 18:24:46.303321"], ["updated_at", "2020-04-29 18:24:46.303321"]]
+  ↳ app/controllers/api/passages_controller.rb:18
+  [1m[35m (42.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/passages_controller.rb:18
+  Rendering api/passages/show.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (0.7ms)
+  Rendered api/passages/show.json.jbuilder (2.1ms)
+Completed 200 OK in 62ms (Views: 9.6ms | ActiveRecord: 46.5ms)
+
+
+  [1m[36mPassage Load (0.9ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+Started DELETE "/api/passages/5" for ::1 at 2020-04-29 11:25:11 -0700
+Processing by Api::PassagesController#destroy as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mPassage Load (8.0ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/passages_controller.rb:35
+  Rendering api/passages/index.json.jbuilder
+  Rendered api/passages/index.json.jbuilder (5.0ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 8.0ms)
+
+
+
+ActionView::Template::Error - undefined method `each' for nil:NilClass:
+  app/controllers/api/passages_controller.rb:37:in `destroy'
+
+Started GET "/api/passages" for ::1 at 2020-04-29 11:25:37 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (1.0ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (0.3ms)
+  Rendered api/passages/_passage.json.jbuilder (0.1ms)
+  Rendered api/passages/_passage.json.jbuilder (0.1ms)
+  Rendered api/passages/_passage.json.jbuilder (0.1ms)
+  Rendered api/passages/_passage.json.jbuilder (0.1ms)
+  Rendered api/passages/index.json.jbuilder (8.6ms)
+Completed 200 OK in 20ms (Views: 18.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/passages/1" for ::1 at 2020-04-29 11:25:48 -0700
+Processing by Api::PassagesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPassage Load (13.4ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/passages_controller.rb:8
+  Rendering api/passages/show.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (0.5ms)
+  Rendered api/passages/show.json.jbuilder (2.1ms)
+Completed 200 OK in 28ms (Views: 12.9ms | ActiveRecord: 13.4ms)
+
+
+Started GET "/api/passages/4" for ::1 at 2020-04-29 11:25:49 -0700
+Processing by Api::PassagesController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mPassage Load (2.7ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/passages_controller.rb:8
+  Rendering api/passages/show.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (0.6ms)
+  Rendered api/passages/show.json.jbuilder (2.6ms)
+Completed 200 OK in 15ms (Views: 10.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/api/passages/5" for ::1 at 2020-04-29 11:25:50 -0700
+Processing by Api::PassagesController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mPassage Load (0.3ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/passages_controller.rb:8
+  Rendering api/passages/show.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/show.json.jbuilder (4.1ms)
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/passages/6" for ::1 at 2020-04-29 11:25:52 -0700
+Processing by Api::PassagesController#show as JSON
+  Parameters: {"id"=>"6"}
+  [1m[36mPassage Load (0.8ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/passages_controller.rb:8
+Completed 404 Not Found in 3ms (ActiveRecord: 0.8ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Passage with 'id'=6:
+  app/controllers/api/passages_controller.rb:8:in `show'
+
+Started GET "/api/passages/5" for ::1 at 2020-04-29 11:25:55 -0700
+Processing by Api::PassagesController#show as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mPassage Load (0.9ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/passages_controller.rb:8
+  Rendering api/passages/show.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (0.6ms)
+  Rendered api/passages/show.json.jbuilder (3.0ms)
+Completed 200 OK in 16ms (Views: 13.3ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/api/passages/5" for ::1 at 2020-04-29 11:27:11 -0700
+Processing by Api::PassagesController#destroy as JSON
+  Parameters: {"id"=>"5"}
+  [1m[36mPassage Load (0.3ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/passages_controller.rb:35
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/passages_controller.rb:37
+  [1m[36mPassage Destroy (3.5ms)[0m  [1m[31mDELETE FROM "passages" WHERE "passages"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/api/passages_controller.rb:37
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/passages_controller.rb:37
+Redirected to 
+Completed 500 Internal Server Error in 278ms (ActiveRecord: 16.3ms)
+
+
+
+NoMethodError - undefined method `index_url' for #<Api::PassagesController:0x00007fb78d0771b8>:
+  app/controllers/api/passages_controller.rb:39:in `destroy'
+
+  [1m[36mPassage Load (1.1ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+Started DELETE "/api/passages/4" for ::1 at 2020-04-29 11:28:16 -0700
+Processing by Api::PassagesController#destroy as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mPassage Load (0.3ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/passages_controller.rb:35
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/passages_controller.rb:37
+  [1m[36mPassage Destroy (0.5ms)[0m  [1m[31mDELETE FROM "passages" WHERE "passages"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/api/passages_controller.rb:37
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/passages_controller.rb:37
+Completed 500 Internal Server Error in 177ms (ActiveRecord: 11.7ms)
+
+
+
+NameError - undefined local variable or method `api_passages' for #<Api::PassagesController:0x00007fb789dee688>:
+  app/controllers/api/passages_controller.rb:39:in `destroy'
+
+Started DELETE "/api/passages/3" for ::1 at 2020-04-29 11:29:08 -0700
+Processing by Api::PassagesController#destroy as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mPassage Load (0.3ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/passages_controller.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/passages_controller.rb:37
+  [1m[36mPassage Destroy (0.8ms)[0m  [1m[31mDELETE FROM "passages" WHERE "passages"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/api/passages_controller.rb:37
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/passages_controller.rb:37
+  Rendering api/passages/index.json.jbuilder
+  Rendered api/passages/index.json.jbuilder (3.4ms)
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 8.9ms)
+
+
+
+ActionView::Template::Error - undefined method `each' for nil:NilClass:
+  app/controllers/api/passages_controller.rb:39:in `destroy'
+
+Started DELETE "/api/passages/2" for ::1 at 2020-04-29 11:29:26 -0700
+Processing by Api::PassagesController#destroy as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mPassage Load (0.4ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/passages_controller.rb:35
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/passages_controller.rb:37
+  [1m[36mPassage Destroy (0.4ms)[0m  [1m[31mDELETE FROM "passages" WHERE "passages"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/api/passages_controller.rb:37
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/passages_controller.rb:37
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.4ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (0.4ms)
+  Rendered api/passages/index.json.jbuilder (4.0ms)
+Completed 200 OK in 44ms (Views: 12.0ms | ActiveRecord: 9.8ms)
+
+

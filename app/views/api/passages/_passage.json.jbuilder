@@ -1,0 +1,1 @@
+json.extract! passage, :id, :title, :author, :body

@@ -23,3 +23,21 @@ users = User.create([
         email: 'gmkleinman@gmail.com',
     },
 ])
+
+passages = Passage.create([
+    {
+        title: 'The Raven',
+        author: 'Edgar Allan Poe',
+        body: 'Once upon a midnight dreary...',
+    },
+    {
+        title: "Sonnets from the Portuguese No. 43",
+        author: "Elizabeth Barrett Browning",
+        body: "How do I love thee? Let me count the ways...",
+    },
+    {
+        title: "Kerpluckit",
+        author: "Grant Kleinman",
+        body: "There once was a man from Kerpluckit...",
+    }
+])
