@@ -1,7 +1,15 @@
-/* COLOR SCHEME OPTION 1,
+/* COLOR SCHEME,
 rgb(6, 17, 20); (basically black)
 #17252A (dark)
 #2B7A78 (dark teal)
 #3AAFA9 (mid teal)
 #DEF2F1 (almost white)
 #FEFFFF (white) */
+
+h1 {
+    font-weight: 600;
+    font-size: 30px;
+    margin: 30px;
+    color: rgb(6, 17, 20);
+    font-family: din-condensed, sans-serif;
+}
