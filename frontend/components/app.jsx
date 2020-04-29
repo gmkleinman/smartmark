@@ -4,6 +4,7 @@ import {Route} from 'react-router-dom'
 import SignUpContainer from './signup/signup_container'
 import SignInContainer from './signin/signin_container'
 import AuthRoute from '../util/route_util'
+import Footer from './footer/footer'
 // import IndexContainer from './index/index_container'
 
 const App = () => {
@@ -16,6 +17,7 @@ const App = () => {
             <Route exact path="/" />
             <AuthRoute path="/signup" component={SignUpContainer} />
             <AuthRoute path="/signin" component={SignInContainer} />
+            <Footer />
         </div>
     )
 }

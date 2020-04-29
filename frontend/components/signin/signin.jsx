@@ -30,59 +30,51 @@ class SignIn extends React.Component {
     handleDemoSubmit(e) {
         e.preventDefault();
         let user = {
-            username: 'CaptainFalcon',
+            username: 'EnderWiggin',
             password: 'password'
         }     
         this.props.login(user);
     }
 
-    loginForm() {
-        return(
-            <form>
-                <ul className='errors'>
-                    {this.props.errors.map((error, i) => (
-                        <li key={`error-${i}`}> {error} </li>
-                    ))}
-                </ul>
-                <label>Username:
-                    <input 
-                    type="text" 
-                    value={this.state.username}
-                    onChange={this.update('username')}
-                    />
-                </label>
-                <label>Password:
-                    <input 
-                    type="text" 
-                    value={this.state.password}
-                    onChange={this.update('password')}
-                    />
-                </label>
-                <button onClick={this.handleSubmit}>Login</button>
-            </form>
-        )
-    }
-
-    loginRender() {
-        return(
-            this.props.currentUser ? (
-                <div>
-                    THIS IS THE SIGN IN FORM, BUT THE USER IS LOGGED IN. IT SHOULD REDIRECT.
-                </div>
-            ) : (
-                <div>
-                    {this.loginForm()}
-                    <button onClick={this.handleDemoSubmit}>Sign is as Demo User</button>
-                    <p>Don't have an account? <Link className="button" to="/signup">Sign Up</Link></p>
-                </div>
-            )
-        )
-    }
-
     render(){
         return(
-            <div>
-                {this.loginRender()}
+            <div id="form-page">
+                <span className='form-title'>Sign In</span> 
+                <div className='auth-container'>
+
+                    <form className='auth-form'>
+
+                    {this.props.errors.length !== 0 ? (
+                        <ul className='errors'>
+                            {this.props.errors.map((error, i) => (
+                                <li key={`error-${i}`}> {error} </li>
+                            ))}
+                        </ul>
+                    ) : (
+                        []
+                    )}
+                        <label className='form-field'>Username<br/>
+                            <input 
+                            type="text" 
+                            value={this.state.username}
+                            onChange={this.update('username')}
+                            />
+                        </label>
+
+                        <label className='form-field'>Password<br/>
+                            <input 
+                            type="text" 
+                            value={this.state.password}
+                            onChange={this.update('password')}
+                            />
+                        </label>
+
+                        <button className='button' onClick={this.handleSubmit}>Login</button>
+                    </form>
+
+                    <button className='button' onClick={this.handleDemoSubmit}>Demo Login</button> <br/>
+                </div>
+                <span className='redirect-text'>Don't have an account? <Link className='link' to="/signup">Sign up here.</Link></span>
             </div>
         )
     }

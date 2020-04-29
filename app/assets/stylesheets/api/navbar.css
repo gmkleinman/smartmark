@@ -7,59 +7,41 @@
 }
 
 .nav-container {
-    min-width: 200px;
+    min-width: 250px;
     display: flex;
     justify-content: center;
 }
 
 #nav-right-container {
     display: flex;
-    /* text-justify: center;
-    justify-content: end; */
+    font-family: 'Roboto', sans-serif;
 }
 
 .greeting-text {
     text-decoration: none;
     color: #DEF2F1;
-    padding-right: 7px;
-    padding-left: 7px
+    padding-right: 15px;
+    padding-left: 15px
 }
 
 #nav-mid-container {
     display: flex;
-    /* align-items: center;
-    text-justify: center;
-    justify-content: center; */
+    font-size: 25px;
+    font-family: 'Roboto', sans-serif;
 }
 
 #nav-left-container {
     display: flex;
-    /* justify-content: left; */
 }
 
 .home-text {
     text-decoration: none;
     text-justify: center;
     color: #DEF2F1;
-
 }
 
-
-
-
-/* COLOR SCHEME OPTION 1,
-
-#17252A (dark)
-#2B7A78 (dark teal)
-#3AAFA9 (mid teal)
-#DEF2F1 (almost white)
-#FEFFFF (white) */
-
-/* COLOR SCHEME OPTION 2,
-
-#05386B (dark blue)
-#379683 (darkish teal)
-#5CDB95 (bright green)
-#8EE4AF (lighter green)
-#EDF5E1 (almost white) */
-
+#logout {
+    background-color: #DEF2F1;
+    width: 75px;
+    margin-right: 25px;
+}

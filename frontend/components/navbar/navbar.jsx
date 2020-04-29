@@ -10,8 +10,8 @@ class NavBar extends React.Component {
         return(
             this.props.currentUser ? (
                 <span id='nav-left-container' className='nav-container'>
-                    <span className='greeting-text'>Hello, {this.props.currentUser.username}!</span>
-                    <button className='greeting-text' onClick={this.props.logout}>LOG OUT</button>
+                    <span className='greeting-text'>Hi, {this.props.currentUser.username}</span>
+                    <button id='logout' onClick={this.props.logout}>LOG OUT</button>
                 </span>
             ) : (
                 <span id='nav-right-container' className='nav-container'>
