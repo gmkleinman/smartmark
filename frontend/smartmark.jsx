@@ -5,7 +5,7 @@ import Root from './components/root'
 
 //test imports
 
-import * as SessionApiUtil from './util/session_api_util'
+import * as PassageApiUtil from './util/passage_api_util'
 
 //end test imports
 
@@ -27,15 +27,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     //tests
-    // console.log("Entry file found!");
-    // window.login = SessionApiUtil.login;
-    // window.logout = SessionApiUtil.logout;
-    // window.signup = SessionApiUtil.signup;
-    // let user = { username: 'CaptainFalcon', password: 'password', email: 'fzero@nintendo.com'}
-    // window.user = user;
-    // window.store = store;
-    // window.getState = store.getState;
-    // window.dispatch = store.dispatch;
+    console.log("Entry file found!");
+    window.store = store;
+    window.getState = store.getState;
+    window.dispatch = store.dispatch;
+    // window.fetchPassages = PassageApiUtil.fetchPassages
+    // window.createPassage = PassageApiUtil.createPassage
+    // window.fetchPassage = PassageApiUtil.fetchPassage
+    // window.updatePassage = PassageApiUtil.updatePassage
+    // window.deletePassage = PassageApiUtil.deletePassage
     //end tests
     
 
