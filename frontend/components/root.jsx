@@ -4,6 +4,8 @@ import { HashRouter } from 'react-router-dom'
 import App from './app'
 
 const Root = ({ store }) => {
+    console.log('At root: store.getState=')
+    console.log(store.getState())
     return(
         <Provider store={store}>
             <HashRouter>

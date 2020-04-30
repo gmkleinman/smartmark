@@ -1,6 +1,6 @@
-import { connect } from 'react-redux'
-import PassageIndex from './passage_index'
-import { fetchPassages } from '../../actions/passage_actions'
+import { connect } from 'react-redux';
+import PassageIndex from './passage_index';
+import { fetchPassages } from '../../actions/passage_actions';
 
 const mSTP = state => {
     return(

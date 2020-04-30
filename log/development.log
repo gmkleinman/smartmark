@@ -23042,3 +23042,1339 @@ Processing by Api::SessionsController#destroy as JSON
 Completed 200 OK in 22ms (Views: 9.7ms | ActiveRecord: 4.3ms)
 
 
+Started GET "/" for ::1 at 2020-04-29 23:51:20 -0700
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/tril/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 1848ms (Views: 1840.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-29 23:51:23 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (1.2ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (2.6ms)
+  Rendered api/passages/_passage.json.jbuilder (1.7ms)
+  Rendered api/passages/_passage.json.jbuilder (1.5ms)
+  Rendered api/passages/_passage.json.jbuilder (1.9ms)
+  Rendered api/passages/index.json.jbuilder (46.9ms)
+Completed 200 OK in 63ms (Views: 44.6ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-29 23:51:25 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.5ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/index.json.jbuilder (11.3ms)
+Completed 200 OK in 28ms (Views: 25.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-29 23:51:26 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.9ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (5.8ms)
+  Rendered api/passages/_passage.json.jbuilder (1.9ms)
+  Rendered api/passages/_passage.json.jbuilder (1.2ms)
+  Rendered api/passages/_passage.json.jbuilder (1.0ms)
+  Rendered api/passages/index.json.jbuilder (21.1ms)
+Completed 200 OK in 32ms (Views: 30.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-04-29 23:51:42 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 473ms (Views: 468.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-29 23:51:45 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 37ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-29 23:51:50 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 36ms (Views: 33.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-29 23:52:41 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 63ms (Views: 58.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-29 23:52:42 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (1.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (2.3ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (1.3ms)
+  Rendered api/passages/_passage.json.jbuilder (1.5ms)
+  Rendered api/passages/index.json.jbuilder (16.5ms)
+Completed 200 OK in 27ms (Views: 24.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-29 23:52:45 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.6ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (4.1ms)
+  Rendered api/passages/_passage.json.jbuilder (1.2ms)
+  Rendered api/passages/_passage.json.jbuilder (1.0ms)
+  Rendered api/passages/_passage.json.jbuilder (2.6ms)
+  Rendered api/passages/index.json.jbuilder (27.0ms)
+Completed 200 OK in 39ms (Views: 37.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-29 23:52:46 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (2.7ms)
+  Rendered api/passages/_passage.json.jbuilder (1.1ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/index.json.jbuilder (20.8ms)
+Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 07:43:47 -0700
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/tril/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 1762ms (Views: 1754.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 07:43:50 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (1.1ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (2.9ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (1.0ms)
+  Rendered api/passages/_passage.json.jbuilder (1.1ms)
+  Rendered api/passages/index.json.jbuilder (42.3ms)
+Completed 200 OK in 58ms (Views: 40.2ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 07:44:14 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 44ms (Views: 39.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 07:44:15 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.7ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (4.7ms)
+  Rendered api/passages/_passage.json.jbuilder (4.7ms)
+  Rendered api/passages/_passage.json.jbuilder (2.4ms)
+  Rendered api/passages/_passage.json.jbuilder (1.3ms)
+  Rendered api/passages/index.json.jbuilder (31.3ms)
+Completed 200 OK in 44ms (Views: 42.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 07:44:18 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 414ms (Views: 411.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 07:44:24 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 38ms (Views: 36.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 07:46:24 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 595ms (Views: 590.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 07:47:24 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.7ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.7ms)
+  Rendered api/passages/_passage.json.jbuilder (1.0ms)
+  Rendered api/passages/_passage.json.jbuilder (4.5ms)
+  Rendered api/passages/_passage.json.jbuilder (1.5ms)
+  Rendered api/passages/index.json.jbuilder (22.1ms)
+Completed 200 OK in 40ms (Views: 37.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 07:47:27 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 35ms (Views: 32.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 07:47:28 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (1.0ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (2.5ms)
+  Rendered api/passages/_passage.json.jbuilder (1.4ms)
+  Rendered api/passages/_passage.json.jbuilder (1.8ms)
+  Rendered api/passages/_passage.json.jbuilder (1.6ms)
+  Rendered api/passages/index.json.jbuilder (18.1ms)
+Completed 200 OK in 29ms (Views: 27.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 07:47:29 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 62ms (Views: 58.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 07:47:30 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.9ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (3.7ms)
+  Rendered api/passages/_passage.json.jbuilder (1.7ms)
+  Rendered api/passages/_passage.json.jbuilder (5.2ms)
+  Rendered api/passages/_passage.json.jbuilder (2.3ms)
+  Rendered api/passages/index.json.jbuilder (30.2ms)
+Completed 200 OK in 40ms (Views: 37.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 07:47:42 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 80ms (Views: 75.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 07:47:42 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.8ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (6.7ms)
+  Rendered api/passages/_passage.json.jbuilder (1.0ms)
+  Rendered api/passages/_passage.json.jbuilder (1.5ms)
+  Rendered api/passages/_passage.json.jbuilder (3.2ms)
+  Rendered api/passages/index.json.jbuilder (27.8ms)
+Completed 200 OK in 38ms (Views: 36.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 07:47:44 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 481ms (Views: 478.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 07:48:05 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 52ms (Views: 49.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 07:48:17 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 559ms (Views: 556.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 07:49:18 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 413ms (Views: 410.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 07:51:46 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 416ms (Views: 414.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 07:52:06 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 438ms (Views: 434.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 08:23:45 -0700
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/tril/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 1969ms (Views: 1960.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:23:53 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (2.7ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.5ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (1.1ms)
+  Rendered api/passages/_passage.json.jbuilder (1.7ms)
+  Rendered api/passages/index.json.jbuilder (32.3ms)
+Completed 200 OK in 50ms (Views: 31.1ms | ActiveRecord: 11.7ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 08:23:56 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 38ms (Views: 34.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:23:56 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (3.7ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (19.8ms)
+  Rendered api/passages/_passage.json.jbuilder (2.2ms)
+  Rendered api/passages/_passage.json.jbuilder (4.8ms)
+  Rendered api/passages/_passage.json.jbuilder (2.9ms)
+  Rendered api/passages/index.json.jbuilder (50.6ms)
+Completed 200 OK in 66ms (Views: 61.3ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 08:25:32 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 436ms (Views: 431.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:25:33 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (2.0ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (3.2ms)
+  Rendered api/passages/_passage.json.jbuilder (1.4ms)
+  Rendered api/passages/_passage.json.jbuilder (1.4ms)
+  Rendered api/passages/_passage.json.jbuilder (2.3ms)
+  Rendered api/passages/index.json.jbuilder (21.9ms)
+Completed 200 OK in 31ms (Views: 28.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 08:25:35 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 38ms (Views: 34.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:25:35 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (4.7ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (2.7ms)
+  Rendered api/passages/_passage.json.jbuilder (1.7ms)
+  Rendered api/passages/_passage.json.jbuilder (1.7ms)
+  Rendered api/passages/_passage.json.jbuilder (3.4ms)
+  Rendered api/passages/index.json.jbuilder (35.0ms)
+Completed 200 OK in 52ms (Views: 45.3ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 08:25:43 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 431ms (Views: 426.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:25:44 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (1.4ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (2.9ms)
+  Rendered api/passages/_passage.json.jbuilder (1.4ms)
+  Rendered api/passages/_passage.json.jbuilder (1.6ms)
+  Rendered api/passages/_passage.json.jbuilder (2.6ms)
+  Rendered api/passages/index.json.jbuilder (21.6ms)
+Completed 200 OK in 32ms (Views: 29.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 08:26:26 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 495ms (Views: 491.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:26:27 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.9ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (2.0ms)
+  Rendered api/passages/_passage.json.jbuilder (2.8ms)
+  Rendered api/passages/_passage.json.jbuilder (1.2ms)
+  Rendered api/passages/_passage.json.jbuilder (1.1ms)
+  Rendered api/passages/index.json.jbuilder (15.5ms)
+Completed 200 OK in 25ms (Views: 22.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 08:27:04 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 428ms (Views: 423.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:27:05 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (2.1ms)
+  Rendered api/passages/_passage.json.jbuilder (1.1ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (1.9ms)
+  Rendered api/passages/index.json.jbuilder (16.1ms)
+Completed 200 OK in 25ms (Views: 24.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 08:27:57 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 115ms (Views: 109.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 08:28:08 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 482ms (Views: 480.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:28:09 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.7ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.8ms)
+  Rendered api/passages/_passage.json.jbuilder (9.2ms)
+  Rendered api/passages/_passage.json.jbuilder (1.3ms)
+  Rendered api/passages/_passage.json.jbuilder (8.7ms)
+  Rendered api/passages/index.json.jbuilder (45.8ms)
+Completed 200 OK in 63ms (Views: 60.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 08:28:09 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 43ms (Views: 40.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:28:10 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (2.1ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (12.2ms)
+  Rendered api/passages/_passage.json.jbuilder (1.7ms)
+  Rendered api/passages/_passage.json.jbuilder (1.6ms)
+  Rendered api/passages/_passage.json.jbuilder (1.3ms)
+  Rendered api/passages/index.json.jbuilder (29.9ms)
+Completed 200 OK in 38ms (Views: 35.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:28:11 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.9ms)
+  Rendered api/passages/_passage.json.jbuilder (1.3ms)
+  Rendered api/passages/_passage.json.jbuilder (1.1ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/index.json.jbuilder (12.5ms)
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/api/session/" for ::1 at 2020-04-30 08:28:14 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"EnderWiggin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "EnderWiggin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "EnderWiggin"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "speakerforthedead@formics.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "oYQMY86pJv6WNO7sd-UKoA"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Update (1.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "oYQMY86pJv6WNO7sd-UKoA"], ["updated_at", "2020-04-30 15:28:14.879214"], ["id", 1]]
+  ↳ app/models/user.rb:30
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:30
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (2.8ms)
+Completed 200 OK in 310ms (Views: 9.9ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:28:14 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.7ms)
+  Rendered api/passages/_passage.json.jbuilder (1.4ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (1.2ms)
+  Rendered api/passages/index.json.jbuilder (14.4ms)
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:28:16 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.4ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (3.0ms)
+  Rendered api/passages/_passage.json.jbuilder (1.3ms)
+  Rendered api/passages/index.json.jbuilder (15.8ms)
+Completed 200 OK in 28ms (Views: 25.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:28:19 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.8ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (5.8ms)
+  Rendered api/passages/_passage.json.jbuilder (1.0ms)
+  Rendered api/passages/_passage.json.jbuilder (1.0ms)
+  Rendered api/passages/_passage.json.jbuilder (1.0ms)
+  Rendered api/passages/index.json.jbuilder (16.0ms)
+Completed 200 OK in 30ms (Views: 29.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:28:19 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (3.1ms)
+  Rendered api/passages/_passage.json.jbuilder (1.0ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/index.json.jbuilder (15.0ms)
+Completed 200 OK in 21ms (Views: 19.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:28:20 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (3.3ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (2.4ms)
+  Rendered api/passages/_passage.json.jbuilder (1.1ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (1.1ms)
+  Rendered api/passages/index.json.jbuilder (15.9ms)
+Completed 200 OK in 30ms (Views: 25.5ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:28:21 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.6ms)
+  Rendered api/passages/_passage.json.jbuilder (1.3ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/index.json.jbuilder (10.8ms)
+Completed 200 OK in 24ms (Views: 23.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 08:28:29 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "oYQMY86pJv6WNO7sd-UKoA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 46ms (Views: 41.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:28:30 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (1.0ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (3.1ms)
+  Rendered api/passages/_passage.json.jbuilder (6.7ms)
+  Rendered api/passages/_passage.json.jbuilder (1.3ms)
+  Rendered api/passages/_passage.json.jbuilder (1.2ms)
+  Rendered api/passages/index.json.jbuilder (30.9ms)
+Completed 200 OK in 47ms (Views: 44.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:28:31 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.6ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.3ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/_passage.json.jbuilder (1.1ms)
+  Rendered api/passages/_passage.json.jbuilder (2.3ms)
+  Rendered api/passages/index.json.jbuilder (12.1ms)
+Completed 200 OK in 24ms (Views: 22.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:28:32 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.3ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/_passage.json.jbuilder (1.1ms)
+  Rendered api/passages/_passage.json.jbuilder (1.6ms)
+  Rendered api/passages/index.json.jbuilder (12.4ms)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:28:34 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.3ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (2.0ms)
+  Rendered api/passages/index.json.jbuilder (13.4ms)
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:28:34 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.9ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.6ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/_passage.json.jbuilder (0.7ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/index.json.jbuilder (11.8ms)
+Completed 200 OK in 20ms (Views: 17.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:28:36 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.4ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (1.5ms)
+  Rendered api/passages/index.json.jbuilder (13.1ms)
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:28:38 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.4ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/index.json.jbuilder (10.7ms)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:28:39 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.4ms)
+  Rendered api/passages/_passage.json.jbuilder (1.2ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/index.json.jbuilder (12.9ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:28:42 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.4ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/_passage.json.jbuilder (1.0ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/index.json.jbuilder (9.7ms)
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:28:44 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.3ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/_passage.json.jbuilder (0.7ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/index.json.jbuilder (9.4ms)
+Completed 200 OK in 22ms (Views: 20.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:28:54 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.6ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.5ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/index.json.jbuilder (15.3ms)
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:28:56 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (2.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.4ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/index.json.jbuilder (14.4ms)
+Completed 200 OK in 21ms (Views: 17.4ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 08:30:15 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "oYQMY86pJv6WNO7sd-UKoA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 470ms (Views: 467.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:30:16 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (1.2ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.9ms)
+  Rendered api/passages/_passage.json.jbuilder (1.6ms)
+  Rendered api/passages/_passage.json.jbuilder (1.7ms)
+  Rendered api/passages/_passage.json.jbuilder (1.0ms)
+  Rendered api/passages/index.json.jbuilder (15.4ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:30:17 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (3.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (3.4ms)
+  Rendered api/passages/_passage.json.jbuilder (3.9ms)
+  Rendered api/passages/_passage.json.jbuilder (2.0ms)
+  Rendered api/passages/_passage.json.jbuilder (2.6ms)
+  Rendered api/passages/index.json.jbuilder (25.6ms)
+Completed 200 OK in 42ms (Views: 37.5ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:30:19 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.8ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.9ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/index.json.jbuilder (13.7ms)
+Completed 200 OK in 29ms (Views: 26.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:30:21 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (2.9ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/index.json.jbuilder (13.0ms)
+Completed 200 OK in 21ms (Views: 19.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:30:22 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.4ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/index.json.jbuilder (10.0ms)
+Completed 200 OK in 21ms (Views: 20.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:30:23 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.6ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (2.6ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/index.json.jbuilder (13.8ms)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:30:24 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (1.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.4ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/index.json.jbuilder (12.7ms)
+Completed 200 OK in 22ms (Views: 19.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:30:27 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.7ms)
+  Rendered api/passages/_passage.json.jbuilder (1.1ms)
+  Rendered api/passages/_passage.json.jbuilder (2.8ms)
+  Rendered api/passages/_passage.json.jbuilder (1.0ms)
+  Rendered api/passages/index.json.jbuilder (15.3ms)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:30:28 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.6ms)
+  Rendered api/passages/_passage.json.jbuilder (2.6ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/index.json.jbuilder (14.3ms)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:30:28 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.4ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/index.json.jbuilder (10.3ms)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:30:29 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.7ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.4ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (1.1ms)
+  Rendered api/passages/index.json.jbuilder (11.5ms)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:30:30 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.9ms)
+  Rendered api/passages/_passage.json.jbuilder (1.0ms)
+  Rendered api/passages/_passage.json.jbuilder (1.0ms)
+  Rendered api/passages/_passage.json.jbuilder (2.9ms)
+  Rendered api/passages/index.json.jbuilder (15.6ms)
+Completed 200 OK in 25ms (Views: 22.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:30:31 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.8ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.5ms)
+  Rendered api/passages/_passage.json.jbuilder (1.0ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (1.8ms)
+  Rendered api/passages/index.json.jbuilder (13.1ms)
+Completed 200 OK in 27ms (Views: 24.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:30:33 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.5ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/index.json.jbuilder (10.2ms)
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:32:23 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (2.4ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (4.5ms)
+  Rendered api/passages/_passage.json.jbuilder (2.0ms)
+  Rendered api/passages/_passage.json.jbuilder (2.3ms)
+  Rendered api/passages/_passage.json.jbuilder (3.2ms)
+  Rendered api/passages/index.json.jbuilder (26.4ms)
+Completed 200 OK in 33ms (Views: 29.6ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:32:25 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.8ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (2.0ms)
+  Rendered api/passages/_passage.json.jbuilder (2.4ms)
+  Rendered api/passages/_passage.json.jbuilder (1.1ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/index.json.jbuilder (15.3ms)
+Completed 200 OK in 29ms (Views: 27.6ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-04-30 08:32:36 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "oYQMY86pJv6WNO7sd-UKoA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "EnderWiggin"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "speakerforthedead@formics.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "oNWsD8cfUAF64oYHdLn4Zw"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "oNWsD8cfUAF64oYHdLn4Zw"], ["updated_at", "2020-04-30 15:32:36.170467"], ["id", 1]]
+  ↳ app/models/user.rb:30
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:30
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (1.7ms)
+Completed 200 OK in 22ms (Views: 7.0ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:32:38 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (1.2ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (4.9ms)
+  Rendered api/passages/_passage.json.jbuilder (1.1ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (1.8ms)
+  Rendered api/passages/index.json.jbuilder (17.3ms)
+Completed 200 OK in 29ms (Views: 25.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:32:41 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (2.7ms)
+  Rendered api/passages/_passage.json.jbuilder (1.0ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/index.json.jbuilder (14.5ms)
+Completed 200 OK in 27ms (Views: 24.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:32:42 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.6ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (5.9ms)
+  Rendered api/passages/_passage.json.jbuilder (1.0ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (1.6ms)
+  Rendered api/passages/index.json.jbuilder (17.0ms)
+Completed 200 OK in 28ms (Views: 25.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:32:45 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (1.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (2.9ms)
+  Rendered api/passages/_passage.json.jbuilder (8.8ms)
+  Rendered api/passages/_passage.json.jbuilder (1.3ms)
+  Rendered api/passages/_passage.json.jbuilder (1.5ms)
+  Rendered api/passages/index.json.jbuilder (26.8ms)
+Completed 200 OK in 38ms (Views: 36.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:33:13 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.9ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.6ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (2.1ms)
+  Rendered api/passages/_passage.json.jbuilder (1.5ms)
+  Rendered api/passages/index.json.jbuilder (14.7ms)
+Completed 200 OK in 28ms (Views: 25.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 08:54:13 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 78ms (Views: 73.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:54:14 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (1.3ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (3.6ms)
+  Rendered api/passages/_passage.json.jbuilder (2.5ms)
+  Rendered api/passages/_passage.json.jbuilder (2.1ms)
+  Rendered api/passages/_passage.json.jbuilder (2.6ms)
+  Rendered api/passages/index.json.jbuilder (21.8ms)
+Completed 200 OK in 34ms (Views: 31.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:54:17 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (2.0ms)
+  Rendered api/passages/_passage.json.jbuilder (1.1ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/index.json.jbuilder (13.3ms)
+Completed 200 OK in 26ms (Views: 24.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:54:33 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (3.7ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (4.5ms)
+  Rendered api/passages/_passage.json.jbuilder (1.7ms)
+  Rendered api/passages/_passage.json.jbuilder (1.9ms)
+  Rendered api/passages/_passage.json.jbuilder (1.7ms)
+  Rendered api/passages/index.json.jbuilder (25.7ms)
+Completed 200 OK in 40ms (Views: 35.5ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:54:35 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.5ms)
+  Rendered api/passages/_passage.json.jbuilder (1.1ms)
+  Rendered api/passages/_passage.json.jbuilder (1.2ms)
+  Rendered api/passages/_passage.json.jbuilder (1.5ms)
+  Rendered api/passages/index.json.jbuilder (13.6ms)
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:56:43 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.8ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.5ms)
+  Rendered api/passages/_passage.json.jbuilder (1.0ms)
+  Rendered api/passages/_passage.json.jbuilder (1.6ms)
+  Rendered api/passages/_passage.json.jbuilder (2.2ms)
+  Rendered api/passages/index.json.jbuilder (14.7ms)
+Completed 200 OK in 27ms (Views: 25.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:56:44 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.7ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (2.3ms)
+  Rendered api/passages/_passage.json.jbuilder (2.4ms)
+  Rendered api/passages/_passage.json.jbuilder (1.1ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/index.json.jbuilder (15.7ms)
+Completed 200 OK in 30ms (Views: 27.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:58:19 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (2.4ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (3.2ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/_passage.json.jbuilder (1.2ms)
+  Rendered api/passages/index.json.jbuilder (15.2ms)
+Completed 200 OK in 28ms (Views: 23.9ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 08:58:51 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 46ms (Views: 41.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:58:51 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.8ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (2.5ms)
+  Rendered api/passages/_passage.json.jbuilder (1.6ms)
+  Rendered api/passages/_passage.json.jbuilder (2.9ms)
+  Rendered api/passages/_passage.json.jbuilder (2.3ms)
+  Rendered api/passages/index.json.jbuilder (18.1ms)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:58:53 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.6ms)
+  Rendered api/passages/_passage.json.jbuilder (1.4ms)
+  Rendered api/passages/_passage.json.jbuilder (1.7ms)
+  Rendered api/passages/_passage.json.jbuilder (1.5ms)
+  Rendered api/passages/index.json.jbuilder (13.7ms)
+Completed 200 OK in 25ms (Views: 23.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:58:54 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.5ms)
+  Rendered api/passages/_passage.json.jbuilder (1.0ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/index.json.jbuilder (12.1ms)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:58:55 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.8ms)
+  Rendered api/passages/_passage.json.jbuilder (1.9ms)
+  Rendered api/passages/_passage.json.jbuilder (2.4ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/index.json.jbuilder (14.0ms)
+Completed 200 OK in 25ms (Views: 23.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:58:57 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.7ms)
+  Rendered api/passages/_passage.json.jbuilder (3.9ms)
+  Rendered api/passages/_passage.json.jbuilder (1.3ms)
+  Rendered api/passages/_passage.json.jbuilder (1.2ms)
+  Rendered api/passages/index.json.jbuilder (16.5ms)
+Completed 200 OK in 26ms (Views: 22.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 08:59:10 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 36ms (Views: 33.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 08:59:10 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.9ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (2.6ms)
+  Rendered api/passages/_passage.json.jbuilder (2.3ms)
+  Rendered api/passages/_passage.json.jbuilder (2.0ms)
+  Rendered api/passages/_passage.json.jbuilder (1.9ms)
+  Rendered api/passages/index.json.jbuilder (19.0ms)
+Completed 200 OK in 30ms (Views: 27.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 09:02:37 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (2.0ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (4.1ms)
+  Rendered api/passages/_passage.json.jbuilder (3.1ms)
+  Rendered api/passages/_passage.json.jbuilder (3.4ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/index.json.jbuilder (30.1ms)
+Completed 200 OK in 44ms (Views: 40.3ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/api/session/" for ::1 at 2020-04-30 09:04:52 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+Completed 401 Unauthorized in 4ms (Views: 0.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/session/" for ::1 at 2020-04-30 09:04:53 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"EnderWiggin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "EnderWiggin"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "EnderWiggin"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "speakerforthedead@formics.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "mFZFFeOxdArj3Hnniwf7yw"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Update (0.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "mFZFFeOxdArj3Hnniwf7yw"], ["updated_at", "2020-04-30 16:04:54.000282"], ["id", 1]]
+  ↳ app/models/user.rb:30
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:30
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (2.6ms)
+Completed 200 OK in 303ms (Views: 11.1ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 09:04:54 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.3ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/index.json.jbuilder (11.3ms)
+Completed 200 OK in 19ms (Views: 15.6ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/api/session" for ::1 at 2020-04-30 09:04:54 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "mFZFFeOxdArj3Hnniwf7yw"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "EnderWiggin"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "speakerforthedead@formics.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "Udr2yDp5wsUklxjdd7wSww"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:30
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Udr2yDp5wsUklxjdd7wSww"], ["updated_at", "2020-04-30 16:04:54.993248"], ["id", 1]]
+  ↳ app/models/user.rb:30
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:30
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.8ms)
+Completed 200 OK in 18ms (Views: 8.0ms | ActiveRecord: 3.7ms)
+
+

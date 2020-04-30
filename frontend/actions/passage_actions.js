@@ -1,19 +1,28 @@
-import * as PassageApiUtil from '../util/passage_api_util'
+import * as PassageApiUtil from '../util/passage_api_util';
 
 export const RECEIVE_PASSAGES = 'RECEIVE_PASSAGES';
 export const RECEIVE_PASSAGE = 'RECEIVE_PASSAGE';
+export const REMOVE_PASSAGE = 'REMOVE_PASSAGE';
 
-export const receivePassages = passages => ({
+const receivePassages = passages => ({
     type: RECEIVE_PASSAGES,
     passages,
 })
 
-export const receivePassage = passage => {
-    debugger
+const receivePassage = passage => {
     return(
         {
         type: RECEIVE_PASSAGE,
         passage,
+        }
+    )
+}
+
+const removePassage = passageId => {
+    return(
+        {
+        type: REMOVE_PASSAGE,
+        passageId,
         }
     )
 }
@@ -24,10 +33,9 @@ export const fetchPassages = () => dispatch => (
 )
 
 export const fetchPassage = passageId => dispatch => {
-    debugger
     return(
         PassageApiUtil.fetchPassage(passageId)
-            .then(passage => dispatch(recievePassage(passage)))
+            .then(passage => dispatch(receivePassage(passage)))
     )
 }
 
