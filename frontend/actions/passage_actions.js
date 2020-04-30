@@ -8,20 +8,28 @@ export const receivePassages = passages => ({
     passages,
 })
 
-export const receivePassage = passage => ({
-    type: RECEIVE_PASSAGE,
-    passage,
-})
+export const receivePassage = passage => {
+    debugger
+    return(
+        {
+        type: RECEIVE_PASSAGE,
+        passage,
+        }
+    )
+}
 
 export const fetchPassages = () => dispatch => (
     PassageApiUtil.fetchPassages()
         .then((passages) => dispatch(receivePassages(passages)))
 )
 
-export const fetchPassage = passage => dispatch => (
-    PassageApiUtil.fetchPassage(passage)
-        .then((passage) => dispatch(recievePassage(passage)))
-)
+export const fetchPassage = passageId => dispatch => {
+    debugger
+    return(
+        PassageApiUtil.fetchPassage(passageId)
+            .then(passage => dispatch(recievePassage(passage)))
+    )
+}
 
 export const createPassage = passage => dispatch => (
     PassageApiUtil.createPassage(passage)

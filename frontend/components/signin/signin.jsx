@@ -39,7 +39,7 @@ class SignIn extends React.Component {
     render(){
         return(
             <div id="form-page">
-                <h1>Sign In</h1>
+                <h2>Sign In</h2>
                 <div className='auth-container'>
 
                     <form className='auth-form'>

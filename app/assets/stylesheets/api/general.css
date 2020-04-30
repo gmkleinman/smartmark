@@ -14,6 +14,14 @@ h1 {
     font-family: din-condensed, sans-serif;
 }
 
+h2 {
+    font-weight: 600;
+    font-size: 62px;
+    margin: 35px;
+    color: rgb(6, 17, 20);
+    font-family: din-condensed, sans-serif;
+}
+
 thead,
 tfoot {
     background-color: transparent;
@@ -22,11 +30,6 @@ tfoot {
 
 tbody {
     background-color: transparent;
-}
-
-caption {
-    padding: 10px;
-    caption-side: bottom;
 }
 
 table {
@@ -39,8 +42,6 @@ table {
 
 td {
     text-align: left;
-    padding-top: 10px;
-    padding-bottom: 10px;
     border-bottom: 1px solid black;
     font-weight: 500;
 }

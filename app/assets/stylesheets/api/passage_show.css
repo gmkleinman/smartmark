@@ -1,0 +1,29 @@
+#passage-container {
+    text-decoration: none;
+    background-color: #3AAFA9;
+    display: flex;
+    flex-direction: column;
+    font-family: din-condensed, sans-serif;
+    font-style: normal;
+}
+
+.passage {
+    display: flex;
+    flex-direction: column;
+}
+
+.passage-line {
+    padding: 12px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.temp-header {
+    font-weight: 600;
+    font-size: 30px;
+    margin: 35px;
+    color: rgb(6, 17, 20);
+    font-family: din-condensed, sans-serif;
+    display: flex;
+    flex-direction: column;
+}

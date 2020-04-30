@@ -27,6 +27,7 @@
     color: #DEF2F1;
     padding: 24px;
     min-width: 300px;
+    font-size: 14px;
 }
 
 .auth-form {
@@ -53,7 +54,6 @@ input {
     margin: 20px;
     color: rgb(6, 17, 20);
     font-weight: 400;
-    
 }
 
 .link {

@@ -4,7 +4,7 @@ import passagesReducer from "./passages_reducer";
 
 const entitiesReducer = combineReducers({
   users: usersReducer,
-  passages: passagesReducer
+  passages: passagesReducer,
 });
 
 export default entitiesReducer;

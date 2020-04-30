@@ -6,6 +6,7 @@ const passagesReducer = (state = {}, action) => {
     case RECEIVE_PASSAGES:
       return action.passages;
     case RECEIVE_PASSAGE:
+      debugger
       return Object.assign({}, state, { [action.passage.id]: action.passage });
     default:
       return state;

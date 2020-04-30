@@ -2,12 +2,16 @@ import { connect } from 'react-redux'
 import PassageIndex from './passage_index'
 import { fetchPassages } from '../../actions/passage_actions'
 
-const mSTP = state => ({
-    passages: Object.values(state.entities.passages),
-})
+const mSTP = state => {
+    return(
+        {
+            passages: Object.values(state.entities.passages),
+        }
+    )
+}
 
 const mDTP = dispatch => ({
-    fetchPassages: dispatch(fetchPassages()),
+    fetchPassages: () => dispatch(fetchPassages()),
 })
 
 export default connect(mSTP, mDTP)(PassageIndex);

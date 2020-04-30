@@ -32,7 +32,7 @@ class SignUp extends React.Component {
     render(){
         return(
             <div id="form-page">
-                <h1>Sign Up</h1> 
+                <h2>Sign Up</h2> 
                 <div className='auth-container'>
 
                     <form className='auth-form'>
