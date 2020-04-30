@@ -7,13 +7,22 @@ class PassageIndex extends React.Component {
 
     render() {
         return(
-            <div classname='passages-container'>
-                <h1>Passage Index</h1>
-                <ul className='passages-index'>
-                {this.props.passages.map((passage, i) => (
-                    <li key={`passage-${i}`} classname='passage-title'> {passage.title}</li>
-                ))}
-                </ul>
+            <div id='index-page'>
+                <div className='index-container'>
+                    <h1>PASSAGES</h1>
+                    <table>
+                        <tbody>
+                            {this.props.passages.map((passage, i) => (
+                                <tr key={`passage-index-row-${i+1}`}> 
+                                    <td id='passage-index-item'>{i+1}</td>
+                                    <td id='passage-index-item'>placeholder</td>
+                                    <td id='passage-index-item'>{passage.title}</td>
+                                    <td id='passage-index-item'>{passage.author}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         )
     }

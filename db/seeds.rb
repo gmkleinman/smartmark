@@ -29,15 +29,25 @@ passages = Passage.create([
         title: 'The Raven',
         author: 'Edgar Allan Poe',
         body: 'Once upon a midnight dreary...',
+        image_url: 'Edgar_Allan_Poe.jpg'
     },
     {
         title: "Sonnets from the Portuguese No. 43",
         author: "Elizabeth Barrett Browning",
         body: "How do I love thee? Let me count the ways...",
+        image_url: 'Elizabeth_Barrett_Browning.jpg'
+            
     },
     {
-        title: "Kerpluckit",
-        author: "Grant Kleinman",
-        body: "There once was a man from Kerpluckit...",
+        title: "Ozymandias",
+        author: "Percy Shelley",
+        body: "some text here",
+        image_url: 'Percy_Shelley.jpg'
+    }
+    {
+        title: "Jabberwocky",
+        author: "Lewis Carroll",
+        body: "lots of nonsense here",
+        image_url: 'Lewis_Carroll.jpg'
     }
 ])

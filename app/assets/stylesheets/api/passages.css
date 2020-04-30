@@ -1,0 +1,21 @@
+#index-page {
+    text-decoration: none;
+    background-color: #3AAFA9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: din-condensed, sans-serif;
+    font-style: normal;
+}
+
+.index-container {
+    display: flex;
+    flex-direction: column;
+    border: solid red;
+    align-items: center;
+}
+
+#passage-index-item {
+    padding-left: 50px;
+    padding-right: 50px;
+}

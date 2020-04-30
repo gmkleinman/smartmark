@@ -8,8 +8,39 @@ rgb(6, 17, 20); (basically black)
 
 h1 {
     font-weight: 600;
-    font-size: 30px;
-    margin: 30px;
+    font-size: 80px;
+    margin: 50px;
     color: rgb(6, 17, 20);
     font-family: din-condensed, sans-serif;
+}
+
+thead,
+tfoot {
+    background-color: transparent;
+    color: #fff;
+}
+
+tbody {
+    background-color: transparent;
+}
+
+caption {
+    padding: 10px;
+    caption-side: bottom;
+}
+
+table {
+    border: none;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    font-size: 24px;
+    margin-bottom: 50px;
+}
+
+td {
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+    font-weight: 500;
 }
