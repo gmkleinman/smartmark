@@ -5,7 +5,7 @@ class Api::PassagesController < ApplicationController
     end
 
     def show
-        @passage = Passage.find(params[:id])
+        @passage = Passage.find_by(id: params[:id])
         if @passage
             render :show
         else
@@ -23,7 +23,7 @@ class Api::PassagesController < ApplicationController
     end
 
     def update
-        @passage = Passage.find(params[:id])
+        @passage = Passage.find_by(id: params[:id])
         if @passage.update(passage_params)
             render :show
         else
@@ -32,13 +32,13 @@ class Api::PassagesController < ApplicationController
     end
 
     def destroy
-        @passage = Passage.find(params[:id])
+        @passage = Passage.find_by(id: params[:id])
         if @passage
             @passage.destroy
         end
         #this works, but there is probably a better way -> redirect to index controller?
-        @passages = Passage.all
-        render '/api/passages/index'
+        # @passages = Passage.all
+        redirect_to action: :index
     end
 
     private

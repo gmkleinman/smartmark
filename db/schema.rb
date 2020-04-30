@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_30_050752) do
+ActiveRecord::Schema.define(version: 2020_04_30_163623) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "annotations", force: :cascade do |t|
+    t.text "body", null: false
+    t.integer "upvote_count", null: false
+    t.integer "passage_id", null: false
+    t.integer "annotator_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["annotator_id"], name: "index_annotations_on_annotator_id"
+    t.index ["passage_id"], name: "index_annotations_on_passage_id"
+  end
 
   create_table "passages", force: :cascade do |t|
     t.string "title", null: false

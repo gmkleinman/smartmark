@@ -1,0 +1,1 @@
+json.extract! annotation, :id, :body, :annotator_id, :passage_id

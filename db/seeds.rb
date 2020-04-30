@@ -64,8 +64,8 @@ passages = Passage.create([
         image_url: 'Percy_Shelley.jpg',
     },
     {
-        title: 'The Raven',
-        author: 'Edgar Allan Poe',
+        title: 'The Road Not Taken',
+        author: 'Robert Frost',
         body: ['Two roads diverged in a yellow wood,',
             'And sorry I could not travel both',
             'And be one traveler, long I stood',
@@ -129,5 +129,20 @@ passages = Passage.create([
             'All mimsy were the borogoves,',
             'And the mome raths outgrabe.'],
         image_url: 'Lewis_Carroll.jpg',
+    },
+])
+
+annotations = Annotation.create([
+    {
+        body: 'annotation!',
+        upvote_count: 0,
+        passage_id: 1,
+        annotator_id: 1,
+    },
+    {
+        body: 'annotation DOS!',
+        upvote_count: 0,
+        passage_id: 2,
+        annotator_id: 2,
     },
 ])
