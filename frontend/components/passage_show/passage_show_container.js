@@ -3,6 +3,7 @@ import PassageShow from './passage_show'
 import { fetchPassage, fetchPassages } from '../../actions/passage_actions'
 
 const mSTP = (state, ownProps) => {
+    // debugger
     return(
         {
             passage: state.entities.passages[ownProps.match.params.passageId],

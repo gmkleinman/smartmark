@@ -134,21 +134,45 @@ passages = Passage.create([
 
 annotations = Annotation.create([
     {
-        body: 'delete this nephew!',
+        body: 'DELETE THIS NEPHEW.....',
         upvote_count: 0,
         passage_id: passages[0].id,
         annotator_id: users[0].id,
     },
     {
-        body: 'annotation DOS!',
+        body: "I don't always make annotations, but when I do, they're not very useful.",
         upvote_count: 0,
         passage_id: passages[1].id,
         annotator_id: users[1].id,
     },
     {
-        body: 'You\'re awesome! Keep slaying!',
+        body: "You're awesome! Stay awesome!",
+        upvote_count: 0,
+        passage_id: passages[2].id,
+        annotator_id: users[1].id,
+    },
+    {
+        body: "Yo dawg I heard you like annotations. That's it tho.",
         upvote_count: 0,
         passage_id: passages[2].id,
         annotator_id: users[0].id,
+    },
+    {
+        body: "Everything the light touches is our kingdom.",
+        upvote_count: 0,
+        passage_id: passages[0].id,
+        annotator_id: users[1].id,
+    },
+    {
+        body: "I like chicken, I like liver, meow mix meow mix please deliver",
+        upvote_count: 0,
+        passage_id: passages[2].id,
+        annotator_id: users[0].id,
+    },
+    {
+        body: "You put the lime in the coconut, you drink the bowl up",
+        upvote_count: 0,
+        passage_id: passages[2].id,
+        annotator_id: users[2].id,
     },
 ])

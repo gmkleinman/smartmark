@@ -29,17 +29,17 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log("Entry file found!");
     window.store = store;
     window.getState = store.getState;
-    window.fetchAnnotation = AnnotationApiUtil.fetchAnnotation
-    window.fetchAnnotations = AnnotationApiUtil.fetchAnnotations
-    window.createAnnotation = AnnotationApiUtil.createAnnotation
-    window.updateAnnotation = AnnotationApiUtil.updateAnnotation
-    window.deleteAnnotation = AnnotationApiUtil.deleteAnnotation
-    window.a = {
-        body: 'delete this nephew',
-        upvote_count: 100,
-        passage_id: 1,
-        annotator_id: 1,
-    }
+    // window.fetchAnnotation = AnnotationApiUtil.fetchAnnotation
+    // window.fetchAnnotations = AnnotationApiUtil.fetchAnnotations
+    // window.createAnnotation = AnnotationApiUtil.createAnnotation
+    // window.updateAnnotation = AnnotationApiUtil.updateAnnotation
+    // window.deleteAnnotation = AnnotationApiUtil.deleteAnnotation
+    // window.a = {
+    //     body: 'delete this nephew',
+    //     upvote_count: 100,
+    //     passage_id: 1,
+    //     annotator_id: 1,
+    // }
     //end tests
     
 
