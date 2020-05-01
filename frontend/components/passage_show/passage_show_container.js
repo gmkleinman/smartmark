@@ -1,6 +1,8 @@
 import { connect } from 'react-redux'
 import PassageShow from './passage_show'
 import { fetchPassage, fetchPassages } from '../../actions/passage_actions'
+import { openModal } from '../../actions/modal_actions'
+import { fetchAnnotations } from '../../actions/annotation_actions'
 
 const mSTP = (state, ownProps) => {
     // debugger
@@ -12,9 +14,14 @@ const mSTP = (state, ownProps) => {
 }
 
 
-const mDTP = dispatch => ({
-    fetchPassage: passageId => dispatch(fetchPassage(passageId)),
-    fetchPassages: () => dispatch(fetchPassages()),
-})
+const mDTP = dispatch => {
+    debugger
+    return {
+        fetchPassage: passageId => dispatch(fetchPassage(passageId)),
+        fetchPassages: () => dispatch(fetchPassages()),
+        fetchAnnotations: () => dispatch(fetchAnnotations()),
+        openModal: () => dispatch(openModal('annotations')),
+    }
+}
 
 export default connect(mSTP, mDTP)(PassageShow);

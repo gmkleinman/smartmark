@@ -45,3 +45,26 @@ td {
     border-bottom: 1px solid black;
     font-weight: 500;
 }
+
+.modal-background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    /* background: rgba(0, 0, 0, 0.7); */
+    z-index: 10;
+    /* width: 500 px; */
+    /* height: 500 px; */
+    /* border: solid; */
+  }
+  
+  .modal-child {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    border: solid;
+  }

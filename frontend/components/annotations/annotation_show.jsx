@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react'
+import React from 'react'
 
 class AnnotationShow extends React.Component {
     constructor(props){
@@ -12,7 +12,7 @@ class AnnotationShow extends React.Component {
 
     render() {
         // debugger
-        if(!this.props.annotations[0]) return <div>No annotations to be found.</div>
+        if(!this.props.annotations[0]) return <div>No annotations found.</div>
         return(
             <div>
                 We're the annotations for passage with id: {this.props.passageId}!<br /><br />

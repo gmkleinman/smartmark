@@ -1,6 +1,6 @@
 import React from 'react'
-import AnnotationShowContainer from '../annotations/annotation_show_container'
-import AnnotationShow from '../annotations/annotation_show'
+// import AnnotationShowContainer from '../annotations/annotation_show_container'
+// import { Route, Link } from 'react-router-dom'
 
 class PassageShow extends React.Component {
     constructor(props){
@@ -10,11 +10,12 @@ class PassageShow extends React.Component {
     componentDidMount(){
         window.scrollTo(0, 0);
         this.props.fetchPassages();
+        this.props.fetchAnnotations();
     }
-    
+
     render() {
         if(!this.props.passage) return null
-        // debugger
+        debugger
         return(
             <div id='passage-show-container'>
                 <div id='passage-container'>
@@ -33,7 +34,7 @@ class PassageShow extends React.Component {
                 </div>
 
                 <div id='annotations-container'>
-                    <AnnotationShowContainer passageId={this.props.passage.id}/>
+                    <button onClick={this.props.openModal}>Open Modal?</button>
                 </div>
                 
             </div>
