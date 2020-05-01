@@ -5,18 +5,18 @@ export const fetchPassages = () => (
     })
 )
 
+export const fetchPassage = passageId => (
+    $.ajax({
+        url: `/api/passages/${passageId}`,
+        method: 'GET',
+    })
+)
+
 export const createPassage = passage => (
     $.ajax({
         url: '/api/passages',
         method: 'POST',
         data: { passage },
-    })
-)
-
-export const fetchPassage = passageId => (
-    $.ajax({
-        url: `/api/passages/${passageId}`,
-        method: 'GET',
     })
 )
 

@@ -26248,3 +26248,1188 @@ Processing by Api::AnnotationsController#destroy as JSON
 Completed 200 OK in 37ms (Views: 0.2ms | ActiveRecord: 12.0ms)
 
 
+Started GET "/api/passages/1" for ::1 at 2020-04-30 15:43:36 -0700
+Processing by Api::PassagesController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPassage Load (0.8ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/passages_controller.rb:8
+  Rendering api/passages/show.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (5.2ms)
+  Rendered api/passages/show.json.jbuilder (9.4ms)
+Completed 200 OK in 79ms (Views: 16.6ms | ActiveRecord: 38.1ms)
+
+
+Started GET "/api/passages/1/annotations/1" for ::1 at 2020-04-30 15:43:46 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>"1", "id"=>"1"}
+  [1m[36mAnnotation Load (1.9ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:3
+Completed 404 Not Found in 24ms (Views: 0.3ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/api/passages/1/annotations/2" for ::1 at 2020-04-30 15:43:54 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>"1", "id"=>"2"}
+  [1m[36mAnnotation Load (1.9ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:3
+Completed 404 Not Found in 5ms (Views: 0.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/passages/1/annotations/4" for ::1 at 2020-04-30 15:43:56 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>"1", "id"=>"4"}
+  [1m[36mAnnotation Load (1.7ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:3
+Completed 404 Not Found in 4ms (Views: 0.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/passages/1/annotations/5" for ::1 at 2020-04-30 15:43:57 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>"1", "id"=>"5"}
+  [1m[36mAnnotation Load (0.6ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:3
+Completed 404 Not Found in 2ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mAnnotation Load (1.7ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+Started GET "/api/passages/1/annotations/7" for ::1 at 2020-04-30 15:44:16 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>"1", "id"=>"7"}
+  [1m[36mAnnotation Load (2.0ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:3
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.4ms)
+  Rendered api/annotations/show.json.jbuilder (3.4ms)
+Completed 200 OK in 35ms (Views: 14.0ms | ActiveRecord: 7.6ms)
+
+
+Started POST "/api/passages/1/annotations/" for ::1 at 2020-04-30 15:44:54 -0700
+Processing by Api::AnnotationsController#create as JSON
+  Parameters: {"passage_id"=>"1"}
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: annotation:
+  app/controllers/api/annotations_controller.rb:40:in `annotation_params'
+  app/controllers/api/annotations_controller.rb:12:in `create'
+
+Started POST "/api/passages/1/annotations/?annotation[:body]=ghosts" for ::1 at 2020-04-30 15:45:07 -0700
+Processing by Api::AnnotationsController#create as JSON
+  Parameters: {"annotation"=>{":body"=>"ghosts"}, "passage_id"=>"1"}
+Unpermitted parameter: ::body
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/annotations_controller.rb:13
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/annotations_controller.rb:13
+Completed 422 Unprocessable Entity in 19ms (Views: 0.4ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/api/passages/1/annotations/?annotation[body]=ghosts" for ::1 at 2020-04-30 15:46:02 -0700
+Processing by Api::AnnotationsController#create as JSON
+  Parameters: {"annotation"=>{"body"=>"ghosts"}, "passage_id"=>"1"}
+  [1m[35m (3.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/annotations_controller.rb:13
+  [1m[35m (3.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/annotations_controller.rb:13
+Completed 422 Unprocessable Entity in 23ms (Views: 1.2ms | ActiveRecord: 6.5ms)
+
+
+Started POST "/api/passages/1/annotations/?annotation[body]=ghosts&annotation[upvote_count]=1&annotation[passage_id]=2&annotation[annotator_id]=2" for ::1 at 2020-04-30 15:46:28 -0700
+Processing by Api::AnnotationsController#create as JSON
+  Parameters: {"annotation"=>{"body"=>"ghosts", "upvote_count"=>"1", "passage_id"=>"2", "annotator_id"=>"2"}, "passage_id"=>"1"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/annotations_controller.rb:13
+  [1m[36mPassage Load (1.7ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:13
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:13
+  [1m[36mAnnotation Create (0.7ms)[0m  [1m[32mINSERT INTO "annotations" ("body", "upvote_count", "passage_id", "annotator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["body", "ghosts"], ["upvote_count", 1], ["passage_id", 2], ["annotator_id", 2], ["created_at", "2020-04-30 22:46:28.264765"], ["updated_at", "2020-04-30 22:46:28.264765"]]
+  ↳ app/controllers/api/annotations_controller.rb:13
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/annotations_controller.rb:13
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.7ms)
+  Rendered api/annotations/show.json.jbuilder (3.0ms)
+Completed 200 OK in 119ms (Views: 9.3ms | ActiveRecord: 11.1ms)
+
+
+Started POST "/api/passages/1/annotations/?annotation[body]=WHEN%20THERE%27S%20BLOOD%20IN%20THE&annotation[upvote_count]=0&annotation[passage_id]=3&annotation[annotator_id]=1" for ::1 at 2020-04-30 15:46:48 -0700
+Processing by Api::AnnotationsController#create as JSON
+  Parameters: {"annotation"=>{"body"=>"WHEN THERE'S BLOOD IN THE", "upvote_count"=>"0", "passage_id"=>"3", "annotator_id"=>"1"}, "passage_id"=>"1"}
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/annotations_controller.rb:13
+  [1m[36mPassage Load (2.8ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:13
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:13
+  [1m[36mAnnotation Create (1.6ms)[0m  [1m[32mINSERT INTO "annotations" ("body", "upvote_count", "passage_id", "annotator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["body", "WHEN THERE'S BLOOD IN THE"], ["upvote_count", 0], ["passage_id", 3], ["annotator_id", 1], ["created_at", "2020-04-30 22:46:48.770364"], ["updated_at", "2020-04-30 22:46:48.770364"]]
+  ↳ app/controllers/api/annotations_controller.rb:13
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/annotations_controller.rb:13
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.6ms)
+  Rendered api/annotations/show.json.jbuilder (3.4ms)
+Completed 200 OK in 39ms (Views: 14.6ms | ActiveRecord: 10.7ms)
+
+
+Started POST "/api/passages/1/annotations/?annotation[body]=delete%20this%20nephew&annotation[upvote_count]=0&annotation[passage_id]=1&annotation[annotator_id]=1" for ::1 at 2020-04-30 15:47:01 -0700
+Processing by Api::AnnotationsController#create as JSON
+  Parameters: {"annotation"=>{"body"=>"delete this nephew", "upvote_count"=>"0", "passage_id"=>"1", "annotator_id"=>"1"}, "passage_id"=>"1"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/annotations_controller.rb:13
+  [1m[36mPassage Load (1.6ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:13
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:13
+  [1m[36mAnnotation Create (1.1ms)[0m  [1m[32mINSERT INTO "annotations" ("body", "upvote_count", "passage_id", "annotator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["body", "delete this nephew"], ["upvote_count", 0], ["passage_id", 1], ["annotator_id", 1], ["created_at", "2020-04-30 22:47:01.409108"], ["updated_at", "2020-04-30 22:47:01.409108"]]
+  ↳ app/controllers/api/annotations_controller.rb:13
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/annotations_controller.rb:13
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.6ms)
+  Rendered api/annotations/show.json.jbuilder (2.6ms)
+Completed 200 OK in 33ms (Views: 15.5ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/api/passages/1/annotations/" for ::1 at 2020-04-30 15:47:33 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/api/passages/1/annotations"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/passages/1/annotations/10" for ::1 at 2020-04-30 15:47:38 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>"1", "id"=>"10"}
+  [1m[36mAnnotation Load (2.2ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:3
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (1.0ms)
+  Rendered api/annotations/show.json.jbuilder (5.1ms)
+Completed 200 OK in 24ms (Views: 19.5ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/passages/2/annotations/10" for ::1 at 2020-04-30 15:47:42 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>"2", "id"=>"10"}
+  [1m[36mAnnotation Load (2.0ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:3
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.6ms)
+  Rendered api/annotations/show.json.jbuilder (3.0ms)
+Completed 200 OK in 18ms (Views: 13.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/passages/3/annotations/10" for ::1 at 2020-04-30 15:47:48 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>"3", "id"=>"10"}
+  [1m[36mAnnotation Load (4.3ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:3
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.7ms)
+  Rendered api/annotations/show.json.jbuilder (3.7ms)
+Completed 200 OK in 18ms (Views: 11.6ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/api/passages/1/annotations/10" for ::1 at 2020-04-30 15:47:58 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>"1", "id"=>"10"}
+  [1m[36mAnnotation Load (2.1ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:3
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.6ms)
+  Rendered api/annotations/show.json.jbuilder (2.5ms)
+Completed 200 OK in 19ms (Views: 14.4ms | ActiveRecord: 2.1ms)
+
+
+Started DELETE "/api/passages/1/annotations/10" for ::1 at 2020-04-30 15:48:11 -0700
+Processing by Api::AnnotationsController#destroy as JSON
+  Parameters: {"passage_id"=>"1", "id"=>"10"}
+  [1m[36mAnnotation Load (2.1ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:31
+  [1m[35m (3.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/annotations_controller.rb:33
+  [1m[36mAnnotation Destroy (9.3ms)[0m  [1m[31mDELETE FROM "annotations" WHERE "annotations"."id" = $1[0m  [["id", 10]]
+  ↳ app/controllers/api/annotations_controller.rb:33
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/annotations_controller.rb:33
+Completed 200 OK in 23ms (Views: 0.2ms | ActiveRecord: 19.2ms)
+
+
+Started GET "/api/passages/1/annotations/10" for ::1 at 2020-04-30 15:48:16 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>"1", "id"=>"10"}
+  [1m[36mAnnotation Load (4.8ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:3
+Completed 404 Not Found in 6ms (Views: 0.2ms | ActiveRecord: 4.8ms)
+
+
+  [1m[36mAnnotation Load (0.9ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (5039.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "smartmark_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (75.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "smartmark_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (74.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "smartmark_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (209.0ms)[0m  [1m[35mCREATE DATABASE "smartmark_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (95.3ms)[0m  [1m[35mCREATE DATABASE "smartmark_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (1.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "annotations" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (29.3ms)[0m  [1m[35mCREATE TABLE "annotations" ("id" bigserial primary key, "body" text NOT NULL, "upvote_count" integer NOT NULL, "passage_id" integer NOT NULL, "annotator_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE  INDEX  "index_annotations_on_annotator_id" ON "annotations"  ("annotator_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE  INDEX  "index_annotations_on_passage_id" ON "annotations"  ("passage_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "passages" CASCADE[0m
+  ↳ db/schema.rb:29
+  [1m[35m (18.0ms)[0m  [1m[35mCREATE TABLE "passages" ("id" bigserial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "body" character varying[] DEFAULT '{}' NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "image_url" character varying)[0m
+  ↳ db/schema.rb:29
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:38
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:38
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:38
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:38
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:38
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200430163623)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200429162622),
+(20200430050752),
+(20200430002355),
+(20200430045638),
+(20200427222125);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-30 22:50:52.258975"], ["updated_at", "2020-04-30 22:50:52.258975"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "annotations" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (17.1ms)[0m  [1m[35mCREATE TABLE "annotations" ("id" bigserial primary key, "body" text NOT NULL, "upvote_count" integer NOT NULL, "passage_id" integer NOT NULL, "annotator_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE  INDEX  "index_annotations_on_annotator_id" ON "annotations"  ("annotator_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE  INDEX  "index_annotations_on_passage_id" ON "annotations"  ("passage_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (3.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "passages" CASCADE[0m
+  ↳ db/schema.rb:29
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "passages" ("id" bigserial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "body" character varying[] DEFAULT '{}' NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "image_url" character varying)[0m
+  ↳ db/schema.rb:29
+  [1m[35m (2.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:38
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:38
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:38
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:38
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:38
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200430163623)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200429162622),
+(20200430050752),
+(20200430002355),
+(20200430045638),
+(20200427222125);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-30 22:50:52.437030"], ["updated_at", "2020-04-30 22:50:52.437030"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.9ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-04-30 22:50:52.443611"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "EnderWiggin"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "speakerforthedead@formics.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "DYoXhRJyItYPPJLez6iFrg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "EnderWiggin"], ["email", "speakerforthedead@formics.com"], ["password_digest", "$2a$12$jnCYnuXs5704pz4/IN8b6ufsr3Iwx7MW0jiwvgPQqPKD.vdYIxqcm"], ["session_token", "DYoXhRJyItYPPJLez6iFrg"], ["created_at", "2020-04-30 22:50:52.785222"], ["updated_at", "2020-04-30 22:50:52.785222"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Zelda"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "princess@hyrule.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "oab7hIteXqwRsFI_FT1a5w"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Zelda"], ["email", "princess@hyrule.com"], ["password_digest", "$2a$12$1vSOb51Oz44cZV5n80Dh8O9032y6KGiEnFjiSXwJ8NZ72dUDN54s."], ["session_token", "oab7hIteXqwRsFI_FT1a5w"], ["created_at", "2020-04-30 22:50:53.070588"], ["updated_at", "2020-04-30 22:50:53.070588"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "G"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "gmkleinman@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Yf-yabzfCuc1gIZkcy5gmA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "G"], ["email", "gmkleinman@gmail.com"], ["password_digest", "$2a$12$l7QcwdaB2sI/BxAsqjLTouBhqqaxqLwDoYVenOx/fCeClNY.3JqyO"], ["session_token", "Yf-yabzfCuc1gIZkcy5gmA"], ["created_at", "2020-04-30 22:50:53.347378"], ["updated_at", "2020-04-30 22:50:53.347378"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mPassage Create (0.8ms)[0m  [1m[32mINSERT INTO "passages" ("title", "author", "body", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Sonnets No. 43"], ["author", "Elizabeth Barrett Browning"], ["body", "{\"How do I love thee? Let me count the ways.\",\"I love thee to the depth and breadth and height\",\"My soul can reach, when feeling out of sight\",\"For the ends of being and ideal grace.\",\"I love thee to the level of every day’s\",\"Most quiet need, by sun and candle-light.\",\"I love thee freely, as men strive for right.\",\"I love thee purely, as they turn from praise.\",\"I love thee with the passion put to use\",\"In my old griefs, and with my childhood’s faith.\",\"I love thee with a love I seemed to lose\",\"With my lost saints. I love thee with the breath,\",\"Smiles, tears, of all my life; and, if God choose,\",\"I shall but love thee better after death.,\"}"], ["created_at", "2020-04-30 22:50:53.367013"], ["updated_at", "2020-04-30 22:50:53.367013"], ["image_url", "Elizabeth_Barrett_Browning.jpg"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mPassage Create (0.7ms)[0m  [1m[32mINSERT INTO "passages" ("title", "author", "body", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Ozymandias"], ["author", "Percy Shelley"], ["body", "{\"I met a traveller from an antique land,\",\"Who said—“Two vast and trunkless legs of stone\",\"Stand in the desert. . . . Near them, on the sand,\",\"Half sunk a shattered visage lies, whose frown,\",\"And wrinkled lip, and sneer of cold command,\",\"Tell that its sculptor well those passions read\",\"Which yet survive, stamped on these lifeless things,\",\"The hand that mocked them, and the heart that fed;\",\"And on the pedestal, these words appear:\",\"My name is Ozymandias, King of Kings;\",\"Look on my Works, ye Mighty, and despair!\",\"Nothing beside remains. Round the decay\",\"Of that colossal Wreck, boundless and bare\",\"The lone and level sands stretch far away.\"}"], ["created_at", "2020-04-30 22:50:53.371819"], ["updated_at", "2020-04-30 22:50:53.371819"], ["image_url", "Percy_Shelley.jpg"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mPassage Create (0.6ms)[0m  [1m[32mINSERT INTO "passages" ("title", "author", "body", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Road Not Taken"], ["author", "Robert Frost"], ["body", "{\"Two roads diverged in a yellow wood,\",\"And sorry I could not travel both\",\"And be one traveler, long I stood\",\"And looked down one as far as I could\",\"To where it bent in the undergrowth;\",\"\",\"Then took the other, as just as fair,\",\"And having perhaps the better claim,\",\"Because it was grassy and wanted wear;\",\"Though as for that the passing there\",\"Had worn them really about the same,\",\"\",\"And both that morning equally lay\",\"In leaves no step had trodden black.\",\"Oh, I kept the first for another day!\",\"Yet knowing how way leads on to way,\",\"I doubted if I should ever come back.\",\"\",\"I shall be telling this with a sigh\",\"Somewhere ages and ages hence:\",\"Two roads diverged in a wood, and I—\",\"I took the one less traveled by,\",\"And that has made all the difference.\"}"], ["created_at", "2020-04-30 22:50:53.376533"], ["updated_at", "2020-04-30 22:50:53.376533"], ["image_url", "Edgar_Allan_Poe.jpg"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mPassage Create (0.5ms)[0m  [1m[32mINSERT INTO "passages" ("title", "author", "body", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Jabberwocky"], ["author", "Lewis Carroll"], ["body", "{\"Twas brillig, and the slithy toves\",\"Did gyre and gimble in the wabe:\",\"All mimsy were the borogoves,\",\"And the mome raths outgrabe.\",\"\",\"“Beware the Jabberwock, my son!\",\"The jaws that bite, the claws that catch!\",\"Beware the Jubjub bird, and shun\",\"The frumious Bandersnatch!”\",\"\",\"He took his vorpal sword in hand;\",\"Long time the manxome foe he sought—\",\"So rested he by the Tumtum tree\",\"And stood awhile in thought.\",\"\",\"And, as in uffish thought he stood,\",\"The Jabberwock, with eyes of flame,\",\"Came whiffling through the tulgey wood,\",\"And burbled as it came!\",\"\",\"One, two! One, two! And through and through\",\"The vorpal blade went snicker-snack!\",\"He left it dead, and with its head\",\"He went galumphing back.\",\"\",\"“And hast thou slain the Jabberwock?\",\"Come to my arms, my beamish boy!\",\"O frabjous day! Callooh! Callay!”\",\"He chortled in his joy.\",\"\",\"'Twas brillig, and the slithy toves\",\"Did gyre and gimble in the wabe:\",\"All mimsy were the borogoves,\",\"And the mome raths outgrabe.\"}"], ["created_at", "2020-04-30 22:50:53.381807"], ["updated_at", "2020-04-30 22:50:53.381807"], ["image_url", "Lewis_Carroll.jpg"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:135
+  [1m[36mAnnotation Load (1.0ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mPassage Load (0.9ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (5042.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "smartmark_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (3.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (50.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "smartmark_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (44.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "smartmark_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (255.6ms)[0m  [1m[35mCREATE DATABASE "smartmark_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (91.0ms)[0m  [1m[35mCREATE DATABASE "smartmark_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (1.6ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "annotations" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (17.0ms)[0m  [1m[35mCREATE TABLE "annotations" ("id" bigserial primary key, "body" text NOT NULL, "upvote_count" integer NOT NULL, "passage_id" integer NOT NULL, "annotator_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE  INDEX  "index_annotations_on_annotator_id" ON "annotations"  ("annotator_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE  INDEX  "index_annotations_on_passage_id" ON "annotations"  ("passage_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "passages" CASCADE[0m
+  ↳ db/schema.rb:29
+  [1m[35m (14.3ms)[0m  [1m[35mCREATE TABLE "passages" ("id" bigserial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "body" character varying[] DEFAULT '{}' NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "image_url" character varying)[0m
+  ↳ db/schema.rb:29
+  [1m[35m (6.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:38
+  [1m[35m (19.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:38
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:38
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:38
+  [1m[35m (12.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:38
+  [1m[35m (20.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (10.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (11.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200430163623)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (7.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200429162622),
+(20200430050752),
+(20200430002355),
+(20200430045638),
+(20200427222125);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-30 22:52:58.534318"], ["updated_at", "2020-04-30 22:52:58.534318"]]
+  ↳ db/schema.rb:13
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "annotations" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (12.0ms)[0m  [1m[35mCREATE TABLE "annotations" ("id" bigserial primary key, "body" text NOT NULL, "upvote_count" integer NOT NULL, "passage_id" integer NOT NULL, "annotator_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE  INDEX  "index_annotations_on_annotator_id" ON "annotations"  ("annotator_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE  INDEX  "index_annotations_on_passage_id" ON "annotations"  ("passage_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "passages" CASCADE[0m
+  ↳ db/schema.rb:29
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "passages" ("id" bigserial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "body" character varying[] DEFAULT '{}' NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "image_url" character varying)[0m
+  ↳ db/schema.rb:29
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:38
+  [1m[35m (17.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:38
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:38
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:38
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:38
+  [1m[35m (9.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200430163623)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200429162622),
+(20200430050752),
+(20200430002355),
+(20200430045638),
+(20200427222125);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (12.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-04-30 22:52:58.764526"], ["updated_at", "2020-04-30 22:52:58.764526"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (1.4ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-04-30 22:52:58.776127"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "EnderWiggin"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "speakerforthedead@formics.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "SJ5_fjwxNe1xWS2hr1u0OA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Create (1.2ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "EnderWiggin"], ["email", "speakerforthedead@formics.com"], ["password_digest", "$2a$12$.fo85U6mZzaQDM81nE25fOc74WTEMhdc2Hxcft7vs0ZibkunYvq4."], ["session_token", "SJ5_fjwxNe1xWS2hr1u0OA"], ["created_at", "2020-04-30 22:52:59.213065"], ["updated_at", "2020-04-30 22:52:59.213065"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Zelda"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "princess@hyrule.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WxyaldAMCySdZBhgskAxwQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Zelda"], ["email", "princess@hyrule.com"], ["password_digest", "$2a$12$jGzV4NDXkJzOjF2UBpfSHO.62dCahczJlXqL2xPdhuOnKxSErXhoa"], ["session_token", "WxyaldAMCySdZBhgskAxwQ"], ["created_at", "2020-04-30 22:52:59.550227"], ["updated_at", "2020-04-30 22:52:59.550227"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "G"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "gmkleinman@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "b026WeqpbYPjfuxzh3lpyw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "G"], ["email", "gmkleinman@gmail.com"], ["password_digest", "$2a$12$iVus44BOhkTcrIQDdEvo5.KVy8yRSnd947kppiuz/P239ZZs.ZL6u"], ["session_token", "b026WeqpbYPjfuxzh3lpyw"], ["created_at", "2020-04-30 22:53:00.048653"], ["updated_at", "2020-04-30 22:53:00.048653"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mPassage Create (0.9ms)[0m  [1m[32mINSERT INTO "passages" ("title", "author", "body", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Sonnets No. 43"], ["author", "Elizabeth Barrett Browning"], ["body", "{\"How do I love thee? Let me count the ways.\",\"I love thee to the depth and breadth and height\",\"My soul can reach, when feeling out of sight\",\"For the ends of being and ideal grace.\",\"I love thee to the level of every day’s\",\"Most quiet need, by sun and candle-light.\",\"I love thee freely, as men strive for right.\",\"I love thee purely, as they turn from praise.\",\"I love thee with the passion put to use\",\"In my old griefs, and with my childhood’s faith.\",\"I love thee with a love I seemed to lose\",\"With my lost saints. I love thee with the breath,\",\"Smiles, tears, of all my life; and, if God choose,\",\"I shall but love thee better after death.,\"}"], ["created_at", "2020-04-30 22:53:00.081360"], ["updated_at", "2020-04-30 22:53:00.081360"], ["image_url", "Elizabeth_Barrett_Browning.jpg"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mPassage Create (0.4ms)[0m  [1m[32mINSERT INTO "passages" ("title", "author", "body", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Ozymandias"], ["author", "Percy Shelley"], ["body", "{\"I met a traveller from an antique land,\",\"Who said—“Two vast and trunkless legs of stone\",\"Stand in the desert. . . . Near them, on the sand,\",\"Half sunk a shattered visage lies, whose frown,\",\"And wrinkled lip, and sneer of cold command,\",\"Tell that its sculptor well those passions read\",\"Which yet survive, stamped on these lifeless things,\",\"The hand that mocked them, and the heart that fed;\",\"And on the pedestal, these words appear:\",\"My name is Ozymandias, King of Kings;\",\"Look on my Works, ye Mighty, and despair!\",\"Nothing beside remains. Round the decay\",\"Of that colossal Wreck, boundless and bare\",\"The lone and level sands stretch far away.\"}"], ["created_at", "2020-04-30 22:53:00.086011"], ["updated_at", "2020-04-30 22:53:00.086011"], ["image_url", "Percy_Shelley.jpg"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mPassage Create (1.0ms)[0m  [1m[32mINSERT INTO "passages" ("title", "author", "body", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Road Not Taken"], ["author", "Robert Frost"], ["body", "{\"Two roads diverged in a yellow wood,\",\"And sorry I could not travel both\",\"And be one traveler, long I stood\",\"And looked down one as far as I could\",\"To where it bent in the undergrowth;\",\"\",\"Then took the other, as just as fair,\",\"And having perhaps the better claim,\",\"Because it was grassy and wanted wear;\",\"Though as for that the passing there\",\"Had worn them really about the same,\",\"\",\"And both that morning equally lay\",\"In leaves no step had trodden black.\",\"Oh, I kept the first for another day!\",\"Yet knowing how way leads on to way,\",\"I doubted if I should ever come back.\",\"\",\"I shall be telling this with a sigh\",\"Somewhere ages and ages hence:\",\"Two roads diverged in a wood, and I—\",\"I took the one less traveled by,\",\"And that has made all the difference.\"}"], ["created_at", "2020-04-30 22:53:00.094104"], ["updated_at", "2020-04-30 22:53:00.094104"], ["image_url", "Edgar_Allan_Poe.jpg"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mPassage Create (1.2ms)[0m  [1m[32mINSERT INTO "passages" ("title", "author", "body", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Jabberwocky"], ["author", "Lewis Carroll"], ["body", "{\"Twas brillig, and the slithy toves\",\"Did gyre and gimble in the wabe:\",\"All mimsy were the borogoves,\",\"And the mome raths outgrabe.\",\"\",\"“Beware the Jabberwock, my son!\",\"The jaws that bite, the claws that catch!\",\"Beware the Jubjub bird, and shun\",\"The frumious Bandersnatch!”\",\"\",\"He took his vorpal sword in hand;\",\"Long time the manxome foe he sought—\",\"So rested he by the Tumtum tree\",\"And stood awhile in thought.\",\"\",\"And, as in uffish thought he stood,\",\"The Jabberwock, with eyes of flame,\",\"Came whiffling through the tulgey wood,\",\"And burbled as it came!\",\"\",\"One, two! One, two! And through and through\",\"The vorpal blade went snicker-snack!\",\"He left it dead, and with its head\",\"He went galumphing back.\",\"\",\"“And hast thou slain the Jabberwock?\",\"Come to my arms, my beamish boy!\",\"O frabjous day! Callooh! Callay!”\",\"He chortled in his joy.\",\"\",\"'Twas brillig, and the slithy toves\",\"Did gyre and gimble in the wabe:\",\"All mimsy were the borogoves,\",\"And the mome raths outgrabe.\"}"], ["created_at", "2020-04-30 22:53:00.100399"], ["updated_at", "2020-04-30 22:53:00.100399"], ["image_url", "Lewis_Carroll.jpg"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (4.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:135
+  [1m[36mPassage Load (0.6ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mAnnotation Create (1.8ms)[0m  [1m[32mINSERT INTO "annotations" ("body", "upvote_count", "passage_id", "annotator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["body", "annotation DOS!"], ["upvote_count", 0], ["passage_id", 2], ["annotator_id", 2], ["created_at", "2020-04-30 22:53:00.276925"], ["updated_at", "2020-04-30 22:53:00.276925"]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:135
+  [1m[36mPassage Load (1.0ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mAnnotation Create (0.5ms)[0m  [1m[32mINSERT INTO "annotations" ("body", "upvote_count", "passage_id", "annotator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["body", "You're awesome! Keep slaying!"], ["upvote_count", 0], ["passage_id", 3], ["annotator_id", 1], ["created_at", "2020-04-30 22:53:00.298009"], ["updated_at", "2020-04-30 22:53:00.298009"]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:135
+  [1m[36mAnnotation Load (0.9ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/api/passages/1/annotations/10" for ::1 at 2020-04-30 15:59:20 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>"1", "id"=>"10"}
+  [1m[36mAnnotation Load (1.6ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:3
+Completed 404 Not Found in 7ms (Views: 0.2ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/api/passages/1/annotations/2" for ::1 at 2020-04-30 15:59:22 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>"1", "id"=>"2"}
+  [1m[36mAnnotation Load (0.5ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:3
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (1.1ms)
+  Rendered api/annotations/show.json.jbuilder (4.8ms)
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/passages/1/annotations/1" for ::1 at 2020-04-30 15:59:25 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>"1", "id"=>"1"}
+  [1m[36mAnnotation Load (0.8ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:3
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/annotations/show.json.jbuilder (2.7ms)
+Completed 200 OK in 14ms (Views: 11.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/passages/4/annotations/1" for ::1 at 2020-04-30 15:59:30 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>"4", "id"=>"1"}
+  [1m[36mAnnotation Load (1.5ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:3
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/annotations/show.json.jbuilder (2.9ms)
+Completed 200 OK in 15ms (Views: 12.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/passages/6/annotations/1" for ::1 at 2020-04-30 16:01:43 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>"6", "id"=>"1"}
+  [1m[36mAnnotation Load (3.7ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:3
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.6ms)
+  Rendered api/annotations/show.json.jbuilder (2.7ms)
+Completed 200 OK in 20ms (Views: 15.0ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/api/passages/10/annotations/1" for ::1 at 2020-04-30 16:01:47 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>"10", "id"=>"1"}
+  [1m[36mAnnotation Load (1.9ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:3
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.8ms)
+  Rendered api/annotations/show.json.jbuilder (2.7ms)
+Completed 200 OK in 18ms (Views: 14.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/passages/asdfjsda/annotations/1" for ::1 at 2020-04-30 16:01:50 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>"asdfjsda", "id"=>"1"}
+  [1m[36mAnnotation Load (2.2ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:3
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.7ms)
+  Rendered api/annotations/show.json.jbuilder (3.9ms)
+Completed 200 OK in 17ms (Views: 12.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/passages/asdfjsda/annotations/asdf" for ::1 at 2020-04-30 16:01:53 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>"asdfjsda", "id"=>"asdf"}
+  [1m[36mAnnotation Load (0.7ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:3
+Completed 404 Not Found in 3ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/passages/*@&$@" for ::1 at 2020-04-30 16:01:59 -0700
+Processing by Api::PassagesController#show as JSON
+  Parameters: {"id"=>"*@&$@"}
+  [1m[36mPassage Load (2.9ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/passages_controller.rb:8
+Completed 404 Not Found in 10ms (Views: 0.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/passages/*@&$@%60~~423%22[]-=" for ::1 at 2020-04-30 16:02:04 -0700
+Processing by Api::PassagesController#show as JSON
+  Parameters: {"id"=>"*@&$@`~~423\"[]-="}
+  [1m[36mPassage Load (4.3ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/passages_controller.rb:8
+Completed 404 Not Found in 6ms (Views: 0.3ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/api/passages/*@&$@%60~~423%22[]-=" for ::1 at 2020-04-30 16:02:22 -0700
+Processing by Api::PassagesController#show as JSON
+  Parameters: {"id"=>"*@&$@`~~423\"[]-="}
+  [1m[36mPassage Load (3.9ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/passages_controller.rb:8
+Completed 404 Not Found in 7ms (Views: 0.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/api/passages/*@&$@%60~~423%22[]-=" for ::1 at 2020-04-30 16:02:25 -0700
+Processing by Api::PassagesController#show as JSON
+  Parameters: {"id"=>"*@&$@`~~423\"[]-="}
+  [1m[36mPassage Load (2.5ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/passages_controller.rb:8
+Completed 404 Not Found in 4ms (Views: 0.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/api/passages/10/annotations/2" for ::1 at 2020-04-30 16:02:30 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>"10", "id"=>"2"}
+  [1m[36mAnnotation Load (2.3ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:3
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.4ms)
+  Rendered api/annotations/show.json.jbuilder (2.0ms)
+Completed 200 OK in 18ms (Views: 13.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/passages/100/annotations/2" for ::1 at 2020-04-30 16:02:34 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>"100", "id"=>"2"}
+  [1m[36mAnnotation Load (6.8ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:3
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.6ms)
+  Rendered api/annotations/show.json.jbuilder (8.1ms)
+Completed 200 OK in 26ms (Views: 17.9ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/api/passages/100000000/annotations/2" for ::1 at 2020-04-30 16:02:37 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>"100000000", "id"=>"2"}
+  [1m[36mAnnotation Load (0.8ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:3
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.9ms)
+  Rendered api/annotations/show.json.jbuilder (3.8ms)
+Completed 200 OK in 16ms (Views: 13.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/passages/23428942/annotations/2" for ::1 at 2020-04-30 16:02:41 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>"23428942", "id"=>"2"}
+  [1m[36mAnnotation Load (1.5ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:3
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.9ms)
+  Rendered api/annotations/show.json.jbuilder (3.1ms)
+Completed 200 OK in 17ms (Views: 13.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/passages/asdfdsadfsa/annotations/2" for ::1 at 2020-04-30 16:02:43 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>"asdfdsadfsa", "id"=>"2"}
+  [1m[36mAnnotation Load (0.4ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:3
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.6ms)
+  Rendered api/annotations/show.json.jbuilder (2.5ms)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/passages/[]/annotations/2" for ::1 at 2020-04-30 16:02:46 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>"[]", "id"=>"2"}
+  [1m[36mAnnotation Load (3.2ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:3
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/show.json.jbuilder (1.5ms)
+Completed 200 OK in 14ms (Views: 8.9ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/api/passages/[]123/annotations/2" for ::1 at 2020-04-30 16:02:48 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>"[]123", "id"=>"2"}
+  [1m[36mAnnotation Load (0.7ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:3
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.8ms)
+  Rendered api/annotations/show.json.jbuilder (2.7ms)
+Completed 200 OK in 13ms (Views: 10.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/passages/[]123!@" for ::1 at 2020-04-30 16:02:52 -0700
+Processing by Api::PassagesController#show as JSON
+  Parameters: {"id"=>"[]123!@"}
+  [1m[36mPassage Load (1.4ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/api/passages_controller.rb:8
+Completed 404 Not Found in 4ms (Views: 0.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/passages/l/annotations/2" for ::1 at 2020-04-30 16:02:59 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>"l", "id"=>"2"}
+  [1m[36mAnnotation Load (2.2ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:3
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.9ms)
+  Rendered api/annotations/show.json.jbuilder (3.4ms)
+Completed 200 OK in 19ms (Views: 14.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 16:08:52 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 793ms (Views: 789.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 16:08:53 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (1.8ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (3.6ms)
+  Rendered api/passages/_passage.json.jbuilder (3.2ms)
+  Rendered api/passages/_passage.json.jbuilder (2.5ms)
+  Rendered api/passages/_passage.json.jbuilder (2.5ms)
+  Rendered api/passages/index.json.jbuilder (24.1ms)
+Completed 200 OK in 35ms (Views: 31.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/passages/:passageId/annotations/1" for ::1 at 2020-04-30 16:09:07 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>":passageId", "id"=>"1"}
+  [1m[36mAnnotation Load (0.9ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:3
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/annotations/show.json.jbuilder (3.2ms)
+Completed 200 OK in 18ms (Views: 13.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/passages/l/annotations/" for ::1 at 2020-04-30 16:17:35 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>"l"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (1.2ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.4ms)
+  Rendered api/annotations/index.json.jbuilder (38.5ms)
+Completed 200 OK in 55ms (Views: 28.8ms | ActiveRecord: 15.2ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 16:21:15 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 549ms (Views: 546.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 16:21:16 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (2.6ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (11.8ms)
+  Rendered api/passages/_passage.json.jbuilder (7.7ms)
+  Rendered api/passages/_passage.json.jbuilder (3.7ms)
+  Rendered api/passages/_passage.json.jbuilder (3.1ms)
+  Rendered api/passages/index.json.jbuilder (96.0ms)
+Completed 200 OK in 129ms (Views: 106.8ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-04-30 16:21:29 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.4ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (6.4ms)
+Completed 200 OK in 15ms (Views: 13.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/passages/:passageId/annotations/" for ::1 at 2020-04-30 16:21:48 -0700
+Processing by Api::AnnotationsController#create as JSON
+  Parameters: {"annotation"=>{"body"=>"delete this nephew", "upvote_count"=>"100", "passage_id"=>"1", "annotator_id"=>"1"}, "passage_id"=>":passageId"}
+  [1m[35m (1.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/annotations_controller.rb:18
+  [1m[36mPassage Load (0.4ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:18
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:18
+  [1m[36mAnnotation Create (0.7ms)[0m  [1m[32mINSERT INTO "annotations" ("body", "upvote_count", "passage_id", "annotator_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["body", "delete this nephew"], ["upvote_count", 100], ["passage_id", 1], ["annotator_id", 1], ["created_at", "2020-04-30 23:21:48.554693"], ["updated_at", "2020-04-30 23:21:48.554693"]]
+  ↳ app/controllers/api/annotations_controller.rb:18
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/annotations_controller.rb:18
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.7ms)
+  Rendered api/annotations/show.json.jbuilder (2.3ms)
+Completed 200 OK in 60ms (Views: 11.3ms | ActiveRecord: 10.6ms)
+
+
+Started GET "/api/passages/:passageId/annotations/3" for ::1 at 2020-04-30 16:22:03 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>":passageId", "id"=>"3"}
+  [1m[36mAnnotation Load (0.4ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:8
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.4ms)
+  Rendered api/annotations/show.json.jbuilder (1.7ms)
+Completed 200 OK in 11ms (Views: 8.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/api/passages/:passageId/annotations/3" for ::1 at 2020-04-30 16:22:54 -0700
+  
+ActionController::RoutingError (No route matches [POST] "/api/passages/:passageId/annotations/3"):
+  
+actionpack (5.2.4.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.4) lib/puma/configuration.rb:227:in `call'
+puma (3.12.4) lib/puma/server.rb:675:in `handle_request'
+puma (3.12.4) lib/puma/server.rb:476:in `process_client'
+puma (3.12.4) lib/puma/server.rb:334:in `block in run'
+puma (3.12.4) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/passages/:passageId/annotations/3" for ::1 at 2020-04-30 16:23:23 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>":passageId", "id"=>"3"}
+  [1m[36mAnnotation Load (1.8ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:8
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.8ms)
+  Rendered api/annotations/show.json.jbuilder (3.6ms)
+Completed 200 OK in 19ms (Views: 15.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 16:25:27 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 522ms (Views: 518.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 16:25:28 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (1.6ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (7.7ms)
+  Rendered api/passages/_passage.json.jbuilder (4.1ms)
+  Rendered api/passages/_passage.json.jbuilder (4.9ms)
+  Rendered api/passages/_passage.json.jbuilder (3.6ms)
+  Rendered api/passages/index.json.jbuilder (40.2ms)
+Completed 200 OK in 56ms (Views: 52.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/passages/:passageId/annotations/3" for ::1 at 2020-04-30 16:25:39 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>":passageId", "id"=>"3"}
+  [1m[36mAnnotation Load (1.1ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:8
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/annotations/show.json.jbuilder (2.9ms)
+Completed 200 OK in 14ms (Views: 10.3ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/api/passages/:passageId/annotations/3" for ::1 at 2020-04-30 16:25:42 -0700
+Processing by Api::AnnotationsController#update as JSON
+  Parameters: {"annotation"=>{"id"=>"3", "body"=>"no"}, "passage_id"=>":passageId", "id"=>"3"}
+  [1m[36mAnnotation Load (1.4ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:26
+Unpermitted parameter: :id
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/annotations_controller.rb:28
+  [1m[36mPassage Load (0.6ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:28
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:28
+  [1m[36mAnnotation Update (0.6ms)[0m  [1m[33mUPDATE "annotations" SET "body" = $1, "updated_at" = $2 WHERE "annotations"."id" = $3[0m  [["body", "no"], ["updated_at", "2020-04-30 23:25:42.342257"], ["id", 3]]
+  ↳ app/controllers/api/annotations_controller.rb:28
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/annotations_controller.rb:28
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/annotations/show.json.jbuilder (1.9ms)
+Completed 200 OK in 24ms (Views: 6.8ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/api/passages/:passageId/annotations/3" for ::1 at 2020-04-30 16:26:27 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>":passageId", "id"=>"3"}
+  [1m[36mAnnotation Load (4.0ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:8
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/annotations/show.json.jbuilder (2.0ms)
+Completed 200 OK in 14ms (Views: 7.4ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/api/passages/:passageId/annotations/3" for ::1 at 2020-04-30 16:27:41 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>":passageId", "id"=>"3"}
+  [1m[36mAnnotation Load (0.8ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:8
+  Rendering api/annotations/show.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.6ms)
+  Rendered api/annotations/show.json.jbuilder (2.6ms)
+Completed 200 OK in 14ms (Views: 11.4ms | ActiveRecord: 0.8ms)
+
+
+Started DELETE "/api/passages/:passageId/annotations/3" for ::1 at 2020-04-30 16:28:02 -0700
+Processing by Api::AnnotationsController#destroy as JSON
+  Parameters: {"passage_id"=>":passageId", "id"=>"3"}
+  [1m[36mAnnotation Load (0.9ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:36
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/annotations_controller.rb:38
+  [1m[36mAnnotation Destroy (0.5ms)[0m  [1m[31mDELETE FROM "annotations" WHERE "annotations"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/api/annotations_controller.rb:38
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/api/annotations_controller.rb:38
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/passages/:passageId/annotations/3" for ::1 at 2020-04-30 16:28:09 -0700
+Processing by Api::AnnotationsController#show as JSON
+  Parameters: {"passage_id"=>":passageId", "id"=>"3"}
+  [1m[36mAnnotation Load (0.4ms)[0m  [1m[34mSELECT  "annotations".* FROM "annotations" WHERE "annotations"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/annotations_controller.rb:8
+Completed 404 Not Found in 4ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-04-30 16:28:17 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (2.5ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.9ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (9.0ms)
+Completed 200 OK in 23ms (Views: 19.9ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2020-04-30 16:53:25 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 116ms (Views: 113.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-04-30 16:53:25 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (1.4ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (4.0ms)
+  Rendered api/passages/_passage.json.jbuilder (3.1ms)
+  Rendered api/passages/_passage.json.jbuilder (1.7ms)
+  Rendered api/passages/_passage.json.jbuilder (4.6ms)
+  Rendered api/passages/index.json.jbuilder (28.9ms)
+Completed 200 OK in 47ms (Views: 43.4ms | ActiveRecord: 1.4ms)
+
+

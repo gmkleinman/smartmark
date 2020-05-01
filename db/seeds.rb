@@ -134,15 +134,21 @@ passages = Passage.create([
 
 annotations = Annotation.create([
     {
-        body: 'annotation!',
+        body: 'delete this nephew!',
         upvote_count: 0,
-        passage_id: 1,
-        annotator_id: 1,
+        passage_id: passages[0].id,
+        annotator_id: users[0].id,
     },
     {
         body: 'annotation DOS!',
         upvote_count: 0,
-        passage_id: 2,
-        annotator_id: 2,
+        passage_id: passages[1].id,
+        annotator_id: users[1].id,
+    },
+    {
+        body: 'You\'re awesome! Keep slaying!',
+        upvote_count: 0,
+        passage_id: passages[2].id,
+        annotator_id: users[0].id,
     },
 ])

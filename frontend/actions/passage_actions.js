@@ -51,5 +51,5 @@ export const updatePassage = passage => dispatch => (
 
 export const deletePassage = passage => dispatch => (
     PassageApiUtil.deletePassage(passage)
-        .then((passage) => dispatch(recievePassage(passage)))
+        .then((passage) => dispatch(removePassage(passage)))
 )

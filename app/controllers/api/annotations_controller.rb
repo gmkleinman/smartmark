@@ -1,4 +1,9 @@
 class Api::AnnotationsController < ApplicationController
+    def index
+        @annotations = Annotation.all 
+        render :index
+    end
+    
     def show
         @annotation = Annotation.find_by(id: params[:id])
         if @annotation 
