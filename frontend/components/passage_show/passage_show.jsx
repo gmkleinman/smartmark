@@ -32,7 +32,7 @@ class PassageShow extends React.Component {
                 </div>
 
                 <div id='annotations-container'>
-                    <button onClick={this.props.openModal}>Open Modal?</button>
+                    <button onClick={this.props.openModal}>Show Annotations</button>
                 </div>
                 
             </div>

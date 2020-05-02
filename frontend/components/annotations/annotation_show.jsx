@@ -13,7 +13,7 @@ class AnnotationShow extends React.Component {
 
     render() {
         // debugger
-        if(!this.props.annotations[0]) return <div>No annotations found.</div>
+        if(!this.props.annotations[0]) return null;
         if(!this.props.modal) return null;
 
         return(
