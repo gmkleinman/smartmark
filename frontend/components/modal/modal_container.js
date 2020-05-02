@@ -2,9 +2,11 @@ import { connect } from 'react-redux'
 import Modal from './modal'
 import { closeModal } from '../../actions/modal_actions'
 
-const mSTP = state => {
+const mSTP = (state, {passageId}) => {
+    // debugger
     return({
-        modal: state.ui.modal
+        modal: state.ui.modal,
+        passageId
     })
 }
 

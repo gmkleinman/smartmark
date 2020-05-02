@@ -2,27 +2,23 @@ import React from 'react';
 import AnnotationShowContainer from '../annotations/annotation_show_container';
 
 function Modal(props) {
-    // debugger
-    //this gets hit once on page load, but does not get hit when we click the button
     if(!props.modal) {
         return null;
     }
 
-    debugger
-    //this debugger has never gotten hit
+//MODAL WAS CREATED FOR ANNOTATIONS, BUT IT NOW HAS ITS OWN. THIS CAN STILL BE USED FOR OTHERS IF NEEDED.
 
     //if modal is in state, return that modal, else null
-    let component;
-    switch (props.modal) {
-        case 'annotations':
-            component = <AnnotationShowContainer />;
-            break;
-        default:
-            return null;
-    }   
+    // let component;
+    // switch (props.modal) {
+    //     case 'annotations':
+    //         component = <AnnotationShowContainer passageId={props.passageId}/>;
+    //         break;
+    //     default:
+    //         return null;
+    // }   
 
-    //this debugger has never gotten hit
-    debugger
+
     return(
         <div className='modal-background' onClick={props.closeModal}>
             <div className='modal-child' onClick={e => e.stopPropagation()}>

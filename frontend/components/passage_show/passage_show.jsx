@@ -1,6 +1,5 @@
 import React from 'react'
-// import AnnotationShowContainer from '../annotations/annotation_show_container'
-// import { Route, Link } from 'react-router-dom'
+import AnnotationShowContainer from '../annotations/annotation_show_container'
 
 class PassageShow extends React.Component {
     constructor(props){
@@ -10,16 +9,15 @@ class PassageShow extends React.Component {
     componentDidMount(){
         window.scrollTo(0, 0);
         this.props.fetchPassages();
-        this.props.fetchAnnotations();
     }
 
     render() {
         if(!this.props.passage) return null
-        debugger
+        // debugger
         return(
             <div id='passage-show-container'>
+                <AnnotationShowContainer passageId={this.props.passage.id}/> 
                 <div id='passage-container'>
-
                     <div className='temp-header'>
                         {this.props.passage.title}<br />
                         {this.props.passage.author}

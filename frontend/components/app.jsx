@@ -13,7 +13,7 @@ import ModalContainer from './modal/modal_container'
 const App = () => {
     return (
         <div>
-            <ModalContainer />
+            {/* <ModalContainer /> */}
             <NavBarContainer/>
             <Switch> 
                 <AuthRoute path="/signup" component={SignUpContainer} />
