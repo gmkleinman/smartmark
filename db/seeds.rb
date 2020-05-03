@@ -28,106 +28,106 @@ passages = Passage.create([
     {
         title: "Sonnets No. 43",
         author: "Elizabeth Barrett Browning",
-        body: ["How do I love thee? Let me count the ways.",
-            "I love thee to the depth and breadth and height",
-            "My soul can reach, when feeling out of sight",
-            "For the ends of being and ideal grace.",
-            "I love thee to the level of every day’s",
-            "Most quiet need, by sun and candle-light.",
-            "I love thee freely, as men strive for right.",
-            "I love thee purely, as they turn from praise.",
-            "I love thee with the passion put to use",
-            "In my old griefs, and with my childhood’s faith.",
-            "I love thee with a love I seemed to lose",
-            "With my lost saints. I love thee with the breath,",
-            "Smiles, tears, of all my life; and, if God choose,",
-            "I shall but love thee better after death.,"],
+        body: "How do I love thee? Let me count the ways.<br>
+            I love thee to the depth and breadth and height<br>
+            My soul can reach, when feeling out of sight<br>
+            For the ends of being and ideal grace.<br>
+            I love thee to the level of every day’s<br>
+            Most quiet need, by sun and candle-light.<br>
+            I love thee freely, as men strive for right.<br>
+            I love thee purely, as they turn from praise.<br>
+            I love thee with the passion put to use<br>
+            In my old griefs, and with my childhood’s faith.<br>
+            I love thee with a love I seemed to lose<br>
+            With my lost saints. I love thee with the breath,<br>
+            Smiles, tears, of all my life; and, if God choose,<br>
+            I shall but love thee better after death.<br>",
         image_url: 'Elizabeth_Barrett_Browning.jpg',
-    },
+    } ,
     {
         title: "Ozymandias",
         author: "Percy Shelley",
-        body: ['I met a traveller from an antique land,',
-            'Who said—“Two vast and trunkless legs of stone',
-            'Stand in the desert. . . . Near them, on the sand,',
-            'Half sunk a shattered visage lies, whose frown,',
-            'And wrinkled lip, and sneer of cold command,',
-            'Tell that its sculptor well those passions read',
-            'Which yet survive, stamped on these lifeless things,',
-            'The hand that mocked them, and the heart that fed;',
-            'And on the pedestal, these words appear:',
-            'My name is Ozymandias, King of Kings;',
-            'Look on my Works, ye Mighty, and despair!',
-            'Nothing beside remains. Round the decay',
-            'Of that colossal Wreck, boundless and bare',
-            'The lone and level sands stretch far away.'],
-        image_url: 'Percy_Shelley.jpg',
+        body: 'I met a traveller from an antique land,<br>
+            Who said—“Two vast and trunkless legs of stone<br>
+            Stand in the desert. . . . Near them, on the sand,<br>
+            Half sunk a shattered visage lies, whose frown,<br>
+            And wrinkled lip, and sneer of cold command,<br>
+            Tell that its sculptor well those passions read<br>
+            Which yet survive, stamped on these lifeless things,<br>
+            The hand that mocked them, and the heart that fed;<br>
+            And on the pedestal, these words appear:<br>
+            My name is Ozymandias, King of Kings;<br>
+            Look on my Works, ye Mighty, and despair!<br>
+            Nothing beside remains. Round the decay<br>
+            Of that colossal Wreck, boundless and bare<br>
+            The lone and level sands stretch far away.<br>',
+        image_url: 'Percy_Shelley.jpg'
     },
     {
         title: 'The Road Not Taken',
         author: 'Robert Frost',
-        body: ['Two roads diverged in a yellow wood,',
-            'And sorry I could not travel both',
-            'And be one traveler, long I stood',
-            'And looked down one as far as I could',
-            'To where it bent in the undergrowth;',
-            '',
-            'Then took the other, as just as fair,',
-            'And having perhaps the better claim,',
-            'Because it was grassy and wanted wear;',
-            'Though as for that the passing there',
-            'Had worn them really about the same,',
-            '',
-            'And both that morning equally lay',
-            'In leaves no step had trodden black.',
-            'Oh, I kept the first for another day!',
-            'Yet knowing how way leads on to way,',
-            'I doubted if I should ever come back.',
-            '',
-            'I shall be telling this with a sigh',
-            'Somewhere ages and ages hence:',
-            'Two roads diverged in a wood, and I—',
-            'I took the one less traveled by,',
-            'And that has made all the difference.'],
+        body: 'Two roads diverged in a yellow wood,<br>
+            And sorry I could not travel both<br>
+            And be one traveler, long I stood<br>
+            And looked down one as far as I could<br>
+            To where it bent in the undergrowth;<br>
+            <br>
+            Then took the other, as just as fair,<br>
+            And having perhaps the better claim,<br>
+            Because it was grassy and wanted wear;<br>
+            Though as for that the passing there<br>
+            Had worn them really about the same,<br>
+            <br>
+            And both that morning equally lay<br>
+            In leaves no step had trodden black.<br>
+            Oh, I kept the first for another day!<br>
+            Yet knowing how way leads on to way,<br>
+            I doubted if I should ever come back.<br>
+            <br>
+            I shall be telling this with a sigh<br>
+            Somewhere ages and ages hence:<br>
+            Two roads diverged in a wood, and I—<br>
+            I took the one less traveled by,<br>
+            And that has made all the difference.',
         image_url: 'Edgar_Allan_Poe.jpg',
     },
     {
         title: "Jabberwocky",
         author: "Lewis Carroll",
-        body: ['Twas brillig, and the slithy toves',
-            'Did gyre and gimble in the wabe:',
-            'All mimsy were the borogoves,',
-            'And the mome raths outgrabe.',
-            '',
-            '“Beware the Jabberwock, my son!',
-            'The jaws that bite, the claws that catch!',
-            'Beware the Jubjub bird, and shun',
-            'The frumious Bandersnatch!”',
-            '',
-            'He took his vorpal sword in hand;',
-            'Long time the manxome foe he sought—',
-            'So rested he by the Tumtum tree',
-            'And stood awhile in thought.',
-            '',
-            'And, as in uffish thought he stood,',
-            'The Jabberwock, with eyes of flame,',
-            'Came whiffling through the tulgey wood,',
-            'And burbled as it came!',
-            '',
-            'One, two! One, two! And through and through',
-            'The vorpal blade went snicker-snack!',
-            'He left it dead, and with its head',
-            'He went galumphing back.',
-            '',
-            '“And hast thou slain the Jabberwock?',
-            'Come to my arms, my beamish boy!',
-            'O frabjous day! Callooh! Callay!”',
-            'He chortled in his joy.',
-            '',
-            "\'Twas brillig, and the slithy toves",
-            'Did gyre and gimble in the wabe:',
-            'All mimsy were the borogoves,',
-            'And the mome raths outgrabe.'],
+        body: 'Twas brillig, and the slithy toves<br>
+            Did gyre and gimble in the wabe:<br>
+            All mimsy were the borogoves,<br>
+            And the mome raths outgrabe.<br>
+            <br>
+            “Beware the Jabberwock, my son!<br>
+            The jaws that bite, the claws that catch!<br>
+            Beware the Jubjub bird, and shun<br>
+            The frumious Bandersnatch!”<br>
+            <br>
+            He took his vorpal sword in hand;<br>
+            Long time the manxome foe he sought—<br>
+            So rested he by the Tumtum tree<br>
+            And stood awhile in thought.<br>
+            <br>
+            And, as in uffish thought he stood,<br>
+            The Jabberwock, with eyes of flame,<br>
+            Came whiffling through the tulgey wood,<br>
+            And burbled as it came!<br>
+            <br>
+            One, two! One, two! And through and through<br>
+            The vorpal blade went snicker-snack!<br>
+            He left it dead, and with its head<br>
+            He went galumphing back.<br>
+            <br>
+            “And hast thou slain the Jabberwock?<br>
+            Come to my arms, my beamish boy!<br>
+            O frabjous day! Callooh! Callay!”<br>
+            He chortled in his joy.<br>
+            <br>
+            \'Twas brillig, and the slithy toves,<br>
+            Did gyre and gimble in the wabe:<br>
+            All mimsy were the borogoves,<br>
+            And the mome raths outgrabe.',
         image_url: 'Lewis_Carroll.jpg',
     },
 ])

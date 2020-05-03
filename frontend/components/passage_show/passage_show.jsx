@@ -35,7 +35,7 @@ class PassageShow extends React.Component {
                     </div>
 
                     <ul className='passage'>
-                    {this.props.passage.body.map((line, i) => {
+                    {this.props.passage.body.split("<br>").map((line, i) => {
                         return <li className='passage-line' key={`line-${i}`}>{line}</li>
                     })}
                     </ul>
