@@ -7,7 +7,8 @@ class AnnotationShow extends React.Component {
     
     componentDidMount() {
         //per selector, only fetches annotations of the current passage 
-        this.props.fetchAnnotations(); 
+        // no longer required because we're calling it on passage show
+        // this.props.fetchAnnotations(); 
     }
 
 

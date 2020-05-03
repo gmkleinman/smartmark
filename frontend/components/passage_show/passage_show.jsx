@@ -5,7 +5,8 @@ class PassageShow extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            selectedText: ""
+            selectedText: "",
+            // indices: []
         }
 
         this.handleSelection = this.handleSelection.bind(this)
@@ -19,6 +20,26 @@ class PassageShow extends React.Component {
 
     handleSelection() {
         this.setState( {selectedText: window.getSelection().toString()} )
+    }
+
+    getIndices() {
+        if (!this.props.annotations) return null
+
+        let indices = [];
+        this.props.annotations.map(annotation => {
+            indices.push([annotation.start_idx, annotation.end_idx])
+        })
+
+        function sortIndices(a,b) {
+            if (a[0] === b[0]) {
+                return 0;
+            }
+            else {
+                return (a[0] < b[0]) ? -1 : 1;
+            }
+        }
+
+        return indices.sort(sortIndices);
     }
 
     highlighter(str, indices, offset = 0) {
@@ -37,6 +58,7 @@ class PassageShow extends React.Component {
                 {strStart} 
                 <span className='highlighted'>{highlighted}</span>
                 {this.highlighter(strEnd, indices, endIdx + offset + 1)}
+
             </span>
         )
     }
@@ -50,6 +72,7 @@ class PassageShow extends React.Component {
             <div id='passage-show-container'>
                 <AnnotationShowContainer passageId={this.props.passage.id}/> 
                 <div id='passage-container' onMouseUp={this.handleSelection}>
+
                 this.selectedText is here: <br />
                 {this.state.selectedText}
                     <div className='temp-header'>
@@ -58,7 +81,12 @@ class PassageShow extends React.Component {
                     </div>
 
                     <ul className='passage'>
-                    {this.highlighter(this.props.passage.body, [[0,10], [20,30], [40,50], [100,120], [395,450]])}
+                        {this.highlighter(this.props.passage.body, (this.getIndices()))}
+                        {/* above should be uncommented when indices are seeded properly */}
+
+                        {/* {this.highlighter(this.props.passage.body, [[0,42], [103,200], [469,546]])} */}
+                        
+                        {/* {console.log(this.props.annotations)} */}
                     </ul>
 
                 </div>

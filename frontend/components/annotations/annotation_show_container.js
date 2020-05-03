@@ -6,6 +6,12 @@ import { closeModal } from '../../actions/modal_actions'
 
 const mSTP = (state, ownProps) => {
     // debugger
+    // console.log("this is annotations:")
+    // console.log(state)
+    // console.log(ownProps.passageId)
+    // console.log(typeof ownProps.passageId)
+    // console.log(selectAnnotationsByPassageId(state, ownProps.passageId))
+
     return(
         {
             annotations: selectAnnotationsByPassageId(state, ownProps.passageId),

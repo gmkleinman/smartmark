@@ -8,13 +8,10 @@ import { selectAnnotationsByPassageId } from '../../reducers/selectors'
 
 const mSTP = (state, ownProps) => {
     // debugger
-    // console.log(ownProps.match.params.passageId)
-    // console.log(state)
-    // console.log(selectAnnotationsByPassageId(state, ownProps.match.params.passageId))
     return(
         {
             passage: state.entities.passages[ownProps.match.params.passageId],
-            annotations: state.entities.annotations
+            annotations: selectAnnotationsByPassageId(state, parseInt(ownProps.match.params.passageId)),
         }
     )
 }
