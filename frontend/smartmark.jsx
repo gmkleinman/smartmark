@@ -26,11 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     //tests
-    console.log("Entry file found!");
     window.store = store;
     window.getState = store.getState;
     // window.fetchAnnotation = AnnotationApiUtil.fetchAnnotation
-    // window.fetchAnnotations = AnnotationApiUtil.fetchAnnotations
+    window.fetchAnnotations = AnnotationApiUtil.fetchAnnotations
     // window.createAnnotation = AnnotationApiUtil.createAnnotation
     // window.updateAnnotation = AnnotationApiUtil.updateAnnotation
     // window.deleteAnnotation = AnnotationApiUtil.deleteAnnotation

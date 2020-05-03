@@ -2,6 +2,7 @@ import { RECEIVE_ANNOTATIONS, RECEIVE_ANNOTATION, REMOVE_ANNOTATION } from '../a
 
 const annotationsReducer = (state = {}, action) => {
     Object.freeze(state);
+    // debugger
     let newState = Object.assign({}, state)
     switch (action.type) {
         case RECEIVE_ANNOTATIONS:

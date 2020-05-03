@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_30_163623) do
+ActiveRecord::Schema.define(version: 2020_05_03_000713) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 2020_04_30_163623) do
     t.integer "annotator_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "start_idx", null: false
+    t.integer "end_idx", null: false
     t.index ["annotator_id"], name: "index_annotations_on_annotator_id"
     t.index ["passage_id"], name: "index_annotations_on_passage_id"
   end

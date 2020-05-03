@@ -42,7 +42,7 @@ class Api::AnnotationsController < ApplicationController
 
     protected
     def annotation_params
-        params.require(:annotation).permit(:body, :passage_id, :annotator_id, :upvote_count)
+        params.require(:annotation).permit(:body, :passage_id, :annotator_id, :upvote_count, :start_idx, :end_idx)
         #too many params? can user sneak upvote_count through?
     end
 end

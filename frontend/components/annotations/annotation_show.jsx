@@ -27,6 +27,9 @@ class AnnotationShow extends React.Component {
                                 <li className='passage-line' key={annotation.id}>
                                 User #{annotation.annotator_id}:<br />
                                 {annotation.body}<br />
+                                Number of likes: {annotation.upvote_count} <br />
+                                Start idx: {annotation.start_idx} <br />
+                                End idx: {annotation.end_idx} <br />
                                 </li>
                             )
                         })}

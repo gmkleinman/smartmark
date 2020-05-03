@@ -35,7 +35,7 @@ tbody {
 table {
     border: none;
     letter-spacing: 1px;
-    font-family: sans-serif;
+    font-family: din-condensed, sans-serif;
     font-size: 24px;
     margin-bottom: 50px;
 }

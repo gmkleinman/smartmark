@@ -6,7 +6,6 @@ class Footer extends React.Component {
     }
 
     render() {
-        // console.log('Footer renders!')
         return(
             <div className='footer'>
                 

@@ -1,1 +1,1 @@
-json.extract! annotation, :id, :body, :annotator_id, :passage_id
+json.extract! annotation, :id, :body, :annotator_id, :passage_id, :upvote_count, :start_idx, :end_idx

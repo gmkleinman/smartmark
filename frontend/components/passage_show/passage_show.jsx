@@ -4,11 +4,20 @@ import AnnotationShowContainer from '../annotations/annotation_show_container'
 class PassageShow extends React.Component {
     constructor(props){
         super(props)
+        this.state = {
+            selectedText: ""
+        }
+
+        this.handleSelection = this.handleSelection.bind(this)
     }
 
     componentDidMount(){
         window.scrollTo(0, 0);
         this.props.fetchPassages();
+    }
+
+    handleSelection() {
+        this.setState( {selectedText: window.getSelection().toString()} )
     }
 
     render() {
@@ -17,7 +26,9 @@ class PassageShow extends React.Component {
         return(
             <div id='passage-show-container'>
                 <AnnotationShowContainer passageId={this.props.passage.id}/> 
-                <div id='passage-container'>
+                <div id='passage-container' onMouseUp={this.handleSelection}>
+                this.selectedText is here: <br />
+                {this.state.selectedText}
                     <div className='temp-header'>
                         {this.props.passage.title}<br />
                         {this.props.passage.author}
