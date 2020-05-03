@@ -44322,3 +44322,2794 @@ Completed 200 OK in 38ms (Views: 32.7ms | ActiveRecord: 3.5ms)
 Completed 200 OK in 51ms (Views: 49.9ms | ActiveRecord: 0.5ms)
 
 
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE DATABASE "smartmark_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE DATABASE "smartmark_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (16.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "annotations" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE TABLE "annotations" ("id" bigserial primary key, "body" text NOT NULL, "upvote_count" integer NOT NULL, "passage_id" integer NOT NULL, "annotator_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "start_idx" integer NOT NULL, "end_idx" integer NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE  INDEX  "index_annotations_on_annotator_id" ON "annotations"  ("annotator_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE  INDEX  "index_annotations_on_passage_id" ON "annotations"  ("passage_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (4.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "passages" CASCADE[0m
+  ↳ db/schema.rb:31
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "passages" ("id" bigserial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "body" text DEFAULT '{}' NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "image_url" character varying)[0m
+  ↳ db/schema.rb:31
+  [1m[35m (5.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:40
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:40
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:40
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:40
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:40
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (17.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "annotations" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (13.3ms)[0m  [1m[35mCREATE TABLE "annotations" ("id" bigserial primary key, "body" text NOT NULL, "upvote_count" integer NOT NULL, "passage_id" integer NOT NULL, "annotator_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "start_idx" integer NOT NULL, "end_idx" integer NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE  INDEX  "index_annotations_on_annotator_id" ON "annotations"  ("annotator_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX  "index_annotations_on_passage_id" ON "annotations"  ("passage_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (4.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "passages" CASCADE[0m
+  ↳ db/schema.rb:31
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "passages" ("id" bigserial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "body" text DEFAULT '{}' NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "image_url" character varying)[0m
+  ↳ db/schema.rb:31
+  [1m[35m (5.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:40
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:40
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:40
+  [1m[35m (3.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:40
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:40
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (2.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Update (0.8ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "development"], ["updated_at", "2020-05-03 07:32:06.776139"], ["key", "environment"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (1.0ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-05-03 07:32:06.785322"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (1.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "EnderWiggin"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "speakerforthedead@formics.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "8n1k2oBty37O6QpQ8lcR7Q"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Create (1.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "EnderWiggin"], ["email", "speakerforthedead@formics.com"], ["password_digest", "$2a$12$2g6nKKzpmUxDex.TAxWUAOTxj5s.KC7UZk/IgE9Zy4W69BtrVfs8."], ["session_token", "8n1k2oBty37O6QpQ8lcR7Q"], ["created_at", "2020-05-03 07:32:07.112091"], ["updated_at", "2020-05-03 07:32:07.112091"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Zelda"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "princess@hyrule.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "hc9K7H0bgHCe_HVpqqcfXg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Zelda"], ["email", "princess@hyrule.com"], ["password_digest", "$2a$12$8cVCuQRQBamSAXAAlE4yBetDDomNDWDwAm9RhtzObvWq9ZDcjctGa"], ["session_token", "hc9K7H0bgHCe_HVpqqcfXg"], ["created_at", "2020-05-03 07:32:07.381053"], ["updated_at", "2020-05-03 07:32:07.381053"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "G"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "gmkleinman@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "WLXcBDSOSoKtG_o396O_cg"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "G"], ["email", "gmkleinman@gmail.com"], ["password_digest", "$2a$12$Ui8R30XQJBZjMxb3I0ueyOOt/gXCj4ju2msrdE41o03mzueEfi9Au"], ["session_token", "WLXcBDSOSoKtG_o396O_cg"], ["created_at", "2020-05-03 07:32:07.649966"], ["updated_at", "2020-05-03 07:32:07.649966"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mPassage Create (0.9ms)[0m  [1m[32mINSERT INTO "passages" ("title", "author", "body", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Sonnets No. 43"], ["author", "Elizabeth Barrett Browning"], ["body", "How do I love thee? Let me count the ways.<br>\n            I love thee to the depth and breadth and height<br>\n            My soul can reach, when feeling out of sight<br>\n            For the ends of being and ideal grace.<br>\n            I love thee to the level of every day’s<br>\n            Most quiet need, by sun and candle-light.<br>\n            I love thee freely, as men strive for right.<br>\n            I love thee purely, as they turn from praise.<br>\n            I love thee with the passion put to use<br>\n            In my old griefs, and with my childhood’s faith.<br>\n            I love thee with a love I seemed to lose<br>\n            With my lost saints. I love thee with the breath,<br>\n            Smiles, tears, of all my life; and, if God choose,<br>\n            I shall but love thee better after death.<br>"], ["created_at", "2020-05-03 07:32:07.670568"], ["updated_at", "2020-05-03 07:32:07.670568"], ["image_url", "Elizabeth_Barrett_Browning.jpg"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mPassage Create (0.4ms)[0m  [1m[32mINSERT INTO "passages" ("title", "author", "body", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Ozymandias"], ["author", "Percy Shelley"], ["body", "I met a traveller from an antique land,<br>\n            Who said—“Two vast and trunkless legs of stone<br>\n            Stand in the desert. . . . Near them, on the sand,<br>\n            Half sunk a shattered visage lies, whose frown,<br>\n            And wrinkled lip, and sneer of cold command,<br>\n            Tell that its sculptor well those passions read<br>\n            Which yet survive, stamped on these lifeless things,<br>\n            The hand that mocked them, and the heart that fed;<br>\n            And on the pedestal, these words appear:<br>\n            My name is Ozymandias, King of Kings;<br>\n            Look on my Works, ye Mighty, and despair!<br>\n            Nothing beside remains. Round the decay<br>\n            Of that colossal Wreck, boundless and bare<br>\n            The lone and level sands stretch far away.<br>"], ["created_at", "2020-05-03 07:32:07.675556"], ["updated_at", "2020-05-03 07:32:07.675556"], ["image_url", "Percy_Shelley.jpg"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mPassage Create (0.4ms)[0m  [1m[32mINSERT INTO "passages" ("title", "author", "body", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Road Not Taken"], ["author", "Robert Frost"], ["body", "Two roads diverged in a yellow wood,<br>\n            And sorry I could not travel both<br>\n            And be one traveler, long I stood<br>\n            And looked down one as far as I could<br>\n            To where it bent in the undergrowth;<br>\n            <br>\n            Then took the other, as just as fair,<br>\n            And having perhaps the better claim,<br>\n            Because it was grassy and wanted wear;<br>\n            Though as for that the passing there<br>\n            Had worn them really about the same,<br>\n            <br>\n            And both that morning equally lay<br>\n            In leaves no step had trodden black.<br>\n            Oh, I kept the first for another day!<br>\n            Yet knowing how way leads on to way,<br>\n            I doubted if I should ever come back.<br>\n            <br>\n            I shall be telling this with a sigh<br>\n            Somewhere ages and ages hence:<br>\n            Two roads diverged in a wood, and I—<br>\n            I took the one less traveled by,<br>\n            And that has made all the difference."], ["created_at", "2020-05-03 07:32:07.679537"], ["updated_at", "2020-05-03 07:32:07.679537"], ["image_url", "Edgar_Allan_Poe.jpg"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mPassage Create (0.4ms)[0m  [1m[32mINSERT INTO "passages" ("title", "author", "body", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Jabberwocky"], ["author", "Lewis Carroll"], ["body", "Twas brillig, and the slithy toves<br>\n            Did gyre and gimble in the wabe:<br>\n            All mimsy were the borogoves,<br>\n            And the mome raths outgrabe.<br>\n            <br>\n            “Beware the Jabberwock, my son!<br>\n            The jaws that bite, the claws that catch!<br>\n            Beware the Jubjub bird, and shun<br>\n            The frumious Bandersnatch!”<br>\n            <br>\n            He took his vorpal sword in hand;<br>\n            Long time the manxome foe he sought—<br>\n            So rested he by the Tumtum tree<br>\n            And stood awhile in thought.<br>\n            <br>\n            And, as in uffish thought he stood,<br>\n            The Jabberwock, with eyes of flame,<br>\n            Came whiffling through the tulgey wood,<br>\n            And burbled as it came!<br>\n            <br>\n            One, two! One, two! And through and through<br>\n            The vorpal blade went snicker-snack!<br>\n            He left it dead, and with its head<br>\n            He went galumphing back.<br>\n            <br>\n            “And hast thou slain the Jabberwock?<br>\n            Come to my arms, my beamish boy!<br>\n            O frabjous day! Callooh! Callay!”<br>\n            He chortled in his joy.<br>\n            <br>\n            'Twas brillig, and the slithy toves,<br>\n            Did gyre and gimble in the wabe:<br>\n            All mimsy were the borogoves,<br>\n            And the mome raths outgrabe."], ["created_at", "2020-05-03 07:32:07.683831"], ["updated_at", "2020-05-03 07:32:07.683831"], ["image_url", "Lewis_Carroll.jpg"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:135
+  [1m[36mPassage Load (0.4ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mAnnotation Create (1.1ms)[0m  [1m[32mINSERT INTO "annotations" ("body", "upvote_count", "passage_id", "annotator_id", "created_at", "updated_at", "start_idx", "end_idx") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["body", "DELETE THIS NEPHEW....."], ["upvote_count", 0], ["passage_id", 1], ["annotator_id", 1], ["created_at", "2020-05-03 07:32:07.748345"], ["updated_at", "2020-05-03 07:32:07.748345"], ["start_idx", 0], ["end_idx", 20]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:135
+  [1m[36mPassage Load (0.4ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mAnnotation Create (0.4ms)[0m  [1m[32mINSERT INTO "annotations" ("body", "upvote_count", "passage_id", "annotator_id", "created_at", "updated_at", "start_idx", "end_idx") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["body", "I don't always make annotations, but when I do, they're not very useful."], ["upvote_count", 0], ["passage_id", 2], ["annotator_id", 2], ["created_at", "2020-05-03 07:32:07.755704"], ["updated_at", "2020-05-03 07:32:07.755704"], ["start_idx", 150], ["end_idx", 160]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:135
+  [1m[36mPassage Load (0.3ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mAnnotation Create (0.4ms)[0m  [1m[32mINSERT INTO "annotations" ("body", "upvote_count", "passage_id", "annotator_id", "created_at", "updated_at", "start_idx", "end_idx") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["body", "You're awesome! Stay awesome!"], ["upvote_count", 0], ["passage_id", 3], ["annotator_id", 2], ["created_at", "2020-05-03 07:32:07.761699"], ["updated_at", "2020-05-03 07:32:07.761699"], ["start_idx", 120], ["end_idx", 140]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:135
+  [1m[36mPassage Load (0.3ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mAnnotation Create (0.4ms)[0m  [1m[32mINSERT INTO "annotations" ("body", "upvote_count", "passage_id", "annotator_id", "created_at", "updated_at", "start_idx", "end_idx") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["body", "Yo dawg I heard you like annotations. That's it tho."], ["upvote_count", 0], ["passage_id", 3], ["annotator_id", 1], ["created_at", "2020-05-03 07:32:07.767547"], ["updated_at", "2020-05-03 07:32:07.767547"], ["start_idx", 80], ["end_idx", 100]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:135
+  [1m[36mPassage Load (0.3ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mAnnotation Create (0.4ms)[0m  [1m[32mINSERT INTO "annotations" ("body", "upvote_count", "passage_id", "annotator_id", "created_at", "updated_at", "start_idx", "end_idx") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["body", "Everything the light touches is our kingdom."], ["upvote_count", 0], ["passage_id", 1], ["annotator_id", 2], ["created_at", "2020-05-03 07:32:07.773704"], ["updated_at", "2020-05-03 07:32:07.773704"], ["start_idx", 42], ["end_idx", 55]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:135
+  [1m[36mPassage Load (0.3ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mAnnotation Create (0.4ms)[0m  [1m[32mINSERT INTO "annotations" ("body", "upvote_count", "passage_id", "annotator_id", "created_at", "updated_at", "start_idx", "end_idx") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["body", "I like chicken, I like liver, meow mix meow mix please deliver"], ["upvote_count", 10000], ["passage_id", 3], ["annotator_id", 1], ["created_at", "2020-05-03 07:32:07.779614"], ["updated_at", "2020-05-03 07:32:07.779614"], ["start_idx", 42], ["end_idx", 55]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:135
+  [1m[36mPassage Load (0.2ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mAnnotation Create (0.4ms)[0m  [1m[32mINSERT INTO "annotations" ("body", "upvote_count", "passage_id", "annotator_id", "created_at", "updated_at", "start_idx", "end_idx") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["body", "You put the lime in the coconut, you drink the bowl up"], ["upvote_count", 0], ["passage_id", 3], ["annotator_id", 3], ["created_at", "2020-05-03 07:32:07.785464"], ["updated_at", "2020-05-03 07:32:07.785464"], ["start_idx", 30], ["end_idx", 40]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:135
+Started GET "/" for ::1 at 2020-05-03 00:32:25 -0700
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/tril/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 2699ms (Views: 2679.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:32:28 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (1.8ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (18.7ms)
+  Rendered api/passages/_passage.json.jbuilder (1.2ms)
+  Rendered api/passages/_passage.json.jbuilder (1.5ms)
+  Rendered api/passages/_passage.json.jbuilder (1.9ms)
+  Rendered api/passages/index.json.jbuilder (65.3ms)
+Completed 200 OK in 88ms (Views: 59.0ms | ActiveRecord: 18.4ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:32:30 -0700
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:32:30 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (5.2ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (2.7ms)
+  Rendered api/passages/_passage.json.jbuilder (2.4ms)
+  Rendered api/passages/_passage.json.jbuilder (1.7ms)
+  Rendered api/passages/_passage.json.jbuilder (1.3ms)
+  Rendered api/passages/index.json.jbuilder (22.7ms)
+Completed 200 OK in 34ms (Views: 27.9ms | ActiveRecord: 5.2ms)
+
+
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (1.2ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (31.8ms)
+Completed 200 OK in 45ms (Views: 24.3ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:35:16 -0700
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/tril/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.2/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 1192ms (Views: 1178.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:35:18 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (1.0ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (2.9ms)
+  Rendered api/passages/_passage.json.jbuilder (1.9ms)
+  Rendered api/passages/_passage.json.jbuilder (3.2ms)
+  Rendered api/passages/_passage.json.jbuilder (1.5ms)
+  Rendered api/passages/index.json.jbuilder (42.8ms)
+Completed 200 OK in 60ms (Views: 39.0ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:35:19 -0700
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:35:19 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (1.2ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.4ms)
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  [1m[36mPassage Load (1.8ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/passages/_passage.json.jbuilder (4.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/passages/_passage.json.jbuilder (2.9ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (53.2ms)
+Completed 200 OK in 79ms (Views: 56.2ms | ActiveRecord: 9.0ms)
+
+
+  Rendered api/passages/_passage.json.jbuilder (2.5ms)
+  Rendered api/passages/_passage.json.jbuilder (2.0ms)
+  Rendered api/passages/index.json.jbuilder (23.0ms)
+Completed 200 OK in 29ms (Views: 26.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:37:00 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 503ms (Views: 501.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:37:01 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (1.2ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.8ms)
+  Rendered api/passages/_passage.json.jbuilder (1.5ms)
+  Rendered api/passages/_passage.json.jbuilder (1.8ms)
+  Rendered api/passages/_passage.json.jbuilder (1.6ms)
+  Rendered api/passages/index.json.jbuilder (17.3ms)
+Completed 200 OK in 28ms (Views: 25.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:37:02 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:37:02 -0700
+  [1m[36mPassage Load (3.7ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.8ms)
+  Rendered api/passages/_passage.json.jbuilder (1.8ms)
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (16.1ms)
+  [1m[36mAnnotation Load (2.9ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.7ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/passages/_passage.json.jbuilder (5.4ms)
+  Rendered api/passages/index.json.jbuilder (41.4ms)
+Completed 200 OK in 51ms (Views: 46.8ms | ActiveRecord: 3.7ms)
+
+
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (1.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (22.9ms)
+Completed 200 OK in 33ms (Views: 29.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:37:02 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.5ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (16.0ms)
+Completed 200 OK in 25ms (Views: 24.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:37:56 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 466ms (Views: 461.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:37:57 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:37:57 -0700
+  [1m[36mPassage Load (0.6ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (1.4ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (1.7ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.6ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/passages/_passage.json.jbuilder (50.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/index.json.jbuilder (41.9ms)
+Completed 200 OK in 51ms (Views: 48.5ms | ActiveRecord: 1.4ms)
+
+
+  Rendered api/passages/_passage.json.jbuilder (36.0ms)
+  Rendered api/passages/_passage.json.jbuilder (5.7ms)
+  Rendered api/passages/_passage.json.jbuilder (9.1ms)
+  Rendered api/passages/index.json.jbuilder (121.1ms)
+Completed 200 OK in 137ms (Views: 134.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:37:57 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.8ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (6.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (35.3ms)
+Completed 200 OK in 53ms (Views: 50.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:38:48 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 463ms (Views: 457.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:38:49 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.7ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:38:49 -0700
+  Rendered api/passages/_passage.json.jbuilder (4.1ms)
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (11.5ms)
+  [1m[36mAnnotation Load (1.6ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/passages/_passage.json.jbuilder (3.8ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/passages/_passage.json.jbuilder (2.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/passages/index.json.jbuilder (36.2ms)
+Completed 200 OK in 57ms (Views: 55.3ms | ActiveRecord: 0.7ms)
+
+
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/index.json.jbuilder (23.9ms)
+Completed 200 OK in 32ms (Views: 30.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:38:49 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (1.0ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (18.2ms)
+Completed 200 OK in 31ms (Views: 29.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:39:05 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 74ms (Views: 70.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:39:05 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.7ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (3.7ms)
+  Rendered api/passages/_passage.json.jbuilder (1.7ms)
+  Rendered api/passages/_passage.json.jbuilder (1.4ms)
+  Rendered api/passages/_passage.json.jbuilder (2.2ms)
+  Rendered api/passages/index.json.jbuilder (19.3ms)
+Completed 200 OK in 30ms (Views: 28.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:39:05 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (1.0ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (1.0ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (23.4ms)
+Completed 200 OK in 31ms (Views: 29.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:39:06 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.5ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (1.9ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/index.json.jbuilder (25.2ms)
+Completed 200 OK in 41ms (Views: 39.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:40:09 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 483ms (Views: 480.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:40:10 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:40:10 -0700
+  [1m[36mPassage Load (1.0ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (12.3ms)
+  [1m[36mAnnotation Load (2.1ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/passages/_passage.json.jbuilder (4.7ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/passages/_passage.json.jbuilder (3.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (20.8ms)
+Completed 200 OK in 30ms (Views: 27.3ms | ActiveRecord: 2.1ms)
+
+
+  Rendered api/passages/_passage.json.jbuilder (6.3ms)
+  Rendered api/passages/index.json.jbuilder (42.5ms)
+Completed 200 OK in 51ms (Views: 49.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:40:10 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.7ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/index.json.jbuilder (16.7ms)
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:40:36 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 506ms (Views: 502.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:40:37 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:40:37 -0700
+  [1m[36mPassage Load (1.2ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendered api/passages/_passage.json.jbuilder (1.5ms)
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (1.3ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (2.0ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/passages/_passage.json.jbuilder (2.8ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/passages/_passage.json.jbuilder (1.3ms)
+  Rendered api/annotations/index.json.jbuilder (25.4ms)
+Completed 200 OK in 41ms (Views: 38.9ms | ActiveRecord: 1.3ms)
+
+
+  Rendered api/passages/index.json.jbuilder (49.5ms)
+Completed 200 OK in 63ms (Views: 61.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:40:37 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (1.7ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.9ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.7ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/index.json.jbuilder (20.0ms)
+Completed 200 OK in 30ms (Views: 27.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:41:10 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 405ms (Views: 401.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:41:11 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (1.4ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:41:11 -0700
+  Rendered api/passages/_passage.json.jbuilder (2.7ms)
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendered api/passages/_passage.json.jbuilder (5.5ms)
+  Rendering api/annotations/index.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (1.4ms)
+  Rendered api/passages/_passage.json.jbuilder (1.3ms)
+  [1m[36mAnnotation Load (3.2ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  Rendered api/passages/index.json.jbuilder (27.5ms)
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+Completed 200 OK in 34ms (Views: 32.4ms | ActiveRecord: 1.4ms)
+
+
+  Rendered api/annotations/_annotation.json.jbuilder (0.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (15.4ms)
+Completed 200 OK in 26ms (Views: 22.3ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:41:11 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.9ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.7ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/index.json.jbuilder (20.7ms)
+Completed 200 OK in 35ms (Views: 32.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:43:09 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 466ms (Views: 460.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:43:10 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.8ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (2.2ms)
+  Rendered api/passages/_passage.json.jbuilder (1.4ms)
+  Rendered api/passages/_passage.json.jbuilder (1.3ms)
+  Rendered api/passages/_passage.json.jbuilder (1.4ms)
+  Rendered api/passages/index.json.jbuilder (14.2ms)
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:43:10 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.6ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (10.8ms)
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:44:01 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 448ms (Views: 443.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:44:02 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.7ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.9ms)
+  Rendered api/passages/_passage.json.jbuilder (1.3ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (0.8ms)
+  Rendered api/passages/index.json.jbuilder (12.0ms)
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:44:02 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.6ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.7ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/index.json.jbuilder (16.2ms)
+Completed 200 OK in 24ms (Views: 23.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:44:04 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 54ms (Views: 50.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:44:05 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:44:05 -0700
+  [1m[36mPassage Load (1.3ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendered api/passages/_passage.json.jbuilder (6.9ms)
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (1.3ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (2.3ms)
+  Rendered api/passages/_passage.json.jbuilder (1.0ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/index.json.jbuilder (28.3ms)
+Completed 200 OK in 37ms (Views: 34.8ms | ActiveRecord: 1.3ms)
+
+
+  Rendered api/annotations/_annotation.json.jbuilder (1.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (36.5ms)
+Completed 200 OK in 50ms (Views: 47.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:44:07 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 60ms (Views: 55.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:44:07 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (3.6ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (3.4ms)
+  Rendered api/passages/_passage.json.jbuilder (1.5ms)
+  Rendered api/passages/_passage.json.jbuilder (3.3ms)
+  Rendered api/passages/_passage.json.jbuilder (2.0ms)
+  Rendered api/passages/index.json.jbuilder (22.5ms)
+Completed 200 OK in 33ms (Views: 29.1ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:44:07 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (1.1ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (1.9ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.7ms)
+  Rendered api/annotations/_annotation.json.jbuilder (1.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (1.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (11.7ms)
+  Rendered api/annotations/index.json.jbuilder (54.4ms)
+Completed 200 OK in 76ms (Views: 73.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:44:09 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 65ms (Views: 62.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:44:10 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (1.1ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (3.4ms)
+  Rendered api/passages/_passage.json.jbuilder (2.1ms)
+  Rendered api/passages/_passage.json.jbuilder (1.2ms)
+  Rendered api/passages/_passage.json.jbuilder (1.2ms)
+  Rendered api/passages/index.json.jbuilder (21.1ms)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:44:10 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.4ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (12.2ms)
+Completed 200 OK in 21ms (Views: 20.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:45:12 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 521ms (Views: 516.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:45:13 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:45:13 -0700
+  [1m[36mPassage Load (1.0ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (11.8ms)
+  [1m[36mAnnotation Load (2.5ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.8ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/passages/_passage.json.jbuilder (8.0ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/passages/_passage.json.jbuilder (6.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/passages/_passage.json.jbuilder (2.4ms)
+  Rendered api/passages/index.json.jbuilder (46.0ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+Completed 200 OK in 57ms (Views: 54.9ms | ActiveRecord: 1.0ms)
+
+
+  Rendered api/annotations/index.json.jbuilder (32.3ms)
+Completed 200 OK in 46ms (Views: 42.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:45:33 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 511ms (Views: 508.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:45:34 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+Started GET "/api/passages" for ::1 at 2020-05-03 00:45:34 -0700
+  [1m[36mAnnotation Load (1.5ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.4ms)
+Processing by Api::PassagesController#index as JSON
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendering api/passages/index.json.jbuilder
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  [1m[36mPassage Load (1.1ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (28.6ms)
+Completed 200 OK in 39ms (Views: 37.2ms | ActiveRecord: 1.5ms)
+
+
+  Rendered api/passages/_passage.json.jbuilder (7.0ms)
+  Rendered api/passages/_passage.json.jbuilder (1.4ms)
+  Rendered api/passages/_passage.json.jbuilder (1.8ms)
+  Rendered api/passages/_passage.json.jbuilder (2.2ms)
+  Rendered api/passages/index.json.jbuilder (25.0ms)
+Completed 200 OK in 35ms (Views: 33.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:45:34 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.4ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (3.0ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/index.json.jbuilder (21.4ms)
+Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:47:03 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 454ms (Views: 448.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:47:15 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 470ms (Views: 465.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:47:16 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:47:16 -0700
+  [1m[36mPassage Load (1.2ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (9.5ms)
+  [1m[36mAnnotation Load (1.4ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.7ms)
+  Rendered api/passages/_passage.json.jbuilder (7.7ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/passages/_passage.json.jbuilder (5.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/passages/_passage.json.jbuilder (4.0ms)
+  Rendered api/passages/index.json.jbuilder (47.9ms)
+Completed 200 OK in 56ms (Views: 53.9ms | ActiveRecord: 1.2ms)
+
+
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/index.json.jbuilder (40.0ms)
+Completed 200 OK in 49ms (Views: 46.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:47:16 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.5ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.6ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/index.json.jbuilder (20.8ms)
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.5ms)
+
+
+  [1m[36mPassage Load (0.9ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  [1m[35m (4.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (50.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "smartmark_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (53.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "smartmark_test"[0m
+  ↳ bin/rails:9
+  [1m[35m (181.6ms)[0m  [1m[35mCREATE DATABASE "smartmark_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (125.2ms)[0m  [1m[35mCREATE DATABASE "smartmark_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "annotations" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (15.9ms)[0m  [1m[35mCREATE TABLE "annotations" ("id" bigserial primary key, "body" text NOT NULL, "upvote_count" integer NOT NULL, "passage_id" integer NOT NULL, "annotator_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "start_idx" integer NOT NULL, "end_idx" integer NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE  INDEX  "index_annotations_on_annotator_id" ON "annotations"  ("annotator_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE  INDEX  "index_annotations_on_passage_id" ON "annotations"  ("passage_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "passages" CASCADE[0m
+  ↳ db/schema.rb:31
+  [1m[35m (23.1ms)[0m  [1m[35mCREATE TABLE "passages" ("id" bigserial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "body" text DEFAULT '{}' NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "image_url" character varying)[0m
+  ↳ db/schema.rb:31
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:40
+  [1m[35m (11.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:40
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:40
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:40
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:40
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200503055534)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200429162622),
+(20200503000713),
+(20200503054229),
+(20200430050752),
+(20200502235153),
+(20200430002355),
+(20200430163623),
+(20200430045638),
+(20200427222125);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-05-03 07:50:59.941069"], ["updated_at", "2020-05-03 07:50:59.941069"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35mSQL (0.9ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  ↳ db/schema.rb:16
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "annotations" CASCADE[0m
+  ↳ db/schema.rb:18
+  [1m[35m (17.2ms)[0m  [1m[35mCREATE TABLE "annotations" ("id" bigserial primary key, "body" text NOT NULL, "upvote_count" integer NOT NULL, "passage_id" integer NOT NULL, "annotator_id" integer NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "start_idx" integer NOT NULL, "end_idx" integer NOT NULL)[0m
+  ↳ db/schema.rb:18
+  [1m[35m (5.5ms)[0m  [1m[35mCREATE  INDEX  "index_annotations_on_annotator_id" ON "annotations"  ("annotator_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE  INDEX  "index_annotations_on_passage_id" ON "annotations"  ("passage_id")[0m
+  ↳ db/schema.rb:18
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "passages" CASCADE[0m
+  ↳ db/schema.rb:31
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE "passages" ("id" bigserial primary key, "title" character varying NOT NULL, "author" character varying NOT NULL, "body" text DEFAULT '{}' NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "image_url" character varying)[0m
+  ↳ db/schema.rb:31
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  ↳ db/schema.rb:40
+  [1m[35m (20.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:40
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users"  ("email")[0m
+  ↳ db/schema.rb:40
+  [1m[35m (3.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/schema.rb:40
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/schema.rb:40
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200503055534)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200429162622),
+(20200503000713),
+(20200503054229),
+(20200430050752),
+(20200502235153),
+(20200430002355),
+(20200430163623),
+(20200430045638),
+(20200427222125);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-05-03 07:51:00.137916"], ["updated_at", "2020-05-03 07:51:00.137916"]]
+  ↳ db/schema.rb:13
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.6ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-05-03 07:51:00.146664"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "EnderWiggin"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "speakerforthedead@formics.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "2gpL46DLk_eXExAMh2IEUA"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "EnderWiggin"], ["email", "speakerforthedead@formics.com"], ["password_digest", "$2a$12$vBxZ4DS6fcTQNd12tnn86u4CAg9Fui3dtBj2hAI3SBkmmj/idOU8K"], ["session_token", "2gpL46DLk_eXExAMh2IEUA"], ["created_at", "2020-05-03 07:51:00.535591"], ["updated_at", "2020-05-03 07:51:00.535591"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Zelda"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "princess@hyrule.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "4cgYVk6SEoz0Kted8k91gQ"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "Zelda"], ["email", "princess@hyrule.com"], ["password_digest", "$2a$12$Sg9rIbWuyPkA.9MrR2iTgOWXvkRbRfb/Or/PMJjydsseSTd/cx/6q"], ["session_token", "4cgYVk6SEoz0Kted8k91gQ"], ["created_at", "2020-05-03 07:51:00.838284"], ["updated_at", "2020-05-03 07:51:00.838284"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "G"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "gmkleinman@gmail.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bvtXb7KzUJXUmhSSBS9OKw"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:9
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("username", "email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["username", "G"], ["email", "gmkleinman@gmail.com"], ["password_digest", "$2a$12$8pH8Zip5fFbKS3BSB8HyJu53OnZ5CkDiu9/dGjLvVZcIkqSuqYl.u"], ["session_token", "bvtXb7KzUJXUmhSSBS9OKw"], ["created_at", "2020-05-03 07:51:01.115821"], ["updated_at", "2020-05-03 07:51:01.115821"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mPassage Create (0.8ms)[0m  [1m[32mINSERT INTO "passages" ("title", "author", "body", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Sonnets No. 43"], ["author", "Elizabeth Barrett Browning"], ["body", "How do I love thee? Let me count the ways.\n\n            I love thee to the depth and breadth and height\n\n            My soul can reach, when feeling out of sight\n\n            For the ends of being and ideal grace.\n\n            I love thee to the level of every day’s\n\n            Most quiet need, by sun and candle-light.\n\n            I love thee freely, as men strive for right.\n\n            I love thee purely, as they turn from praise.\n\n            I love thee with the passion put to use\n\n            In my old griefs, and with my childhood’s faith.\n\n            I love thee with a love I seemed to lose\n\n            With my lost saints. I love thee with the breath,\n\n            Smiles, tears, of all my life; and, if God choose,\n\n            I shall but love thee better after death.\n"], ["created_at", "2020-05-03 07:51:01.136665"], ["updated_at", "2020-05-03 07:51:01.136665"], ["image_url", "Elizabeth_Barrett_Browning.jpg"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mPassage Create (0.4ms)[0m  [1m[32mINSERT INTO "passages" ("title", "author", "body", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Ozymandias"], ["author", "Percy Shelley"], ["body", "I met a traveller from an antique land,\n\n            Who said—“Two vast and trunkless legs of stone\n\n            Stand in the desert. . . . Near them, on the sand,\n\n            Half sunk a shattered visage lies, whose frown,\n\n            And wrinkled lip, and sneer of cold command,\n\n            Tell that its sculptor well those passions read\n\n            Which yet survive, stamped on these lifeless things,\n\n            The hand that mocked them, and the heart that fed;\n\n            And on the pedestal, these words appear:\n\n            My name is Ozymandias, King of Kings;\n\n            Look on my Works, ye Mighty, and despair!\n\n            Nothing beside remains. Round the decay\n\n            Of that colossal Wreck, boundless and bare\n\n            The lone and level sands stretch far away.\n"], ["created_at", "2020-05-03 07:51:01.141237"], ["updated_at", "2020-05-03 07:51:01.141237"], ["image_url", "Percy_Shelley.jpg"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mPassage Create (0.4ms)[0m  [1m[32mINSERT INTO "passages" ("title", "author", "body", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "The Road Not Taken"], ["author", "Robert Frost"], ["body", "Two roads diverged in a yellow wood,\n\n            And sorry I could not travel both\n\n            And be one traveler, long I stood\n\n            And looked down one as far as I could\n\n            To where it bent in the undergrowth;\n\n            \n\n            Then took the other, as just as fair,\n\n            And having perhaps the better claim,\n\n            Because it was grassy and wanted wear;\n\n            Though as for that the passing there\n\n            Had worn them really about the same,\n\n            \n\n            And both that morning equally lay\n\n            In leaves no step had trodden black.\n\n            Oh, I kept the first for another day!\n\n            Yet knowing how way leads on to way,\n\n            I doubted if I should ever come back.\n\n            \n\n            I shall be telling this with a sigh\n\n            Somewhere ages and ages hence:\n\n            Two roads diverged in a wood, and I—\n\n            I took the one less traveled by,\n\n            And that has made all the difference."], ["created_at", "2020-05-03 07:51:01.145549"], ["updated_at", "2020-05-03 07:51:01.145549"], ["image_url", "Edgar_Allan_Poe.jpg"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mPassage Create (0.5ms)[0m  [1m[32mINSERT INTO "passages" ("title", "author", "body", "created_at", "updated_at", "image_url") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["title", "Jabberwocky"], ["author", "Lewis Carroll"], ["body", "Twas brillig, and the slithy toves\n\n            Did gyre and gimble in the wabe:\n\n            All mimsy were the borogoves,\n\n            And the mome raths outgrabe.\n\n            \n\n            “Beware the Jabberwock, my son!\n\n            The jaws that bite, the claws that catch!\n\n            Beware the Jubjub bird, and shun\n\n            The frumious Bandersnatch!”\n\n            \n\n            He took his vorpal sword in hand;\n\n            Long time the manxome foe he sought—\n\n            So rested he by the Tumtum tree\n\n            And stood awhile in thought.\n\n            \n\n            And, as in uffish thought he stood,\n\n            The Jabberwock, with eyes of flame,\n\n            Came whiffling through the tulgey wood,\n\n            And burbled as it came!\n\n            \n\n            One, two! One, two! And through and through\n\n            The vorpal blade went snicker-snack!\n\n            He left it dead, and with its head\n\n            He went galumphing back.\n\n            \n\n            “And hast thou slain the Jabberwock?\n\n            Come to my arms, my beamish boy!\n\n            O frabjous day! Callooh! Callay!”\n\n            He chortled in his joy.\n\n            \n\n            'Twas brillig, and the slithy toves,\n\n            Did gyre and gimble in the wabe:\n\n            All mimsy were the borogoves,\n\n            And the mome raths outgrabe."], ["created_at", "2020-05-03 07:51:01.150071"], ["updated_at", "2020-05-03 07:51:01.150071"], ["image_url", "Lewis_Carroll.jpg"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:135
+  [1m[36mPassage Load (0.4ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mAnnotation Create (1.0ms)[0m  [1m[32mINSERT INTO "annotations" ("body", "upvote_count", "passage_id", "annotator_id", "created_at", "updated_at", "start_idx", "end_idx") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["body", "DELETE THIS NEPHEW....."], ["upvote_count", 0], ["passage_id", 1], ["annotator_id", 1], ["created_at", "2020-05-03 07:51:01.196476"], ["updated_at", "2020-05-03 07:51:01.196476"], ["start_idx", 0], ["end_idx", 20]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:135
+  [1m[36mPassage Load (0.3ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mAnnotation Create (0.4ms)[0m  [1m[32mINSERT INTO "annotations" ("body", "upvote_count", "passage_id", "annotator_id", "created_at", "updated_at", "start_idx", "end_idx") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["body", "I don't always make annotations, but when I do, they're not very useful."], ["upvote_count", 0], ["passage_id", 2], ["annotator_id", 2], ["created_at", "2020-05-03 07:51:01.203540"], ["updated_at", "2020-05-03 07:51:01.203540"], ["start_idx", 150], ["end_idx", 160]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:135
+  [1m[36mPassage Load (0.3ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mAnnotation Create (0.4ms)[0m  [1m[32mINSERT INTO "annotations" ("body", "upvote_count", "passage_id", "annotator_id", "created_at", "updated_at", "start_idx", "end_idx") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["body", "You're awesome! Stay awesome!"], ["upvote_count", 0], ["passage_id", 3], ["annotator_id", 2], ["created_at", "2020-05-03 07:51:01.209832"], ["updated_at", "2020-05-03 07:51:01.209832"], ["start_idx", 120], ["end_idx", 140]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:135
+  [1m[36mPassage Load (0.4ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mAnnotation Create (0.5ms)[0m  [1m[32mINSERT INTO "annotations" ("body", "upvote_count", "passage_id", "annotator_id", "created_at", "updated_at", "start_idx", "end_idx") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["body", "Yo dawg I heard you like annotations. That's it tho."], ["upvote_count", 0], ["passage_id", 3], ["annotator_id", 1], ["created_at", "2020-05-03 07:51:01.215934"], ["updated_at", "2020-05-03 07:51:01.215934"], ["start_idx", 80], ["end_idx", 100]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:135
+  [1m[36mPassage Load (0.4ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mAnnotation Create (0.4ms)[0m  [1m[32mINSERT INTO "annotations" ("body", "upvote_count", "passage_id", "annotator_id", "created_at", "updated_at", "start_idx", "end_idx") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["body", "Everything the light touches is our kingdom."], ["upvote_count", 0], ["passage_id", 1], ["annotator_id", 2], ["created_at", "2020-05-03 07:51:01.222651"], ["updated_at", "2020-05-03 07:51:01.222651"], ["start_idx", 42], ["end_idx", 55]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:135
+  [1m[36mPassage Load (0.3ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mAnnotation Create (0.4ms)[0m  [1m[32mINSERT INTO "annotations" ("body", "upvote_count", "passage_id", "annotator_id", "created_at", "updated_at", "start_idx", "end_idx") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["body", "I like chicken, I like liver, meow mix meow mix please deliver"], ["upvote_count", 10000], ["passage_id", 3], ["annotator_id", 1], ["created_at", "2020-05-03 07:51:01.228791"], ["updated_at", "2020-05-03 07:51:01.228791"], ["start_idx", 42], ["end_idx", 55]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:135
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:135
+  [1m[36mPassage Load (0.3ms)[0m  [1m[34mSELECT  "passages".* FROM "passages" WHERE "passages"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:135
+  [1m[36mAnnotation Create (0.4ms)[0m  [1m[32mINSERT INTO "annotations" ("body", "upvote_count", "passage_id", "annotator_id", "created_at", "updated_at", "start_idx", "end_idx") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["body", "You put the lime in the coconut, you drink the bowl up"], ["upvote_count", 0], ["passage_id", 3], ["annotator_id", 3], ["created_at", "2020-05-03 07:51:01.234816"], ["updated_at", "2020-05-03 07:51:01.234816"], ["start_idx", 30], ["end_idx", 40]]
+  ↳ db/seeds.rb:135
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:135
+Started GET "/" for ::1 at 2020-05-03 00:51:35 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 481ms (Views: 479.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:51:36 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:51:36 -0700
+  [1m[36mPassage Load (2.6ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.7ms)
+  Rendered api/passages/_passage.json.jbuilder (1.0ms)
+  Rendered api/passages/_passage.json.jbuilder (1.7ms)
+  Rendered api/passages/_passage.json.jbuilder (1.5ms)
+  Rendered api/passages/index.json.jbuilder (16.5ms)
+Completed 200 OK in 25ms (Views: 21.2ms | ActiveRecord: 2.6ms)
+
+
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (3.1ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (1.9ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.6ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (35.4ms)
+Completed 200 OK in 47ms (Views: 42.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:51:37 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (1.3ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.6ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (30.8ms)
+Completed 200 OK in 42ms (Views: 39.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:52:11 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 77ms (Views: 73.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:52:11 -0700
+Processing by Api::PassagesController#index as JSON
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:52:11 -0700
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.7ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (13.3ms)
+  [1m[36mAnnotation Load (3.0ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/passages/_passage.json.jbuilder (5.3ms)
+  Rendered api/passages/_passage.json.jbuilder (1.5ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.7ms)
+  Rendered api/passages/_passage.json.jbuilder (5.4ms)
+  Rendered api/passages/index.json.jbuilder (39.9ms)
+Completed 200 OK in 48ms (Views: 46.9ms | ActiveRecord: 0.7ms)
+
+
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/index.json.jbuilder (33.7ms)
+Completed 200 OK in 44ms (Views: 40.8ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:52:11 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (2.2ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.6ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.6ms)
+  Rendered api/annotations/index.json.jbuilder (14.7ms)
+Completed 200 OK in 21ms (Views: 18.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:52:31 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 507ms (Views: 504.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:52:32 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (1.4ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (2.5ms)
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:52:32 -0700
+  Rendered api/passages/_passage.json.jbuilder (2.1ms)
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendered api/passages/_passage.json.jbuilder (7.9ms)
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.8ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.4ms)
+  Rendered api/passages/_passage.json.jbuilder (6.5ms)
+  Rendered api/passages/index.json.jbuilder (38.7ms)
+Completed 200 OK in 49ms (Views: 47.2ms | ActiveRecord: 1.4ms)
+
+
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/index.json.jbuilder (22.4ms)
+Completed 200 OK in 34ms (Views: 32.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:52:32 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (1.2ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (22.0ms)
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:53:07 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 497ms (Views: 491.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:53:08 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (1.0ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:53:08 -0700
+  ↳ app/views/api/passages/index.json.jbuilder:1
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (1.3ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.7ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (13.1ms)
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 1.3ms)
+
+
+  Rendered api/passages/_passage.json.jbuilder (32.1ms)
+  Rendered api/passages/_passage.json.jbuilder (3.9ms)
+  Rendered api/passages/_passage.json.jbuilder (2.3ms)
+  Rendered api/passages/_passage.json.jbuilder (4.5ms)
+  Rendered api/passages/index.json.jbuilder (57.9ms)
+Completed 200 OK in 67ms (Views: 65.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:53:17 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 510ms (Views: 505.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:53:18 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:53:18 -0700
+  [1m[36mPassage Load (2.1ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.9ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  Rendered api/passages/_passage.json.jbuilder (18.3ms)
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.6ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/passages/_passage.json.jbuilder (7.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/passages/_passage.json.jbuilder (8.7ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/index.json.jbuilder (36.0ms)
+Completed 200 OK in 48ms (Views: 45.7ms | ActiveRecord: 0.9ms)
+
+
+  Rendered api/passages/_passage.json.jbuilder (8.7ms)
+  Rendered api/passages/index.json.jbuilder (66.0ms)
+Completed 200 OK in 76ms (Views: 73.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:53:29 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 65ms (Views: 60.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:53:29 -0700
+Processing by Api::PassagesController#index as JSON
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:53:29 -0700
+  Rendering api/passages/index.json.jbuilder
+Processing by Api::AnnotationsController#index as JSON
+  [1m[36mPassage Load (3.8ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  Parameters: {"passage_id"=>":passageId"}
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (1.7ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (8.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/passages/_passage.json.jbuilder (25.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (55.5ms)
+Completed 200 OK in 65ms (Views: 62.6ms | ActiveRecord: 1.7ms)
+
+
+  Rendered api/passages/_passage.json.jbuilder (2.4ms)
+  Rendered api/passages/_passage.json.jbuilder (2.3ms)
+  Rendered api/passages/index.json.jbuilder (80.6ms)
+Completed 200 OK in 90ms (Views: 85.3ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:53:40 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 73ms (Views: 69.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:53:41 -0700
+Started GET "/api/passages" for ::1 at 2020-05-03 00:53:41 -0700
+Processing by Api::PassagesController#index as JSON
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (1.6ms)
+  Rendered api/passages/_passage.json.jbuilder (0.9ms)
+  Rendered api/passages/_passage.json.jbuilder (1.0ms)
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (1.4ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.8ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/passages/_passage.json.jbuilder (6.1ms)
+  Rendered api/passages/index.json.jbuilder (24.7ms)
+Completed 200 OK in 39ms (Views: 38.1ms | ActiveRecord: 0.5ms)
+
+
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/index.json.jbuilder (19.6ms)
+Completed 200 OK in 39ms (Views: 36.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:53:45 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 524ms (Views: 520.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:53:46 -0700
+Processing by Api::PassagesController#index as JSON
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:53:46 -0700
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.9ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (2.7ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/passages/_passage.json.jbuilder (10.0ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/passages/_passage.json.jbuilder (9.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/passages/_passage.json.jbuilder (5.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (42.0ms)
+Completed 200 OK in 55ms (Views: 51.1ms | ActiveRecord: 2.7ms)
+
+
+  Rendered api/passages/_passage.json.jbuilder (7.1ms)
+  Rendered api/passages/index.json.jbuilder (65.8ms)
+Completed 200 OK in 79ms (Views: 77.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:53:46 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.4ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (1.9ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (14.0ms)
+Completed 200 OK in 21ms (Views: 19.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:54:06 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 528ms (Views: 525.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:54:08 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:54:08 -0700
+  [1m[36mPassage Load (0.8ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (14.4ms)
+  [1m[36mAnnotation Load (2.4ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.7ms)
+  Rendered api/passages/_passage.json.jbuilder (5.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/passages/_passage.json.jbuilder (6.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/passages/_passage.json.jbuilder (5.5ms)
+  Rendered api/annotations/index.json.jbuilder (32.5ms)
+  Rendered api/passages/index.json.jbuilder (53.0ms)
+Completed 200 OK in 44ms (Views: 41.3ms | ActiveRecord: 2.4ms)
+
+
+Completed 200 OK in 65ms (Views: 62.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:54:08 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (2.1ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.8ms)
+  Rendered api/annotations/index.json.jbuilder (16.5ms)
+Completed 200 OK in 32ms (Views: 27.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:54:39 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 67ms (Views: 62.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:54:40 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.9ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (2.5ms)
+  Rendered api/passages/_passage.json.jbuilder (1.6ms)
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:54:40 -0700
+  Rendered api/passages/_passage.json.jbuilder (3.2ms)
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (9.6ms)
+  Rendered api/passages/index.json.jbuilder (37.1ms)
+Completed 200 OK in 45ms (Views: 43.3ms | ActiveRecord: 0.9ms)
+
+
+  [1m[36mAnnotation Load (1.7ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/index.json.jbuilder (17.0ms)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:54:40 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (1.4ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (1.8ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/index.json.jbuilder (17.7ms)
+Completed 200 OK in 28ms (Views: 25.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:57:34 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 484ms (Views: 480.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:57:56 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 633ms (Views: 630.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:57:57 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:57:57 -0700
+  [1m[36mPassage Load (1.2ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (18.1ms)
+  [1m[36mAnnotation Load (1.5ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.9ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/passages/_passage.json.jbuilder (6.0ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/passages/_passage.json.jbuilder (4.8ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (32.0ms)
+Completed 200 OK in 43ms (Views: 41.0ms | ActiveRecord: 1.5ms)
+
+
+  Rendered api/passages/_passage.json.jbuilder (10.7ms)
+  Rendered api/passages/index.json.jbuilder (56.7ms)
+Completed 200 OK in 67ms (Views: 65.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:57:57 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.5ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.6ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/index.json.jbuilder (10.8ms)
+Completed 200 OK in 18ms (Views: 16.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:59:04 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 514ms (Views: 510.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:59:06 -0700
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:59:06 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (1.4ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.7ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/index.json.jbuilder (24.4ms)
+Completed 200 OK in 35ms (Views: 32.9ms | ActiveRecord: 1.4ms)
+
+
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (6.5ms)
+  Rendered api/passages/_passage.json.jbuilder (1.5ms)
+  Rendered api/passages/_passage.json.jbuilder (21.4ms)
+  Rendered api/passages/_passage.json.jbuilder (2.1ms)
+  Rendered api/passages/index.json.jbuilder (46.5ms)
+Completed 200 OK in 127ms (Views: 125.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:59:06 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.6ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.6ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.6ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/index.json.jbuilder (38.8ms)
+Completed 200 OK in 57ms (Views: 55.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 00:59:19 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 493ms (Views: 489.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 00:59:20 -0700
+Processing by Api::PassagesController#index as JSON
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:59:20 -0700
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.8ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+Processing by Api::AnnotationsController#index as JSON
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.9ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.8ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/passages/_passage.json.jbuilder (23.6ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (29.7ms)
+Completed 200 OK in 41ms (Views: 38.9ms | ActiveRecord: 0.9ms)
+
+
+  Rendered api/passages/_passage.json.jbuilder (10.2ms)
+  Rendered api/passages/_passage.json.jbuilder (3.8ms)
+  Rendered api/passages/_passage.json.jbuilder (6.5ms)
+  Rendered api/passages/index.json.jbuilder (72.5ms)
+Completed 200 OK in 83ms (Views: 80.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 00:59:20 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.9ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (1.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/index.json.jbuilder (23.4ms)
+Completed 200 OK in 37ms (Views: 33.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 01:00:18 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 493ms (Views: 476.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 01:00:19 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:00:19 -0700
+  [1m[36mPassage Load (2.3ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+Processing by Api::AnnotationsController#index as JSON
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (3.6ms)
+  [1m[36mAnnotation Load (2.5ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.6ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.6ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/passages/_passage.json.jbuilder (3.7ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/index.json.jbuilder (30.9ms)
+Completed 200 OK in 42ms (Views: 38.6ms | ActiveRecord: 2.5ms)
+
+
+  Rendered api/passages/_passage.json.jbuilder (3.6ms)
+  Rendered api/passages/_passage.json.jbuilder (1.4ms)
+  Rendered api/passages/index.json.jbuilder (59.3ms)
+Completed 200 OK in 68ms (Views: 64.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:00:19 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.6ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.8ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/index.json.jbuilder (21.0ms)
+Completed 200 OK in 34ms (Views: 32.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 01:01:54 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 551ms (Views: 547.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 01:01:55 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.5ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (2.3ms)
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:01:55 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.8ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/index.json.jbuilder (26.5ms)
+Completed 200 OK in 35ms (Views: 33.4ms | ActiveRecord: 0.8ms)
+
+
+  Rendered api/passages/_passage.json.jbuilder (5.5ms)
+  Rendered api/passages/_passage.json.jbuilder (2.4ms)
+  Rendered api/passages/_passage.json.jbuilder (2.0ms)
+  Rendered api/passages/index.json.jbuilder (85.0ms)
+Completed 200 OK in 94ms (Views: 92.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:01:56 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.7ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (1.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.7ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (21.0ms)
+Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 01:03:40 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 494ms (Views: 490.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 01:03:41 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:03:41 -0700
+  [1m[36mPassage Load (1.1ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (13.8ms)
+  [1m[36mAnnotation Load (2.2ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (1.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/passages/_passage.json.jbuilder (10.6ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/passages/_passage.json.jbuilder (5.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/passages/_passage.json.jbuilder (3.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/passages/index.json.jbuilder (52.7ms)
+Completed 200 OK in 65ms (Views: 63.1ms | ActiveRecord: 1.1ms)
+
+
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (38.3ms)
+Completed 200 OK in 51ms (Views: 47.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:03:41 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.9ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/index.json.jbuilder (13.2ms)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 01:04:05 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 479ms (Views: 475.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 01:04:06 -0700
+Processing by Api::PassagesController#index as JSON
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:04:06 -0700
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.9ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+Processing by Api::AnnotationsController#index as JSON
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (1.1ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.6ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/passages/_passage.json.jbuilder (17.9ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/index.json.jbuilder (21.0ms)
+Completed 200 OK in 31ms (Views: 28.7ms | ActiveRecord: 1.1ms)
+
+
+  Rendered api/passages/_passage.json.jbuilder (5.2ms)
+  Rendered api/passages/_passage.json.jbuilder (2.7ms)
+  Rendered api/passages/_passage.json.jbuilder (3.3ms)
+  Rendered api/passages/index.json.jbuilder (50.1ms)
+Completed 200 OK in 62ms (Views: 60.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:04:06 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.7ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.8ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (12.7ms)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 01:04:22 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 495ms (Views: 492.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 01:04:23 -0700
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:04:23 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  [1m[36mPassage Load (5.2ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  Rendering api/annotations/index.json.jbuilder
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  [1m[36mAnnotation Load (2.0ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.6ms)
+  Rendered api/passages/_passage.json.jbuilder (4.8ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/passages/_passage.json.jbuilder (4.7ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/passages/_passage.json.jbuilder (4.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (35.4ms)
+Completed 200 OK in 46ms (Views: 42.5ms | ActiveRecord: 2.0ms)
+
+
+  Rendered api/passages/_passage.json.jbuilder (8.6ms)
+  Rendered api/passages/index.json.jbuilder (52.8ms)
+Completed 200 OK in 63ms (Views: 56.9ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:04:23 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.7ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.7ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/index.json.jbuilder (16.1ms)
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 01:04:47 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 479ms (Views: 475.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 01:04:48 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:04:48 -0700
+  [1m[36mPassage Load (1.1ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (15.3ms)
+  [1m[36mAnnotation Load (3.3ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.6ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (24.3ms)
+Completed 200 OK in 36ms (Views: 32.4ms | ActiveRecord: 3.3ms)
+
+
+  Rendered api/passages/_passage.json.jbuilder (4.7ms)
+  Rendered api/passages/_passage.json.jbuilder (3.3ms)
+  Rendered api/passages/_passage.json.jbuilder (1.4ms)
+  Rendered api/passages/index.json.jbuilder (74.1ms)
+Completed 200 OK in 84ms (Views: 81.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:04:48 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (1.9ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/index.json.jbuilder (15.6ms)
+Completed 200 OK in 30ms (Views: 26.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 01:06:52 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 513ms (Views: 510.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 01:06:53 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:06:53 -0700
+  [1m[36mPassage Load (0.9ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (12.9ms)
+  [1m[36mAnnotation Load (3.1ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/passages/_passage.json.jbuilder (5.0ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/passages/_passage.json.jbuilder (4.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/passages/_passage.json.jbuilder (4.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/passages/index.json.jbuilder (48.4ms)
+Completed 200 OK in 61ms (Views: 59.0ms | ActiveRecord: 0.9ms)
+
+
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (35.8ms)
+Completed 200 OK in 47ms (Views: 43.6ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:06:53 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.7ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (1.5ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (17.8ms)
+Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 01:08:02 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 462ms (Views: 458.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 01:08:03 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:08:03 -0700
+  [1m[36mPassage Load (1.1ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (13.5ms)
+  [1m[36mAnnotation Load (1.0ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.9ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/passages/_passage.json.jbuilder (4.0ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/passages/_passage.json.jbuilder (3.5ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (24.3ms)
+Completed 200 OK in 37ms (Views: 34.9ms | ActiveRecord: 1.0ms)
+
+
+  Rendered api/passages/_passage.json.jbuilder (6.8ms)
+  Rendered api/passages/index.json.jbuilder (51.5ms)
+Completed 200 OK in 60ms (Views: 58.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:08:03 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (3.8ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (1.0ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (1.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (28.7ms)
+Completed 200 OK in 44ms (Views: 39.5ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 01:08:05 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 45ms (Views: 42.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 01:08:05 -0700
+Processing by Api::PassagesController#index as JSON
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:08:05 -0700
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.7ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (7.7ms)
+  [1m[36mAnnotation Load (2.0ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/passages/_passage.json.jbuilder (7.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (23.5ms)
+Completed 200 OK in 32ms (Views: 29.6ms | ActiveRecord: 2.0ms)
+
+
+  Rendered api/passages/_passage.json.jbuilder (7.5ms)
+  Rendered api/passages/_passage.json.jbuilder (1.6ms)
+  Rendered api/passages/index.json.jbuilder (44.5ms)
+Completed 200 OK in 56ms (Views: 54.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:08:06 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.4ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (12.7ms)
+Completed 200 OK in 18ms (Views: 17.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 01:08:41 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 510ms (Views: 505.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 01:08:56 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 493ms (Views: 489.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 01:08:57 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:08:57 -0700
+  [1m[36mPassage Load (1.1ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendered api/passages/_passage.json.jbuilder (6.1ms)
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.7ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/passages/_passage.json.jbuilder (5.8ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/passages/_passage.json.jbuilder (7.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/passages/_passage.json.jbuilder (4.4ms)
+  Rendered api/passages/index.json.jbuilder (45.2ms)
+Completed 200 OK in 56ms (Views: 53.5ms | ActiveRecord: 1.1ms)
+
+
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (37.5ms)
+Completed 200 OK in 50ms (Views: 48.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:08:57 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.6ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.7ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/index.json.jbuilder (20.2ms)
+Completed 200 OK in 33ms (Views: 31.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 01:11:05 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 486ms (Views: 484.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 01:11:06 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:11:06 -0700
+  [1m[36mPassage Load (1.4ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendered api/passages/_passage.json.jbuilder (10.6ms)
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (1.6ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.8ms)
+  Rendered api/passages/_passage.json.jbuilder (6.8ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/passages/_passage.json.jbuilder (4.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/passages/_passage.json.jbuilder (7.6ms)
+  Rendered api/annotations/index.json.jbuilder (29.4ms)
+  Rendered api/passages/index.json.jbuilder (52.7ms)
+Completed 200 OK in 62ms (Views: 59.5ms | ActiveRecord: 1.4ms)
+
+
+Completed 200 OK in 41ms (Views: 38.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:11:07 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (1.3ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.4ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/index.json.jbuilder (11.9ms)
+Completed 200 OK in 18ms (Views: 16.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 01:12:05 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 63ms (Views: 58.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 01:12:06 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:12:06 -0700
+  [1m[36mPassage Load (2.1ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (13.3ms)
+  [1m[36mAnnotation Load (2.8ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.7ms)
+  Rendered api/passages/_passage.json.jbuilder (9.0ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/passages/_passage.json.jbuilder (13.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/passages/_passage.json.jbuilder (6.4ms)
+  Rendered api/passages/index.json.jbuilder (57.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+Completed 200 OK in 67ms (Views: 64.7ms | ActiveRecord: 2.1ms)
+
+
+  Rendered api/annotations/index.json.jbuilder (42.8ms)
+Completed 200 OK in 54ms (Views: 50.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:12:06 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.5ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.6ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (12.3ms)
+Completed 200 OK in 20ms (Views: 18.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 01:12:08 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 472ms (Views: 468.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 01:12:09 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:12:09 -0700
+  [1m[36mPassage Load (0.7ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (13.5ms)
+  [1m[36mAnnotation Load (2.3ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/passages/_passage.json.jbuilder (8.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/passages/_passage.json.jbuilder (4.7ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/passages/_passage.json.jbuilder (3.4ms)
+  Rendered api/passages/index.json.jbuilder (46.5ms)
+Completed 200 OK in 56ms (Views: 54.9ms | ActiveRecord: 0.7ms)
+
+
+  Rendered api/annotations/index.json.jbuilder (29.0ms)
+Completed 200 OK in 40ms (Views: 37.3ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:12:09 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.9ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.7ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (2.5ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/index.json.jbuilder (44.8ms)
+Completed 200 OK in 58ms (Views: 56.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 01:12:59 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 546ms (Views: 541.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 01:13:00 -0700
+Processing by Api::PassagesController#index as JSON
+  Rendering api/passages/index.json.jbuilder
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:13:00 -0700
+  [1m[36mPassage Load (1.1ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+  ↳ app/views/api/passages/index.json.jbuilder:1
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (6.6ms)
+  Rendered api/passages/_passage.json.jbuilder (1.5ms)
+  Rendered api/passages/_passage.json.jbuilder (4.7ms)
+  Rendered api/passages/_passage.json.jbuilder (2.2ms)
+  Rendered api/passages/index.json.jbuilder (41.5ms)
+Completed 200 OK in 51ms (Views: 49.0ms | ActiveRecord: 1.1ms)
+
+
+  [1m[36mAnnotation Load (17.4ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.8ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (1.5ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (89.2ms)
+Completed 200 OK in 102ms (Views: 84.3ms | ActiveRecord: 17.4ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:13:00 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.7ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (1.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (1.7ms)
+  Rendered api/annotations/index.json.jbuilder (34.0ms)
+Completed 200 OK in 53ms (Views: 50.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2020-05-03 01:14:42 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 75ms (Views: 72.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/passages" for ::1 at 2020-05-03 01:14:43 -0700
+Processing by Api::PassagesController#index as JSON
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:14:43 -0700
+  Rendering api/passages/index.json.jbuilder
+  [1m[36mPassage Load (0.7ms)[0m  [1m[34mSELECT "passages".* FROM "passages"[0m
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  ↳ app/views/api/passages/index.json.jbuilder:1
+  Rendering api/annotations/index.json.jbuilder
+  Rendered api/passages/_passage.json.jbuilder (10.7ms)
+  Rendered api/passages/_passage.json.jbuilder (4.4ms)
+  [1m[36mAnnotation Load (2.7ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.7ms)
+  Rendered api/passages/_passage.json.jbuilder (7.6ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/passages/_passage.json.jbuilder (6.9ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/passages/index.json.jbuilder (55.1ms)
+Completed 200 OK in 71ms (Views: 69.6ms | ActiveRecord: 0.7ms)
+
+
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/index.json.jbuilder (44.6ms)
+Completed 200 OK in 62ms (Views: 58.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/api/passages/:passageId/annotations/" for ::1 at 2020-05-03 01:14:43 -0700
+Processing by Api::AnnotationsController#index as JSON
+  Parameters: {"passage_id"=>":passageId"}
+  Rendering api/annotations/index.json.jbuilder
+  [1m[36mAnnotation Load (0.7ms)[0m  [1m[34mSELECT "annotations".* FROM "annotations"[0m
+  ↳ app/views/api/annotations/index.json.jbuilder:1
+  Rendered api/annotations/_annotation.json.jbuilder (0.5ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.3ms)
+  Rendered api/annotations/_annotation.json.jbuilder (1.0ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.1ms)
+  Rendered api/annotations/_annotation.json.jbuilder (0.2ms)
+  Rendered api/annotations/index.json.jbuilder (19.9ms)
+Completed 200 OK in 36ms (Views: 35.0ms | ActiveRecord: 0.7ms)
+
+
