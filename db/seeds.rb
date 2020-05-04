@@ -135,7 +135,7 @@ passages = Passage.create([
 annotations = Annotation.create([
     {
         body: 'DELETE THIS NEPHEW.....',
-        upvote_count: 0,
+        upvote_count: -5,
         passage_id: passages[0].id,
         annotator_id: users[0].id,
         start_idx: 0,
@@ -143,14 +143,14 @@ annotations = Annotation.create([
     },
     {
         body: "I don't always make annotations, but when I do, they're not very useful.",
-        upvote_count: 0,
+        upvote_count: 1,
         passage_id: passages[1].id,
         annotator_id: users[1].id,
         start_idx: 100,
         end_idx: 130,
     },
     {
-        body: "You're awesome! Stay awesome!",
+        body: "When you realize you want to spend the rest of your life with somebody, you want the rest of your life to start as soon as possible.",
         upvote_count: 0,
         passage_id: passages[2].id,
         annotator_id: users[1].id,
@@ -158,8 +158,8 @@ annotations = Annotation.create([
         end_idx: 300,
     },
     {
-        body: "Yo dawg I heard you like annotations. That's it tho.",
-        upvote_count: 0,
+        body: "My name is Maximus Decimus Meridius, commander of the Armies of the North, General of the Felix Legions and loyal servant to the true emperor, Marcus Aurelius. Father to a murdered son, husband to a murdered wife. And I will have my vengeance, in this life or the next",
+        upvote_count: 50,
         passage_id: passages[2].id,
         annotator_id: users[0].id,
         start_idx: 400,
@@ -167,14 +167,14 @@ annotations = Annotation.create([
     },
     {
         body: "Everything the light touches is our kingdom.",
-        upvote_count: 0,
+        upvote_count: 4,
         passage_id: passages[0].id,
         annotator_id: users[1].id,
         start_idx: 500,
         end_idx: 550,
     },
     {
-        body: "I like chicken, I like liver, meow mix meow mix please deliver",
+        body: "I like chicken, I like liver, meow mix meow mix please deliver.",
         upvote_count: 10000,
         passage_id: passages[2].id,
         annotator_id: users[0].id,
@@ -183,7 +183,7 @@ annotations = Annotation.create([
     },
     {
         body: "You put the lime in the coconut, you drink the bowl up",
-        upvote_count: 0,
+        upvote_count: 71,
         passage_id: passages[2].id,
         annotator_id: users[2].id,
         start_idx: 800,

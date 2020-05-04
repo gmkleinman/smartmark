@@ -5,11 +5,6 @@ import { selectAnnotationsByPassageId } from '../../reducers/selectors'
 import { closeModal } from '../../actions/modal_actions'
 
 const mSTP = (state, ownProps) => {
-    // console.log("this is annotations:")
-    console.log(state)
-    // console.log(ownProps.passageId)
-    // console.log(typeof ownProps.passageId)
-    // console.log(selectAnnotationsByPassageId(state, ownProps.passageId))
     // debugger
 
     let annotationId = state.ui.modal;

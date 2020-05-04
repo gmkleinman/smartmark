@@ -43,8 +43,6 @@ class PassageShow extends React.Component {
     }
 
     handleClick(annotationId){
-        console.log("this is annotation Id")
-        console.log(annotationId)
         this.props.openModal(annotationId)
     }
 
@@ -81,22 +79,17 @@ class PassageShow extends React.Component {
                 <AnnotationShowContainer passageId={this.props.passage.id}/> 
                 <div id='passage-container' onMouseUp={this.handleSelection}>
 
-                {/* this.selectedText is here: <br /> */}
-                {this.state.selectedText}
-                    <div className='temp-header'>
-                        {this.props.passage.title}<br />
-                        {this.props.passage.author}
-                    </div>
-
+                    {/* this.selectedText is here: <br /> */}
+                    {this.state.selectedText}
+                    
+                    <div className='title'> {this.props.passage.title} </div>
+                    <div className='author'> {this.props.passage.author} </div>
+                    
                     <ul className='passage'>
                         {this.highlighter(this.props.passage.body, this.getIndices())}
                     </ul>
 
                 </div>
-
-                {/* <div id='annotations-container'>
-                    <div onClick={this.props.openModal}>Show Annotations</div>
-                </div> */}
                 
                 <div>
                     {/* this is TEMPORARY for spacing */}
