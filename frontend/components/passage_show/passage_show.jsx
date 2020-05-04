@@ -6,7 +6,6 @@ class PassageShow extends React.Component {
         super(props)
         this.state = {
             selectedText: "",
-            // indices: []
         }
 
         this.handleSelection = this.handleSelection.bind(this)
@@ -46,7 +45,7 @@ class PassageShow extends React.Component {
     handleClick(annotationId){
         console.log("this is annotation Id")
         console.log(annotationId)
-        this.props.openModal(1)
+        this.props.openModal(annotationId)
     }
 
     //indices are a 2D array structured as [[startIdx, endIdx, annotationId], [...]]
@@ -82,7 +81,7 @@ class PassageShow extends React.Component {
                 <AnnotationShowContainer passageId={this.props.passage.id}/> 
                 <div id='passage-container' onMouseUp={this.handleSelection}>
 
-                this.selectedText is here: <br />
+                {/* this.selectedText is here: <br /> */}
                 {this.state.selectedText}
                     <div className='temp-header'>
                         {this.props.passage.title}<br />
