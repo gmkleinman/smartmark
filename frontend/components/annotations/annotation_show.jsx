@@ -6,16 +6,15 @@ class AnnotationShow extends React.Component {
     }
     
     componentDidMount() {
-        //per selector, only fetches annotations of the current passage 
         // no longer required because we're calling it on passage show
-        // this.props.fetchAnnotations(); 
+        this.props.fetchAnnotations(); 
     }
 
 
     render() {
         // debugger
         if(!this.props.annotations[0]) return null;
-        if(!this.props.modal) return null;
+        if(!this.props.annotationId) return null;
 
         return(
             <div className='modal-background' onClick={this.props.closeModal}>

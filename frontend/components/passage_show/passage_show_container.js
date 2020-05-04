@@ -18,13 +18,12 @@ const mSTP = (state, ownProps) => {
 
 
 const mDTP = dispatch => {
-    // debugger
-    
+    debugger    
     return {
         fetchPassage: passageId => dispatch(fetchPassage(passageId)),
         fetchPassages: () => dispatch(fetchPassages()),
         fetchAnnotations: () => dispatch(fetchAnnotations()),
-        openModal: () => dispatch(openModal('annotations')),
+        openModal: passageId => dispatch(openModal(passageId)),
     }
 }
 

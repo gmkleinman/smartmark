@@ -11,12 +11,11 @@ const mSTP = (state, ownProps) => {
     // console.log(ownProps.passageId)
     // console.log(typeof ownProps.passageId)
     // console.log(selectAnnotationsByPassageId(state, ownProps.passageId))
-
     return(
         {
             annotations: selectAnnotationsByPassageId(state, ownProps.passageId),
-            modal: state.ui.modal,
-            
+            annotationId: state.ui.modal,   
+            // annotation: state.entities.annotations[state.ui.modal]
         }
     )
 }

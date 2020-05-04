@@ -10,6 +10,7 @@ class PassageShow extends React.Component {
         }
 
         this.handleSelection = this.handleSelection.bind(this)
+        this.handleClick = this.handleClick.bind(this)
     }
 
     componentDidMount(){
@@ -27,7 +28,7 @@ class PassageShow extends React.Component {
 
         let indices = [];
         this.props.annotations.map(annotation => {
-            indices.push([annotation.start_idx, annotation.end_idx])
+            indices.push([annotation.start_idx, annotation.end_idx, annotation.id])
         })
 
         function sortIndices(a,b) {
@@ -42,31 +43,39 @@ class PassageShow extends React.Component {
         return indices.sort(sortIndices);
     }
 
+    handleClick(annotationId){
+        console.log("this is annotation Id")
+        console.log(annotationId)
+        this.props.openModal(1)
+    }
+
+    //indices are a 2D array structured as [[startIdx, endIdx, annotationId], [...]]
     highlighter(str, indices, offset = 0) {
         if(indices.length < 1) return str;
     
         let startIdx = indices[0][0] - offset 
         let endIdx = indices[0][1] - offset
+        let annotationId = indices[0][2]
         indices.shift();
         
         let strStart = str.substring(0, startIdx)
         let highlighted = str.substring(startIdx, endIdx+1)
         let strEnd = str.substring(endIdx+1, str.length)
-    
+
         return (
             <span>
                 {strStart} 
-                <span className='highlighted'>{highlighted}</span>
+                <span className='highlighted' onClick={() => this.handleClick(annotationId)}>{highlighted}</span>
                 {this.highlighter(strEnd, indices, endIdx + offset + 1)}
-
             </span>
         )
     }
 
+
+
     render() {
         if(!this.props.passage) return null
         // if(!this.props.annotations[0]) return null;
-        // console.log(this.props.annotations)
         // debugger
         return(
             <div id='passage-show-container'>
@@ -81,20 +90,19 @@ class PassageShow extends React.Component {
                     </div>
 
                     <ul className='passage'>
-                        {this.highlighter(this.props.passage.body, (this.getIndices()))}
-                        {/* above should be uncommented when indices are seeded properly */}
-
-                        {/* {this.highlighter(this.props.passage.body, [[0,42], [103,200], [469,546]])} */}
-                        
-                        {/* {console.log(this.props.annotations)} */}
+                        {this.highlighter(this.props.passage.body, this.getIndices())}
                     </ul>
 
                 </div>
 
-                <div id='annotations-container'>
-                    <button onClick={this.props.openModal}>Show Annotations</button>
-                </div>
+                {/* <div id='annotations-container'>
+                    <div onClick={this.props.openModal}>Show Annotations</div>
+                </div> */}
                 
+                <div>
+                    {/* this is TEMPORARY for spacing */}
+                </div>
+
             </div>
         )
     }
