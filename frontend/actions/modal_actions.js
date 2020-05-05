@@ -1,10 +1,10 @@
-export const OPEN_MODAL = 'OPEN_MODAL';
+export const OPEN_SHOW_ANNOTATION = 'OPEN_SHOW_ANNOTATION';
 export const CLOSE_MODAL = 'CLOSE_MODAL';
 
-export const openModal = passageId => {
+export const openShowAnnotation = passageId => {
     // debugger
     return {
-        type: OPEN_MODAL,
+        type: OPEN_SHOW_ANNOTATION,
         passageId
     }
 }

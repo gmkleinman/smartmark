@@ -1,9 +1,10 @@
 import { connect } from 'react-redux'
 import PassageShow from './passage_show'
 import { fetchPassage, fetchPassages } from '../../actions/passage_actions'
-import { openModal } from '../../actions/modal_actions'
+import { openShowAnnotation } from '../../actions/modal_actions'
 import { fetchAnnotations } from '../../actions/annotation_actions'
 import { selectAnnotationsByPassageId } from '../../reducers/selectors'
+import { openNewAnnotation } from '../../actions/anno_modal_actions'
 
 
 const mSTP = (state, ownProps) => {
@@ -23,7 +24,8 @@ const mDTP = dispatch => {
         fetchPassage: passageId => dispatch(fetchPassage(passageId)),
         fetchPassages: () => dispatch(fetchPassages()),
         fetchAnnotations: () => dispatch(fetchAnnotations()),
-        openModal: passageId => dispatch(openModal(passageId)),
+        openShowAnnotation: passageId => dispatch(openShowAnnotation(passageId)),
+        openNewAnnotation: () => dispatch(openNewAnnotation()),
     }
 }
 

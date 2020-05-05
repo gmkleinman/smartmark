@@ -1,9 +1,9 @@
-import { OPEN_MODAL, CLOSE_MODAL } from '../actions/modal_actions';
+import { OPEN_SHOW_ANNOTATION, CLOSE_MODAL } from '../actions/modal_actions';
 
 const modalReducer = (state = null, action) => {
-  //debugger
+  debugger
   switch (action.type) {
-    case OPEN_MODAL:
+    case OPEN_SHOW_ANNOTATION:
       return action.passageId;
     case CLOSE_MODAL:
       return null;

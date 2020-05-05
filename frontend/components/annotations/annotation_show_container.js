@@ -6,16 +6,18 @@ import { closeModal } from '../../actions/modal_actions'
 
 const mSTP = (state, ownProps) => {
     // debugger
-
     let annotationId = state.ui.modal;
-    let annotations = selectAnnotationsByPassageId(state, ownProps.passageId);
-    let annotation = Object.values(annotations).find(annotation => annotation.id === annotationId);
+    let annotation;
+    let annotations;
+    
+    if (typeof annotationId === 'number') {
+        annotations = selectAnnotationsByPassageId(state, ownProps.passageId);
+        annotation = Object.values(annotations).find(annotation => annotation.id === annotationId);
+    }
 
     return(
         {
             annotation: annotation
-            // annotations: selectAnnotationsByPassageId(state, ownProps.passageId),
-            // annotationId: state.ui.modal,
         }
     )
 }
