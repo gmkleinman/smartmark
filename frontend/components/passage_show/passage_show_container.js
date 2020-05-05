@@ -18,7 +18,7 @@ const mSTP = (state, ownProps) => {
 
 
 const mDTP = dispatch => {
-    debugger    
+    // debugger    
     return {
         fetchPassage: passageId => dispatch(fetchPassage(passageId)),
         fetchPassages: () => dispatch(fetchPassages()),
