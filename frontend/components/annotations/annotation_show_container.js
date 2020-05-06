@@ -1,11 +1,12 @@
 import { connect } from 'react-redux'
 import AnnotationShow from './annotation_show'
-import { fetchAnnotation, fetchAnnotations } from '../../actions/annotation_actions'
+import { fetchAnnotation, fetchAnnotations, updateAnnotation, deleteAnnotation } from '../../actions/annotation_actions'
 import { selectAnnotationsByPassageId } from '../../reducers/selectors'
-import { closeNewAnnotation } from '../../actions/anno_modal_actions'
+import { closeModal } from '../../actions/modal_actions'
+
 
 const mSTP = (state, ownProps) => {
-    debugger
+    // debugger
     let annotationId = ownProps.annotationId;
     let annotation;
     let annotations;
@@ -17,7 +18,8 @@ const mSTP = (state, ownProps) => {
 
     return(
         {
-            annotation: annotation
+            annotation: annotation,
+            currentUser: state.entities.users[state.session.id],
         }
     )
 }
@@ -26,7 +28,9 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => ({
     fetchAnnotation: annotationId => dispatch(fetchAnnotation(annotationId)),
     fetchAnnotations: () => dispatch(fetchAnnotations()),
-    closeNewAnnotation: () => dispatch(closeNewAnnotation()),
+    closeModal: () => dispatch(closeModal()),
+    deleteAnnotation: annotationId => dispatch(deleteAnnotation(annotationId)),
+    updateAnnotation: annotationId => dispatch(updateAnnotation(annotationId)),
 })
 
 export default connect(mSTP, mDTP)(AnnotationShow);

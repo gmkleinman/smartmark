@@ -10,7 +10,7 @@ class PassageShow extends React.Component {
             selectionEnd: 0,
         }
 
-        this.clickedAnnotationId = 1;
+        this.clickedAnnotationId = 0;
         this.handleSelection = this.handleSelection.bind(this)
         this.handleShowAnnoClick = this.handleShowAnnoClick.bind(this)
     }
@@ -73,15 +73,12 @@ class PassageShow extends React.Component {
 
         return indices.sort(sortIndices);
     }
-
     
     handleShowAnnoClick(annotationId){
         this.clickedAnnotationId = annotationId;
         this.props.openModal('viewAnnotation')
     }
 
-    //this will need to be refactored to handle multiple highlights on the same line -> instead of return, how do I add things?
-    //I think I can do this recursively? rest of line -> recursive call
     highlighter(line, lineStartIdx, indices) {
         if(indices.length === 0) return line
         // indices is a 2d array of all annotation indices
@@ -100,7 +97,9 @@ class PassageShow extends React.Component {
                     <span offsetidx={annoStartIdx} className='highlighted' onClick={() => this.handleShowAnnoClick(annotationId)}>
                         {line.substring(annoStartIdx, annoEndIdx)}
                     </span>
-                    <span offsetidx={annoEndIdx}>{line.substring(annoEndIdx, lineEnd)}</span>
+                    <span offsetidx={annoEndIdx}>
+                        {this.highlighter(line.substring(annoEndIdx, lineEnd),lineStartIdx+annoEndIdx, indices)}
+                    </span>
                 </span>
             )
         }
@@ -122,6 +121,7 @@ class PassageShow extends React.Component {
                         {line.substring(0, annoEndIdx)}
                     </span>
                     <span offsetidx={annoEndIdx}>{line.substring(annoEndIdx, lineEnd)}</span>
+                    {this.highlighter(line.substring(annoStartIdx, annoEndIdx), lineStartIdx+annoEndIdx, indices)}
                 </span>
             )
 
