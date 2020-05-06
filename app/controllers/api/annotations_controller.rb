@@ -14,7 +14,8 @@ class Api::AnnotationsController < ApplicationController
     end
 
     def create
-        @annotation = Annotation.new(annotation_params)        
+        # debugger
+        @annotation = Annotation.new(annotation_params)     
         if @annotation.save
             render :show
         else
@@ -43,6 +44,5 @@ class Api::AnnotationsController < ApplicationController
     protected
     def annotation_params
         params.require(:annotation).permit(:body, :passage_id, :annotator_id, :upvote_count, :start_idx, :end_idx)
-        #too many params? can user sneak upvote_count through?
     end
 end

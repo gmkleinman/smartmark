@@ -13,6 +13,7 @@ const mSTP = (state, ownProps) => {
         {
             passage: state.entities.passages[ownProps.match.params.passageId],
             annotations: selectAnnotationsByPassageId(state, parseInt(ownProps.match.params.passageId)),
+            currentUser: state.entities.users[state.session.id],
         }
     )
 }

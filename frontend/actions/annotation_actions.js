@@ -30,12 +30,12 @@ export const fetchAnnotation = annotationId => dispatch => (
 )
 
 export const createAnnotation = annotation => dispatch => (
-    AnnotationApiUtil.fetchAnnotation(annotation)
+    AnnotationApiUtil.createAnnotation(annotation)
         .then(annotation => dispatch(receiveAnnotation(annotation)))
 )
 
 export const updateAnnotation = annotation => dispatch => (
-    AnnotationApiUtil.fetchAnnotation(annotation)
+    AnnotationApiUtil.updateAnnotation(annotation)
         .then(annotation => dispatch(receiveAnnotation(annotation)))
 )
 
