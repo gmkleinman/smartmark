@@ -24,12 +24,26 @@ class PassageShow extends React.Component {
     handleSelection() {
         if(!this.props.currentUser) return null //refactor to ask user to log in
         let selection = this.getSelectedIndices();
-        if(selection[0] > selection[1]) {
+        let existingIndices = this.getExistingIndices();
+        let overlappingIndices = false;
+
+        if(selection[0] > selection[1]) { //fix user selecting backwards
             [selection[0],selection[1]] = [selection[1],selection[0]]
         }
 
+        existingIndices.forEach(existingIndex => {
+            if( 
+                (selection[0] > existingIndex[0] && selection[0] < existingIndex[1]) || 
+                (selection[1] > existingIndex[0] && selection[1] < existingIndex[1]) || 
+                (selection[0] < existingIndex[0] && selection[1] > existingIndex[1])
+            ) {
+                overlappingIndices = true;
+            }
+            
+        });
+
         this.setState({selectionStart: selection[0], selectionEnd: selection[1]}, () => {
-            if(this.state.selectionStart != this.state.selectionEnd) {
+            if(this.state.selectionStart != this.state.selectionEnd && overlappingIndices == false) {
                 this.props.openModal('newAnnotation')
             }
         })
@@ -40,7 +54,7 @@ class PassageShow extends React.Component {
     getSelectedIndices() {
         //This recursively finds the offset based on offsetidx set during initial render
         function getTotalOffset(node) {
-            if(typeof node != HTMLElement) return 0; 
+            // if(typeof node != HTMLElement) return 0; this breaks it, but something like it should happen
             if (node.getAttribute('id') === 'passage') return 0;
             if (!node.getAttribute('offsetidx')) return getTotalOffset(node.parentNode);
             return parseInt(node.getAttribute('offsetidx')) + getTotalOffset(node.parentNode);
@@ -164,7 +178,7 @@ class PassageShow extends React.Component {
                 />
 
                     {/* SelectionIdxs: <br /> */}
-                    {this.state.selectionStart} , {this.state.selectionEnd}
+                    {/* {this.state.selectionStart} , {this.state.selectionEnd} */}
 
                     <div className='title'> {this.props.passage.title} </div>
                     <div className='author'> {this.props.passage.author} </div>
