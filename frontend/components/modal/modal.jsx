@@ -1,32 +1,36 @@
-// import React from 'react';
-// import AnnotationShowContainer from '../annotations/annotation_show_container';
+import React from 'react';
+// import { closeModal } from '../../actions_modal_actions';
+// import { connect } from 'react-redux'
+import AnnotationShowContainer from '../annotations/annotation_show_container';
+import AnnotationNewContainer from '../annotations/annotation_new_container';
 
-// function Modal(props) {
-//     if(!props.modal) {
-//         return null;
-//     }
+function Modal(props) {
+    if(!props.modal) {
+        return null;
+    }
 
-// //MODAL WAS CREATED FOR ANNOTATIONS, BUT IT NOW HAS ITS OWN. THIS CAN STILL BE USED FOR OTHERS IF NEEDED.
-
-//     //if modal is in state, return that modal, else null
-//     // let component;
-//     // switch (props.modal) {
-//     //     case 'annotations':
-//     //         component = <AnnotationShowContainer passageId={props.passageId}/>;
-//     //         break;
-//     //     default:
-//     //         return null;
-//     // }   
-
-
-//     return(
-//         <div className='modal-background' onClick={props.closeModal}>
-//             <div className='modal-child' onClick={e => e.stopPropagation()}>
-//                 { component }
-//             </div>
-//         </div>
-//     )
+    // if modal is in state, return that modal, else null
+    let component;
+    switch (props.modal) {
+        case 'viewAnnotation':
+            component = <AnnotationShowContainer passageId={props.passageId} annotationId={props.annotationId}/>;
+            break;
+        case 'newAnnotation':
+            component = <AnnotationNewContainer passageId={props.passageId} startIdx={props.startIdx} endIdx={props.endIdx} />
+            break;
+        default:
+            return null;
+    }   
 
 
-// }
-// export default Modal;
+    return(
+        <div className='modal-background' onClick={props.closeModal}>
+            <div className='modal-child' onClick={e => e.stopPropagation()}>
+                { component }
+            </div>
+        </div>
+    )
+
+
+}
+export default Modal;

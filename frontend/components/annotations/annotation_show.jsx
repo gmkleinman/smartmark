@@ -20,8 +20,8 @@ class AnnotationShow extends React.Component {
 
         return(
             <div className='modal-background' onClick={this.props.closeModal}>
+                
                 <div className='modal-child' onClick={e => e.stopPropagation()}>
-
                     <span className='passage-line' key={this.props.annotation.id}>
                     User #{this.props.annotation.annotator_id} says:<br /><br />
                     {this.props.annotation.body}<br /><br />

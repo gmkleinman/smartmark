@@ -5,7 +5,6 @@ export const openNewAnnotation = () => {
     // debugger
     return {
         type: OPEN_NEW_ANNOTATION,
-        // passageId
     }
 }
 

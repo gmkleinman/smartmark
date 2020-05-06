@@ -25,28 +25,18 @@ class AnnotationNew extends React.Component {
         e.preventDefault();
         // debugger
         this.props.createAnnotation(this.state);
+        this.props.closeModal();
     }
 
     render() {
         // debugger
-        if(!this.props.annoModal) return null;
+        if(!this.props.closeModal) return null;
 
         return(
-            <div className='modal-background' onClick={this.props.closeNewAnnotation}>
-                <div className='modal-child' onClick={e => e.stopPropagation()}>
+            <div>
+                <div>
                     Create a new Annotation!
                     <form>
-
-                        {/* refactor these errors for annotations */}
-                        {/* {this.props.errors.length !== 0 ? (
-                            <ul className='errors'>
-                                {this.props.errors.map((error, i) => (
-                                    <li key={`error-${i}`}>{error} </li>
-                                ))}
-                            </ul>
-                        ) : (
-                            []
-                        )} */}
 
                         
                         <label className='form-field'>

@@ -4,7 +4,6 @@ import annoModalReducer from './anno_modal_reducer';
 
 const uiReducer = combineReducers({
   modal: modalReducer,
-  annoModal: annoModalReducer,
 });
 
 export default uiReducer;

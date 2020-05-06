@@ -1,14 +1,13 @@
 import { connect } from 'react-redux'
 import AnnotationNew from './annotation_new'
-import { closeNewAnnotation } from '../../actions/anno_modal_actions'
 import { createAnnotation } from '../../actions/annotation_actions'
+import { closeModal } from '../../actions/modal_actions'
 
 //import openAnnotationNew to passage_show
 
 const mSTP = (state, ownProps) => {
     // debugger
     return({
-        annoModal: state.ui.annoModal,
         currentUser: state.entities.users[state.session.id],
         passageId: ownProps.passageId,
         startIdx: ownProps.startIdx,
@@ -18,7 +17,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = dispatch => {
     return ({
-        closeNewAnnotation: () => dispatch(closeNewAnnotation()),
+        closeModal: () => dispatch(closeModal()),
         createAnnotation: annotation => dispatch(createAnnotation(annotation)),
     })
 }

@@ -1,6 +1,5 @@
 import React from 'react'
-import AnnotationShowContainer from '../annotations/annotation_show_container'
-import AnnotationNewContainer from '../annotations/annotation_new_container'
+import ModalContainer from '../modal/modal_container'
 
 class PassageShow extends React.Component {
     constructor(props){
@@ -10,9 +9,10 @@ class PassageShow extends React.Component {
             selectionStart: 0,
             selectionEnd: 0,
         }
+
+        this.clickedAnnotationId = 1;
         this.handleSelection = this.handleSelection.bind(this)
         this.handleShowAnnoClick = this.handleShowAnnoClick.bind(this)
-        // this.handleNewAnnoClick = this.handleNewAnnoClick.bind(this)
     }
 
     componentDidMount(){
@@ -21,17 +21,20 @@ class PassageShow extends React.Component {
         this.props.fetchAnnotations();
     }
 
-    showAnnotationContainer() {
-        if(this.state.selectionStart != this.state.selectionEnd) {
-            return true;
-        }
-        return false;    
-    }
-
     handleSelection() {
         if(!this.props.currentUser) return null //refactor to ask user to log in
-        this.getSelectedIndices();
-        this.props.openNewAnnotation();
+        let selection = this.getSelectedIndices();
+        if(selection[0] > selection[1]) {
+            [selection[0],selection[1]] = [selection[1],selection[0]]
+        }
+
+        this.setState({selectionStart: selection[0], selectionEnd: selection[1]}, () => {
+            if(this.state.selectionStart != this.state.selectionEnd) {
+                this.props.openModal('newAnnotation')
+            }
+        })
+
+        return null;   
     }
 
     getSelectedIndices() {
@@ -48,7 +51,7 @@ class PassageShow extends React.Component {
         let startIdx = selection.anchorOffset+getTotalOffset(selection.anchorNode.parentNode)
         let endIdx = selection.focusOffset+getTotalOffset(selection.focusNode.parentNode)
 
-        this.setState({selectionStart: startIdx, selectionEnd: endIdx})
+        return [startIdx, endIdx]
     }
 
     getExistingIndices() {
@@ -73,7 +76,8 @@ class PassageShow extends React.Component {
 
     
     handleShowAnnoClick(annotationId){
-        this.props.openShowAnnotation(annotationId)
+        this.clickedAnnotationId = annotationId;
+        this.props.openModal('viewAnnotation')
     }
 
     //this will need to be refactored to handle multiple highlights on the same line -> instead of return, how do I add things?
@@ -147,15 +151,22 @@ class PassageShow extends React.Component {
 
     render() {
         if(!this.props.passage) return null
+        if(!this.props.openModal) return null
         // if(!this.props.annotations[0]) return null;
         // debugger
         return(
             <div id='passage-show-container'>
                 <div id='passage-container' onMouseUp={this.handleSelection}>
-                    {/* <button onClick={this.handleNewAnnoClick}>CLICK ME FOR ANNO NEW</button> */}
+
+                <ModalContainer
+                    passageId={this.props.passage.id}
+                    startIdx={this.state.selectionStart}
+                    endIdx={this.state.selectionEnd}
+                    annotationId={this.clickedAnnotationId}
+                />
+
                     {/* SelectionIdxs: <br /> */}
-                    {this.state.selectionStart}<br />
-                    {this.state.selectionEnd}
+                    {this.state.selectionStart} , {this.state.selectionEnd}
 
                     <div className='title'> {this.props.passage.title} </div>
                     <div className='author'> {this.props.passage.author} </div>
@@ -167,16 +178,7 @@ class PassageShow extends React.Component {
                 </div>
                 
                 <div>
-                   { this.showAnnotationContainer() ? (  
-                    <AnnotationNewContainer 
-                        passageId={this.props.passage.id}
-                        startIdx={this.state.selectionStart}
-                        endIdx={this.state.selectionEnd}
-                        />
-                    ) : (null)}
-
-
-                    <AnnotationShowContainer passageId={this.props.passage.id}/> 
+                    {/* temp placeholder for css spacing */}
                 </div>
 
             </div>

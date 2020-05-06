@@ -1,11 +1,12 @@
 import { connect } from 'react-redux'
 import PassageShow from './passage_show'
 import { fetchPassage, fetchPassages } from '../../actions/passage_actions'
-import { openShowAnnotation } from '../../actions/modal_actions'
+// import { openShowAnnotation } from '../../actions/modal_actions'
 import { fetchAnnotations } from '../../actions/annotation_actions'
 import { selectAnnotationsByPassageId } from '../../reducers/selectors'
-import { openNewAnnotation } from '../../actions/anno_modal_actions'
-
+// import { openNewAnnotation } from '../../actions/anno_modal_actions'
+import { openModal } from '../../actions/modal_actions'
+import { fetchAnnotation } from '../../util/annotation_api_util'
 
 const mSTP = (state, ownProps) => {
     // debugger
@@ -18,15 +19,15 @@ const mSTP = (state, ownProps) => {
     )
 }
 
-
 const mDTP = dispatch => {
     // debugger    
     return {
         fetchPassage: passageId => dispatch(fetchPassage(passageId)),
         fetchPassages: () => dispatch(fetchPassages()),
         fetchAnnotations: () => dispatch(fetchAnnotations()),
-        openShowAnnotation: passageId => dispatch(openShowAnnotation(passageId)),
-        openNewAnnotation: () => dispatch(openNewAnnotation()),
+        // openShowAnnotation: passageId => dispatch(openShowAnnotation(passageId)),
+        // openNewAnnotation: () => dispatch(openNewAnnotation()),
+        openModal: modal => dispatch(openModal(modal)),
     }
 }
 
