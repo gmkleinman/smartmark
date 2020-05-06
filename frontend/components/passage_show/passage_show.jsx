@@ -133,7 +133,6 @@ class PassageShow extends React.Component {
     passageWithLineIndices() {
         let indices = this.getExistingIndices();
         let endIdx = 0;
-        // debugger
 
         return ( 
             <div>
@@ -152,8 +151,6 @@ class PassageShow extends React.Component {
     render() {
         if(!this.props.passage) return null
         if(!this.props.openModal) return null
-        // if(!this.props.annotations[0]) return null;
-        // debugger
         return(
             <div id='passage-show-container'>
                 <div id='passage-container' onMouseUp={this.handleSelection}>

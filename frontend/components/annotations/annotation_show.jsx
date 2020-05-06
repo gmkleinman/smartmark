@@ -15,8 +15,9 @@ class AnnotationShow extends React.Component {
     }
 
     handleUpdateClick() {
-        this.props.updateAnnotation(this.props.annotation.id)
         this.props.closeModal();
+        this.props.openModal('editAnnotation');
+        // this.props.updateAnnotation(this.props.annotation.id)
     }
 
     addOwnerButtons() {
@@ -28,7 +29,7 @@ class AnnotationShow extends React.Component {
                     </button>
 
                     <button onClick={() => this.handleUpdateClick()}>
-                    Update
+                        Update
                     </button>
                 </div>
             )

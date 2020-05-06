@@ -1,15 +1,13 @@
 import React from 'react';
-// import { closeModal } from '../../actions_modal_actions';
-// import { connect } from 'react-redux'
 import AnnotationShowContainer from '../annotations/annotation_show_container';
 import AnnotationNewContainer from '../annotations/annotation_new_container';
+import AnnotationEditContainer from '../annotations/annotation_edit_container';
 
 function Modal(props) {
     if(!props.modal) {
         return null;
     }
 
-    // if modal is in state, return that modal, else null
     let component;
     switch (props.modal) {
         case 'viewAnnotation':
@@ -17,6 +15,9 @@ function Modal(props) {
             break;
         case 'newAnnotation':
             component = <AnnotationNewContainer passageId={props.passageId} startIdx={props.startIdx} endIdx={props.endIdx} />
+            break;
+        case 'editAnnotation':
+            component = <AnnotationEditContainer passageId={props.passageId} annotationId={props.annotationId} />
             break;
         default:
             return null;

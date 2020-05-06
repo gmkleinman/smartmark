@@ -42,7 +42,7 @@ class AnnotationNew extends React.Component {
                         <label className='form-field'>
                             <input 
                             type="textarea" 
-                            value={this.state.username}
+                            value={this.state.body}
                             onChange={this.update('body')}
                             />
                         </label>
