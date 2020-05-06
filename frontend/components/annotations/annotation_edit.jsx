@@ -5,39 +5,34 @@ class AnnotationEdit extends React.Component {
     constructor(props){
         super(props)
         
-        // this.state = {
-        //     body: this.props.annotation.body,
-        //     upvote_count: 0,
-        //     passage_id: this.props.annotation.passageId,
-        //     annotator_id: this.props.annotation.currentUser.id, 
-        //     start_idx: this.props.annotation.startIdx, 
-        //     end_idx: this.props.annotation.endIdx, 
-        // }
         this.state = {
-            annotation: {
                 body: '',
                 upvote_count: 0,
                 passage_id: 0,
                 annotator_id: 0, 
                 start_idx: 0, 
                 end_idx: 0, 
-            }
         }
-        this.annotation = {};
-
         
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
-        // this.annotation = fetchAnnotation(this.props.annotationId)
-        // debugger
-        this.setState({ annotation: fetchAnnotation(this.props.annotationId)})
+        let anno = this.props.annotation;
+        this.setState({
+            id: anno.id,
+            body: anno.body,
+            upvote_count: anno.upvote_count,
+            passage_id: anno.passage_id,
+            annotator_id: anno.annotator_id, 
+            start_idx: anno.start_idx, 
+            end_idx: anno.end_idx,           
+         })
     }
 
     update(field) {
         return (e) => {
-            this.setState({ [field]: e.currentTarget.value })
+            this.setState( { [field]: e.currentTarget.value } )
         }
     }
 
@@ -55,12 +50,10 @@ class AnnotationEdit extends React.Component {
                 <div>
                     Update Existing Annotation
                     <form>
-                        Body: {this.state.annotation.body}
 
-                        <label className='form-field'>
-                            <input 
-                            type="textarea" 
-                            value={this.state.annotation.body}
+                        <label className=''>
+                            <textarea
+                            value={this.state.body}
                             onChange={this.update('body')}
                             />
                         </label>

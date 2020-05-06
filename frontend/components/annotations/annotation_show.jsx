@@ -21,6 +21,7 @@ class AnnotationShow extends React.Component {
     }
 
     addOwnerButtons() {
+        if(!this.props.currentUser) return null;
         if(this.props.currentUser.id === this.props.annotation.annotator_id) {
             return(
                 <div>

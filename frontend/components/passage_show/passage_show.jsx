@@ -40,6 +40,7 @@ class PassageShow extends React.Component {
     getSelectedIndices() {
         //This recursively finds the offset based on offsetidx set during initial render
         function getTotalOffset(node) {
+            if(typeof node != HTMLElement) return 0; 
             if (node.getAttribute('id') === 'passage') return 0;
             if (!node.getAttribute('offsetidx')) return getTotalOffset(node.parentNode);
             return parseInt(node.getAttribute('offsetidx')) + getTotalOffset(node.parentNode);

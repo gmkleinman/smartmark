@@ -23,13 +23,11 @@ class AnnotationNew extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // debugger
         this.props.createAnnotation(this.state);
         this.props.closeModal();
     }
 
     render() {
-        // debugger
         if(!this.props.closeModal) return null;
 
         return(
@@ -38,10 +36,8 @@ class AnnotationNew extends React.Component {
                     Create a new Annotation!
                     <form>
 
-                        
                         <label className='form-field'>
-                            <input 
-                            type="textarea" 
+                            <textarea
                             value={this.state.body}
                             onChange={this.update('body')}
                             />
