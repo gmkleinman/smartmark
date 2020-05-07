@@ -15,27 +15,19 @@ class PassageIndex extends React.Component {
         return(
             <div id='index-page'>
                 <div className='index-container'>
-                    <h1>PASSAGES</h1>
-                    <table>
-                        <tbody>
-                            {this.props.passages.map((passage, i) => (
-                                <tr key={`passage-index-row-${i+1}`}> 
-
-                                    <td id='passage-index-item'>{i+1}</td>
-
-                                    <td id='passage-index-item'>
-                                        <img src={`${passage.image_url}`} />
-                                    </td>
-
-                                    <td id='passage-index-item'>
-                                        <Link className='redirect-text' to={`/passages/${passage.id}`}>{passage.title}</Link>
-                                    </td>
-
-                                    <td id='passage-index-item'>{passage.author}</td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
+                    <h1 id='passage-index-header'>PASSAGES</h1>
+                    <div>
+                        {this.props.passages.map((passage, i) => (
+                            <Link key={`${passage.id}`} id='passage-index-row' to={`/passages/${passage.id}`}>
+                                <div className='index-line-item'>
+                                    <span className='index-item-count'>{i+1}</span>
+                                    <span className='index-item-image'><img src={`${passage.image_url}`} /></span>
+                                    <span className='index-item-title'> {passage.title}</span>
+                                    <span className='index-item-author'>{passage.author}</span>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
                 </div>
             </div>
         )

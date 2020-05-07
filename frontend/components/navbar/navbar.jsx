@@ -28,14 +28,19 @@ class NavBar extends React.Component {
 
     render() {
         return(
-            <div className='nav-bar'>
-                <span id='nav-left-container' className='nav-container'>
+            <div>
+                <div className='nav-bar'>
+                    <span id='nav-left-container' className='nav-container'>
 
-                </span>
-                <span id='nav-mid-container' className='nav-container'>
-                    <Link className="home-text" to="/">S M A R T M A R K</Link>
-                </span>
-                {this.loginRender()}
+                    </span>
+                    <span id='nav-mid-container' className='nav-container'>
+                        <Link className="home-text" to="/">S M A R T M A R K</Link>
+                    </span>
+                    {this.loginRender()}
+                </div>
+                <div className='links-bar'>
+                
+                </div>
             </div>
         )
     }

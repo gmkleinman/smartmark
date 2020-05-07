@@ -1,6 +1,6 @@
 #index-page {
     text-decoration: none;
-    background-color: #3AAFA9;
+    background-color: #FFFFFF;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -12,10 +12,70 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 50px;
+}
+
+#passage-index-header {
+    font-weight: 600;
+    font-size: 80px;
+    margin: 50px;
+    color: rgb(6, 17, 20);
+    font-family: din-condensed, sans-serif;
+}
+
+#passage-index-row {
+    text-decoration: none;
+    /* width: 1500px; */
+    height: 77px;
+    font-size: 24px;
+    color: black;
+}
+
+.index-line-item {
+    display: flex;
+    flex-direction: row;
+    border-bottom: .15rem solid rgb(233,233,233);
+    min-height: 77px;
+    /* align-content: center; */
+    /* justify-content: center; */
+    padding-top: 10px;
+}
+
+.index-line-item:hover {
+    background: rgb(233, 233, 233)
 }
 
 #passage-index-item {
-    padding: 25px;
+    display: flex;
+    text-decoration: none;
+}
+
+.index-item-count {
+    display: flex;
+    margin-right: 70px;
+    margin-left: 25px;
+    margin-top: 24px;
+}
+
+.index-item-image {
+    display: flex;
+    margin-right: 70px;
+    margin-top: 4px;
+}
+
+.index-item-title {
+    display: flex;
+    width: 350px;
+    white-space: nowrap;
+    margin-top: 24px;
+}
+
+.index-item-author {
+    display: inline-block;
+    margin-right: 25px;
+    margin-top: 24px;
+    /* white-space: nowrap; */
+
 }
 
 img {

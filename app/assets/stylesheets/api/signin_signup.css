@@ -7,15 +7,14 @@
 
 #form-page {
     text-decoration: none;
-    background-color: #3AAFA9;
-    display: flex;
+    background-color: black;
     flex-direction: column;
-    justify-content: center;
-    justify-items: center;
     align-content: center;
     align-items: center;
-    /* font-family: din-condensed, sans-serif; */
+    font-family: din-condensed, sans-serif;
     font-style: normal;
+    position: relative;
+    display: flex;
 }
 
 .auth-container {
@@ -23,11 +22,19 @@
     justify-content: center;
     justify-items: center;
     text-align: left;
-    background-color: #2B7A78;
-    color: #DEF2F1;
+    background-color: #363636;
+    color: #FFFFFF;
     padding: 24px;
     min-width: 300px;
     font-size: 14px;
+}
+
+.auth-header {
+    font-weight: 600;
+    font-size: 62px;
+    margin: 35px;
+    color: #FFFFFF;
+    font-family: din-condensed, sans-serif;
 }
 
 .auth-form {
@@ -45,17 +52,19 @@ input {
 }
 
 .button {
-    background-color: #DEF2F1;
+    background-color: #262626;
     width: 100px;
     margin: 10px;
+    color: #FFFFFF;
   }
 
 .redirect-text {
     margin: 20px;
-    color: rgb(6, 17, 20);
+    color: #FFFFFF;
     font-weight: 400;
 }
 
 .link {
-    color: rgb(6, 17, 20);
+    color: #5BA7C2;
+    text-decoration: none;
 }

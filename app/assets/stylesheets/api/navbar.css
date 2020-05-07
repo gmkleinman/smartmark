@@ -1,9 +1,9 @@
 .nav-bar {
     display: flex;
-    min-height: 50px;
+    min-height: 40px;
     align-items: center;
     justify-content: space-between;
-    background-color: #2B7A78;
+    background-color: #FFFF64;
 }
 
 .nav-container {
@@ -15,18 +15,20 @@
 #nav-right-container {
     display: flex;
     font-family: 'Roboto', sans-serif;
+    font-size: 12px;
 }
 
 .greeting-text {
     text-decoration: none;
-    color: #DEF2F1;
+    color: black;
     padding-right: 15px;
-    padding-left: 15px
+    padding-left: 15px;
+    font-size: 12px;
 }
 
 #nav-mid-container {
     display: flex;
-    font-size: 25px;
+    font-size: 19px;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -37,11 +39,16 @@
 .home-text {
     text-decoration: none;
     text-justify: center;
-    color: #DEF2F1;
+    color:black;
 }
 
 #logout {
     background-color: #DEF2F1;
     width: 75px;
     margin-right: 25px;
+}
+
+.links-bar {
+    height: 41px;
+    background-color: #121212;
 }

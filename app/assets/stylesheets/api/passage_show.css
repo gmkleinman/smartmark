@@ -1,7 +1,7 @@
 #passage-show-container {
     display: flex;
     text-decoration: none;
-    background-color: #3AAFA9;
+    background-color: #FFFFFF;
     font-family: din-condensed, sans-serif;
     font-style: normal;
     justify-content: space-evenly;
@@ -9,19 +9,20 @@
 
 #passage-container {
     padding-right: 300px;
+    padding-bottom: 75px;
 }
 /* 
 #annotations-container {
     margin: 1px;
 } */
 
-#passage {
-    /* display: flex;
-    flex-direction: column; */
-}
+/* #passage {
+    display: flex;
+    flex-direction: column;
+} */
 
 .passage-line {
-    padding: 4px;
+    padding: 3px;
     font-weight: 500;
     font-size: 18px;
 }
@@ -40,9 +41,13 @@
     font-size: 20px;
     font-family: din-condensed, sans-serif;
     padding-bottom: 40px;
-
 }
 
 .highlighted {
-    background-color: yellow;
+    background-color: #99F2A5;
+}
+
+.highlighted:hover {
+    /* background-color: #38EF51; */
+    cursor: pointer;
 }
