@@ -168,18 +168,17 @@ class PassageShow extends React.Component {
         if(!this.props.openModal) return null
         return(
             <div id='passage-show-container'>
-                <div id='passage-container' onMouseUp={this.handleSelection}>
-
                 <ModalContainer
                     passageId={this.props.passage.id}
                     startIdx={this.state.selectionStart}
                     endIdx={this.state.selectionEnd}
                     annotationId={this.clickedAnnotationId}
                 />
+                <div className='passage-sides'></div>
 
+                <div id='passage-container' onMouseUp={this.handleSelection}>
                     {/* SelectionIdxs: <br /> */}
                     {/* {this.state.selectionStart} , {this.state.selectionEnd} */}
-
                     <div className='title'> {this.props.passage.title} </div>
                     <div className='author'> {this.props.passage.author} </div>
                     
@@ -193,6 +192,7 @@ class PassageShow extends React.Component {
                     {/* temp placeholder for css spacing */}
                 </div>
 
+                <div className='passage-sides'></div>
             </div>
         )
     }

@@ -16,6 +16,7 @@ class PassageIndex extends React.Component {
             <div id='index-page'>
                 <div className='index-container'>
                     <h1 id='passage-index-header'>PASSAGES</h1>
+                    <h2 id='passage-index-subheader'>TRENDING ON SMARTMARK</h2>
                     <div>
                         {this.props.passages.map((passage, i) => (
                             <Link key={`${passage.id}`} id='passage-index-row' to={`/passages/${passage.id}`}>

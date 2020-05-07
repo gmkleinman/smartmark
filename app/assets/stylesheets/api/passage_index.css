@@ -18,9 +18,19 @@
 #passage-index-header {
     font-weight: 600;
     font-size: 80px;
-    margin: 50px;
+    margin: 0;
+    margin-top: 60px;
     color: rgb(6, 17, 20);
     font-family: din-condensed, sans-serif;
+}
+
+#passage-index-subheader {
+    color: rgb(255, 20, 100);
+    font-size: 0.875rem;
+    font-weight: 400;
+    margin:0;
+    margin-top: 25px;
+    margin-bottom: 50px;
 }
 
 #passage-index-row {
@@ -75,7 +85,6 @@
     margin-right: 25px;
     margin-top: 24px;
     /* white-space: nowrap; */
-
 }
 
 img {

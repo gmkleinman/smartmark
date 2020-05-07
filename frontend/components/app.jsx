@@ -12,16 +12,17 @@ import ModalContainer from './modal/modal_container'
 
 const App = () => {
     return (
-        <div>
+        <div id='app'>
             {/* <ModalContainer /> */}
             <NavBarContainer/>
-            <Switch> 
-                <AuthRoute path="/signup" component={SignUpContainer} />
-                <AuthRoute path="/signin" component={SignInContainer} />
-                <Route exact path='/passages/:passageId' component={PassageShowContainer}/>
-                {/* <Route path="/passages/:passageId/annotations" component={AnnotationShowContainer} /> */}
-                <Route path="/" component={PassageIndexContainer}/>
-            </Switch>
+            <div id='main'>
+                <Switch> 
+                    <AuthRoute path="/signup" component={SignUpContainer} />
+                    <AuthRoute path="/signin" component={SignInContainer} />
+                    <Route exact path='/passages/:passageId' component={PassageShowContainer}/>
+                    <Route path="/" component={PassageIndexContainer}/>
+                </Switch>
+            </div>
             
             <Footer />
         </div>
