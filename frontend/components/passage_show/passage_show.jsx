@@ -22,33 +22,38 @@ class PassageShow extends React.Component {
     }
 
     handleSelection() {
-        if(!this.props.currentUser) return null //refactor to ask user to log in
-        let selection = this.getSelectedIndices();
-        let existingIndices = this.getExistingIndices();
-        let overlappingIndices = false;
+        if(!this.props.currentUser) {
+            this.props.openModal('requireLogin')
+        } else {
 
-        if(selection[0] > selection[1]) { //fix user selecting backwards
-            [selection[0],selection[1]] = [selection[1],selection[0]]
+            //refactor to ask user to log in
+            let selection = this.getSelectedIndices();
+            let existingIndices = this.getExistingIndices();
+            let overlappingIndices = false;
+
+            if(selection[0] > selection[1]) { //fix user selecting backwards
+                [selection[0],selection[1]] = [selection[1],selection[0]]
+            }
+
+            existingIndices.forEach(existingIndex => {
+                if( 
+                    (selection[0] > existingIndex[0] && selection[0] < existingIndex[1]) || 
+                    (selection[1] > existingIndex[0] && selection[1] < existingIndex[1]) || 
+                    (selection[0] < existingIndex[0] && selection[1] > existingIndex[1])
+                ) {
+                    overlappingIndices = true;
+                }
+                
+            });
+
+            this.setState({selectionStart: selection[0], selectionEnd: selection[1]}, () => {
+                if(this.state.selectionStart != this.state.selectionEnd && overlappingIndices == false) {
+                    this.props.openModal('newAnnotation')
+                }
+            })
+
+            return null;   
         }
-
-        existingIndices.forEach(existingIndex => {
-            if( 
-                (selection[0] > existingIndex[0] && selection[0] < existingIndex[1]) || 
-                (selection[1] > existingIndex[0] && selection[1] < existingIndex[1]) || 
-                (selection[0] < existingIndex[0] && selection[1] > existingIndex[1])
-            ) {
-                overlappingIndices = true;
-            }
-            
-        });
-
-        this.setState({selectionStart: selection[0], selectionEnd: selection[1]}, () => {
-            if(this.state.selectionStart != this.state.selectionEnd && overlappingIndices == false) {
-                this.props.openModal('newAnnotation')
-            }
-        })
-
-        return null;   
     }
 
     getSelectedIndices() {
@@ -168,12 +173,7 @@ class PassageShow extends React.Component {
         if(!this.props.openModal) return null
         return(
             <div id='passage-show-container'>
-                <ModalContainer
-                    passageId={this.props.passage.id}
-                    startIdx={this.state.selectionStart}
-                    endIdx={this.state.selectionEnd}
-                    annotationId={this.clickedAnnotationId}
-                />
+
                 <div className='passage-sides'></div>
 
                 <div id='passage-container' onMouseUp={this.handleSelection}>
@@ -189,7 +189,12 @@ class PassageShow extends React.Component {
                 </div>
                 
                 <div>
-                    {/* temp placeholder for css spacing */}
+                    <ModalContainer
+                        passageId={this.props.passage.id}
+                        startIdx={this.state.selectionStart}
+                        endIdx={this.state.selectionEnd}
+                        annotationId={this.clickedAnnotationId}
+                    />
                 </div>
 
                 <div className='passage-sides'></div>

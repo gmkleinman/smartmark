@@ -15,6 +15,7 @@ class SignUp extends React.Component {
 
     componentDidMount() {
         this.props.clearSessionErrors()
+        this.props.closeModal();
     }
 
     update(field) {

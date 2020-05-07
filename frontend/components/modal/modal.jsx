@@ -2,6 +2,7 @@ import React from 'react';
 import AnnotationShowContainer from '../annotations/annotation_show_container';
 import AnnotationNewContainer from '../annotations/annotation_new_container';
 import AnnotationEditContainer from '../annotations/annotation_edit_container';
+import RequireLoginContainer from '../annotations/require_login_container';
 
 function Modal(props) {
     if(!props.modal) {
@@ -18,6 +19,9 @@ function Modal(props) {
             break;
         case 'editAnnotation':
             component = <AnnotationEditContainer passageId={props.passageId} annotationId={props.annotationId} />
+            break;
+        case 'requireLogin':
+            component = <RequireLoginContainer />;
             break;
         default:
             return null;
