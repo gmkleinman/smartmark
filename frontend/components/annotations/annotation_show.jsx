@@ -1,4 +1,5 @@
 import React from 'react'
+import { fetchUser } from '../../actions/user_actions';
 
 class AnnotationShow extends React.Component {
     constructor(props){
@@ -6,7 +7,7 @@ class AnnotationShow extends React.Component {
     }
     
     componentDidMount() {
-        //fetchuser here, so we know who wrote the annotation
+        fetchUser(this.props.annotation.annotator_id);
     }
 
     handleDeleteClick(){
@@ -24,12 +25,11 @@ class AnnotationShow extends React.Component {
         if(this.props.currentUser.id === this.props.annotation.annotator_id) {
             return(
                 <div>
-                    <button onClick={() => this.handleDeleteClick()}>
-                        Delete
+                    <button id='anno-button' onClick={() => this.handleUpdateClick()}>
+                        <span>Edit</span>
                     </button>
-
-                    <button onClick={() => this.handleUpdateClick()}>
-                        Update
+                    <button id='anno-button' onClick={() => this.handleDeleteClick()}>
+                        <span>Delete</span>
                     </button>
                 </div>
             )
@@ -42,10 +42,14 @@ class AnnotationShow extends React.Component {
         if(!this.props.closeModal) return null;
 
         return(
-            <div>
-                User  #{this.props.annotation.annotator_id} says:<br /><br />
-                {this.props.annotation.body}<br /><br />
-                Number of upvotes: {this.props.annotation.upvote_count} <br />
+            <div className='annotation-show-container'>
+                {/* this state users: {this.props.users} */}
+
+                User  #{this.props.annotation.annotator_id} says:
+                <div className='annotation'>
+                    {this.props.annotation.body}
+                </div>
+                {/* Number of upvotes: {this.props.annotation.upvote_count} <br /> */}
                 {this.addOwnerButtons()}
             </div>
         )

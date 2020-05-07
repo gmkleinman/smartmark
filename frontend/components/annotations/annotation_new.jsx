@@ -33,18 +33,21 @@ class AnnotationNew extends React.Component {
         return(
             <div>
                 <div>
-                    Create a new Annotation!
                     <form>
-
                         <label className='form-field'>
                             <textarea
-                            value={this.state.body}
-                            onChange={this.update('body')}
+                                className='anno-textarea'
+                                rows='12'
+                                cols='45'
+                                value={this.state.body}
+                                onChange={this.update('body')}
+                                placeholder='Type your annotation in here!'
                             />
-                        </label>
-                        
-                        <button className='button' onClick={this.handleSubmit}>Save</button>
-                    </form> <br/>
+                        </label><br />
+                        <div id='create-button'>
+                            <button id='anno-button' onClick={this.handleSubmit}>Save</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         )

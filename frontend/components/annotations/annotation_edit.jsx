@@ -48,18 +48,21 @@ class AnnotationEdit extends React.Component {
         return(
             <div>
                 <div>
-                    Update Existing Annotation
                     <form>
 
-                        <label className=''>
+                        <label className='form-field'>
                             <textarea
+                            className='anno-textarea'
+                            rows='12'
+                            cols='45'
                             value={this.state.body}
                             onChange={this.update('body')}
                             />
                         </label>
-                        
-                        <button className='button' onClick={this.handleSubmit}>Save</button>
-                    </form> <br/>
+                        <div id='create-button'>
+                            <button id='anno-button' onClick={this.handleSubmit}>Save</button>
+                        </div>
+                    </form> 
                 </div>
             </div>
         )

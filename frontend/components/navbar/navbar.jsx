@@ -9,12 +9,12 @@ class NavBar extends React.Component {
     loginRender() {
         return(
             this.props.currentUser ? (
-                <span id='nav-left-container' className='nav-container'>
-                    <span className='greeting-text'>Hi, {this.props.currentUser.username}</span>
+                <span id='nav-right-loggedin' className='nav-container'>
+                    {/* <span className='greeting-text'>Hi, {this.props.currentUser.username}</span> */}
                     <button id='logout' onClick={this.props.logout}>LOG OUT</button>
                 </span>
             ) : (
-                <span id='nav-right-container' className='nav-container'>
+                <span id='nav-right-loggedout' className='nav-container'>
                     <span>
                         <Link className="greeting-text" to="/signup">SIGN UP</Link>
                     </span>

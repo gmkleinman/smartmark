@@ -26,25 +26,6 @@ users = User.create([
 
 passages = Passage.create([
     {
-        title: "Sonnets No. 43",
-        author: "Elizabeth Barrett Browning",
-        body: "How do I love thee? Let me count the ways.\n
-            I love thee to the depth and breadth and height\n
-            My soul can reach, when feeling out of sight\n
-            For the ends of being and ideal grace.\n
-            I love thee to the level of every day’s\n
-            Most quiet need, by sun and candle-light.\n
-            I love thee freely, as men strive for right.\n
-            I love thee purely, as they turn from praise.\n
-            I love thee with the passion put to use\n
-            In my old griefs, and with my childhood’s faith.\n
-            I love thee with a love I seemed to lose\n
-            With my lost saints. I love thee with the breath,\n
-            Smiles, tears, of all my life; and, if God choose,\n
-            I shall but love thee better after death.\n",
-        image_url: 'Elizabeth_Barrett_Browning.jpg',
-    } ,
-    {
         title: "Ozymandias",
         author: "Percy Shelley",
         body: "I met a traveller from an antique land,\n
@@ -63,6 +44,25 @@ passages = Passage.create([
             The lone and level sands stretch far away.\n",
         image_url: 'Percy_Shelley.jpg'
     },
+    {
+        title: "Sonnets No. 43",
+        author: "Elizabeth Barrett Browning",
+        body: "How do I love thee? Let me count the ways.\n
+            I love thee to the depth and breadth and height\n
+            My soul can reach, when feeling out of sight\n
+            For the ends of being and ideal grace.\n
+            I love thee to the level of every day’s\n
+            Most quiet need, by sun and candle-light.\n
+            I love thee freely, as men strive for right.\n
+            I love thee purely, as they turn from praise.\n
+            I love thee with the passion put to use\n
+            In my old griefs, and with my childhood’s faith.\n
+            I love thee with a love I seemed to lose\n
+            With my lost saints. I love thee with the breath,\n
+            Smiles, tears, of all my life; and, if God choose,\n
+            I shall but love thee better after death.\n",
+        image_url: 'Elizabeth_Barrett_Browning.jpg',
+    } ,
     {
         title: 'The Road Not Taken',
         author: 'Robert Frost',
@@ -89,7 +89,7 @@ passages = Passage.create([
             Two roads diverged in a wood, and I—\n
             I took the one less traveled by,\n
             And that has made all the difference.",
-        image_url: 'Edgar_Allan_Poe.jpg',
+        image_url: 'robert_frost.jpg',
     },
     {
         title: "Jabberwocky",
@@ -130,24 +130,72 @@ passages = Passage.create([
             And the mome raths outgrabe.",
         image_url: 'Lewis_Carroll.jpg',
     },
+    {
+        title: "The Rum Tum Tugger",
+        author: "T.S. Eliot",
+        body: "The Rum Tum Tugger is a Curious Cat:\n
+            If you offer him pheasant he would rather have grouse.\n
+            If you put him in a house he would much prefer a flat,\n
+            If you put him in a flat then he'd rather have a house.\n
+            If you set him on a mouse then he only wants a rat,\n
+            If you set him on a rat then he'd rather chase a mouse.\n
+            Yes the Rum Tum Tugger is a Curious Cat--\n
+            And there isn't any call for me to shout it:\n
+            For he will do\n
+            As he do do\n
+            And there's no doing anything about it!\n
+            \n
+            The Rum Tum Tugger is a terrible bore:\n
+            When you let him in, then he wants to be out;\n
+            He's always on the wrong side of every door,\n
+            And as soon as he's at home, then he'd like to get about.\n
+            He likes to lie in the bureau drawer,\n
+            But he makes such a fuss if he can't get out.\n
+            \n
+            Yes the Rum Tum Tugger is a Curious Cat--\n
+            And there isn't any use for you to doubt it:\n
+            For he will do\n
+            As he do do\n
+            And there's no doing anything about it!\n
+            \n
+            The Rum Tum Tugger is a curious beast:\n
+            His disobliging ways are a matter of habit.\n
+            If you offer him fish then he always wants a feast;\n
+            When there isn't any fish then he won't eat rabbit.\n
+            If you offer him cream then he sniffs and sneers,\n
+            For he only likes what he finds for himself;\n
+            \n
+            So you'll catch him in it right up to the ears,\n
+            If you put it away on the larder shelf.\n
+            The Rum Tum Tugger is artful and knowing,\n
+            The Rum Tum Tugger doesn't care for a cuddle;\n
+            But he'll leap on your lap in the middle of your sewing,\n
+            For there's nothing he enjoys like a horrible muddle.\n
+            Yes the Rum Tum Tugger is a Curious Cat--\n
+            And there isn't any need for me to spout it:\n
+            For he will do\n
+            As he do do\n
+            And theres no doing anything about it!\n",
+        image_url: 'ts_eliot.jpg',
+    },
 ])
 
 annotations = Annotation.create([
     {
-        body: 'DELETE THIS NEPHEW.....',
-        upvote_count: -5,
-        passage_id: passages[0].id,
+        body: "Omg I just love what she's saying here, it's the reason I started my poetry farm. It's quite beautiful, with pages running all over the place. They get lonely sometimes though, probably similar to how Ms. Browning was feeling.",
+        upvote_count: 15,
+        passage_id: passages[1].id,
         annotator_id: users[0].id,
-        start_idx: 0,
-        end_idx: 42,
+        start_idx: 219,
+        end_idx: 311,
     },
     {
-        body: "I don't always make annotations, but when I do, they're not very useful.",
+        body: "This is probably a deep poem about the mortality of man and how time makes fools of us all, but all I can think is how great of a narrator Leonard Nimoy was for Civilization IV.",
         upvote_count: 1,
-        passage_id: passages[1].id,
+        passage_id: passages[0].id,
         annotator_id: users[1].id,
-        start_idx: 100,
-        end_idx: 130,
+        start_idx: 523,
+        end_idx: 613,
     },
     {
         body: "When you realize you want to spend the rest of your life with somebody, you want the rest of your life to start as soon as possible.",
@@ -162,31 +210,31 @@ annotations = Annotation.create([
         upvote_count: 50,
         passage_id: passages[2].id,
         annotator_id: users[0].id,
-        start_idx: 400,
-        end_idx: 450,
+        start_idx: 352,
+        end_idx: 365,
     },
     {
-        body: "Everything the light touches is our kingdom.",
+        body: "Look, you can't just make words up. If everybody made words up, we'd never be able to discuss anything. Unless everybody made the same words up and they had the same meanings, and we all knew it because we're telepathic or something. That's cromulent enough.",
         upvote_count: 4,
-        passage_id: passages[0].id,
+        passage_id: passages[3].id,
         annotator_id: users[1].id,
-        start_idx: 500,
-        end_idx: 550,
+        start_idx: 0,
+        end_idx: 159,
     },
-    {
-        body: "I like chicken, I like liver, meow mix meow mix please deliver.",
-        upvote_count: 10000,
-        passage_id: passages[2].id,
-        annotator_id: users[0].id,
-        start_idx: 560,
-        end_idx: 750,
-    },
-    {
-        body: "You put the lime in the coconut, you drink the bowl up",
-        upvote_count: 71,
-        passage_id: passages[2].id,
-        annotator_id: users[2].id,
-        start_idx: 800,
-        end_idx: 1000,
-    },
+    # {
+    #     body: "I like chicken, I like liver, meow mix meow mix please deliver.",
+    #     upvote_count: 10000,
+    #     passage_id: passages[2].id,
+    #     annotator_id: users[0].id,
+    #     start_idx: 560,
+    #     end_idx: 750,
+    # },
+    # {
+    #     body: "You put the lime in the coconut, you drink the bowl up",
+    #     upvote_count: 71,
+    #     passage_id: passages[2].id,
+    #     annotator_id: users[2].id,
+    #     start_idx: 800,
+    #     end_idx: 1000,
+    # },
 ])

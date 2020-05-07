@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import usersReducer from "./users_reducer";
+import usersReducer from "./users_session_reducer";
 import passagesReducer from "./passages_reducer";
 import annotationsReducer from "./annotations_reducer"
 
