@@ -172,32 +172,45 @@ class PassageShow extends React.Component {
         if(!this.props.passage) return null
         if(!this.props.openModal) return null
         return(
-            <div id='passage-show-container'>
+            <div>
+                <div className='passage-show-header'>
+                    <div className='header-sides'></div>
+                        <div className='passage-internal-header'>
+                            <div className='test'></div>
+                            <div className='passage-info'>
+                                <div className='title'> {this.props.passage.title} </div><br />
+                                <div className='author'> {this.props.passage.author} </div>
+                            </div>
+                            <div></div>
+                        </div>
+                    <div className='header-sides'></div>
+                </div>
 
-                <div className='passage-sides'></div>
+                <div id='passage-show-container'>
+                    <div className='passage-sides'></div>
 
-                <div id='passage-container' onMouseUp={this.handleSelection}>
-                    {/* SelectionIdxs: <br /> */}
-                    {/* {this.state.selectionStart} , {this.state.selectionEnd} */}
-                    <div className='title'> {this.props.passage.title} </div>
-                    <div className='author'> {this.props.passage.author} </div>
+                    <div id='passage-container' onMouseUp={this.handleSelection}>
+                        {/* SelectionIdxs: <br /> */}
+                        {/* {this.state.selectionStart} , {this.state.selectionEnd} */}
+
+                        
+                        <div id='passage'>
+                            {this.passageWithLineIndices()}
+                        </div>
+
+                    </div>
                     
-                    <div id='passage'>
-                        {this.passageWithLineIndices()}
+                    <div>
+                        <ModalContainer
+                            passageId={this.props.passage.id}
+                            startIdx={this.state.selectionStart}
+                            endIdx={this.state.selectionEnd}
+                            annotationId={this.clickedAnnotationId}
+                        />
                     </div>
 
+                    <div className='passage-sides'></div>
                 </div>
-                
-                <div>
-                    <ModalContainer
-                        passageId={this.props.passage.id}
-                        startIdx={this.state.selectionStart}
-                        endIdx={this.state.selectionEnd}
-                        annotationId={this.clickedAnnotationId}
-                    />
-                </div>
-
-                <div className='passage-sides'></div>
             </div>
         )
     }

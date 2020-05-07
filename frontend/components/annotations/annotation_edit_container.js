@@ -6,8 +6,6 @@ import { selectAnnotationsByPassageId } from '../../reducers/selectors'
 
 
 const mSTP = (state, ownProps) => {
-    // debugger
-    // const banana = ownProps.annotationId;
     let annotation;
     let annotations;
     
