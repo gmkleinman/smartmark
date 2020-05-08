@@ -19,6 +19,7 @@ class PassageShow extends React.Component {
         window.scrollTo(0, 0);
         this.props.fetchPassages();
         this.props.fetchAnnotations();
+        this.props.fetchUsers();
     }
 
     handleSelection() {
@@ -176,12 +177,13 @@ class PassageShow extends React.Component {
                 <div className='passage-show-header'>
                     <div className='header-sides'></div>
                         <div className='passage-internal-header'>
-                            <div className='test'></div>
+                            <img className='author-large' src={`${this.props.passage.image_url}`} />
+
                             <div className='passage-info'>
                                 <div className='title'> {this.props.passage.title} </div><br />
                                 <div className='author'> {this.props.passage.author} </div>
                             </div>
-                            <div></div>
+
                         </div>
                     <div className='header-sides'></div>
                 </div>
@@ -192,8 +194,6 @@ class PassageShow extends React.Component {
                     <div id='passage-container' onMouseUp={this.handleSelection}>
                         {/* SelectionIdxs: <br /> */}
                         {/* {this.state.selectionStart} , {this.state.selectionEnd} */}
-
-                        
                         <div id='passage'>
                             {this.passageWithLineIndices()}
                         </div>

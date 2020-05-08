@@ -16,12 +16,11 @@ const mSTP = (state, ownProps) => {
         annotation = Object.values(annotations).find(annotation => annotation.id === annotationId);
     }
 
-    // debugger
     return(
         {
             annotation: annotation,
             currentUser: state.entities.users[state.session.id],
-            // users: state.users[annotation.id]
+            users: state.users
         }
     )
 }

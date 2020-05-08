@@ -4,6 +4,7 @@ import { fetchPassage, fetchPassages } from '../../actions/passage_actions'
 import { fetchAnnotations } from '../../actions/annotation_actions'
 import { selectAnnotationsByPassageId } from '../../reducers/selectors'
 import { openModal, closeModal } from '../../actions/modal_actions'
+import { fetchUsers } from '../../actions/user_actions'
 
 const mSTP = (state, ownProps) => {
     return(
@@ -20,6 +21,7 @@ const mDTP = dispatch => {
         fetchPassage: passageId => dispatch(fetchPassage(passageId)),
         fetchPassages: () => dispatch(fetchPassages()),
         fetchAnnotations: () => dispatch(fetchAnnotations()),
+        fetchUsers: () => dispatch(fetchUsers()),
         openModal: modal => dispatch(openModal(modal)),
         closeModal: () => dispatch(closeModal()),
     }

@@ -7,13 +7,10 @@ import AuthRoute from '../util/route_util'
 import Footer from './footer/footer'
 import PassageIndexContainer from './passage_index/passage_index_container'
 import PassageShowContainer from './passage_show/passage_show_container'
-import ModalContainer from './modal/modal_container'
-// import AnnotationShowContainer from './annotations/annotation_show_container'
 
 const App = () => {
     return (
         <div id='app'>
-            {/* <ModalContainer /> */}
             <NavBarContainer/>
             <div id='main'>
                 <Switch> 
@@ -23,7 +20,6 @@ const App = () => {
                     <Route path="/" component={PassageIndexContainer}/>
                 </Switch>
             </div>
-            
             <Footer />
         </div>
     )

@@ -7,7 +7,7 @@ class AnnotationShow extends React.Component {
     }
     
     componentDidMount() {
-        fetchUser(this.props.annotation.annotator_id);
+        // fetchUser(this.props.annotation.annotator_id);
     }
 
     handleDeleteClick(){
@@ -39,13 +39,9 @@ class AnnotationShow extends React.Component {
 
     render() {
         if(!this.props.annotation) return null;
-        if(!this.props.closeModal) return null;
-
         return(
             <div className='annotation-show-container'>
-                {/* this state users: {this.props.users} */}
-
-                User  #{this.props.annotation.annotator_id} says:
+                <span className='annotator'>{this.props.users[this.props.annotation.annotator_id].username}:</span><br />
                 <div className='annotation'>
                     {this.props.annotation.body}
                 </div>

@@ -15,7 +15,7 @@
     font-style: normal;
     position: relative;
     display: flex;
-    height: 100%;
+    height: calc(100vh - 121px);
 }
 
 .auth-container {
@@ -57,6 +57,7 @@ input {
     width: 100px;
     margin: 10px;
     color: #FFFFFF;
+    cursor: pointer;
   }
 
 .redirect-text {

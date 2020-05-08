@@ -4,8 +4,8 @@ import configureStore from './store/store'
 import Root from './components/root'
 
 //test imports
-import * as AnnotationApiUtil from './util/annotation_api_util'
-
+// import * as AnnotationApiUtil from './util/annotation_api_util'
+// import * as UserApiUtil from './util/user_api_util'
 //end test imports
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -26,19 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     //tests
-    window.store = store;
-    window.getState = store.getState;
-    // window.fetchAnnotation = AnnotationApiUtil.fetchAnnotation
-    window.fetchAnnotations = AnnotationApiUtil.fetchAnnotations
-    // window.createAnnotation = AnnotationApiUtil.createAnnotation
-    // window.updateAnnotation = AnnotationApiUtil.updateAnnotation
-    // window.deleteAnnotation = AnnotationApiUtil.deleteAnnotation
-    // window.a = {
-    //     body: 'delete this nephew',
-    //     upvote_count: 100,
-    //     passage_id: 1,
-    //     annotator_id: 1,
-    // }
+    // window.store = store;
+    // window.getState = store.getState;
+    // window.fetchUser = UserApiUtil.fetchUser
+    // window.fetchUsers = UserApiUtil.fetchUsers
     //end tests
     
 

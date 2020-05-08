@@ -18,7 +18,7 @@ users = User.create([
         email: 'princess@hyrule.com',
     },
     {
-        username: 'G', 
+        username: 'Mr. Snuffleupagus', 
         password: 'password',
         email: 'gmkleinman@gmail.com',
     },
@@ -44,6 +44,54 @@ passages = Passage.create([
             The lone and level sands stretch far away.\n",
         image_url: 'Percy_Shelley.jpg'
     },
+    {
+        title: "Caged Bird",
+        author: "Maya Angelou",
+        body: "A free bird leaps\n
+            on the back of the wind\n
+            and floats downstream\n
+            till the current ends\n
+            and dips his wing\n
+            in the orange sun rays\n
+            and dares to claim the sky.\n
+            \n
+            But a bird that stalks\n
+            down his narrow cage\n
+            can seldom see through\n
+            his bars of rage\n
+            his wings are clipped and\n
+            his feet are tied\n
+            so he opens his throat to sing.\n
+            \n
+            The caged bird sings\n
+            with a fearful trill\n
+            of things unknown\n
+            but longed for still\n
+            and his tune is heard\n
+            on the distant hill\n
+            for the caged bird\n
+            sings of freedom.\n
+            \n
+            The free bird thinks of another breeze\n
+            and the trade winds soft through the sighing trees\n
+            and the fat worms waiting on a dawn bright lawn\n
+            and he names the sky his own\n
+            \n
+            But a caged bird stands on the grave of dreams\n
+            his shadow shouts on a nightmare scream\n
+            his wings are clipped and his feet are tied\n
+            so he opens his throat to sing.\n
+            \n
+            The caged bird sings\n
+            with a fearful trill\n
+            of things unknown\n
+            but longed for still\n
+            and his tune is heard\n
+            on the distant hill\n
+            for the caged bird\n
+            sings of freedom.\n",
+        image_url: 'maya_angelou.jpg',
+    } ,
     {
         title: "Sonnets No. 43",
         author: "Elizabeth Barrett Browning",
@@ -184,8 +232,8 @@ annotations = Annotation.create([
     {
         body: "Omg I just love what she's saying here, it's the reason I started my poetry farm. It's quite beautiful, with pages running all over the place. They get lonely sometimes though, probably similar to how Ms. Browning was feeling.",
         upvote_count: 15,
-        passage_id: passages[1].id,
-        annotator_id: users[0].id,
+        passage_id: passages[2].id,
+        annotator_id: users[2].id,
         start_idx: 219,
         end_idx: 311,
     },
@@ -200,7 +248,7 @@ annotations = Annotation.create([
     {
         body: "When you realize you want to spend the rest of your life with somebody, you want the rest of your life to start as soon as possible.",
         upvote_count: 0,
-        passage_id: passages[2].id,
+        passage_id: passages[3].id,
         annotator_id: users[1].id,
         start_idx: 140,
         end_idx: 300,
@@ -208,7 +256,7 @@ annotations = Annotation.create([
     {
         body: "My name is Maximus Decimus Meridius, commander of the Armies of the North, General of the Felix Legions and loyal servant to the true emperor, Marcus Aurelius. Father to a murdered son, husband to a murdered wife. And I will have my vengeance, in this life or the next",
         upvote_count: 50,
-        passage_id: passages[2].id,
+        passage_id: passages[3].id,
         annotator_id: users[0].id,
         start_idx: 352,
         end_idx: 365,
@@ -216,19 +264,19 @@ annotations = Annotation.create([
     {
         body: "Look, you can't just make words up. If everybody made words up, we'd never be able to discuss anything. Unless everybody made the same words up and they had the same meanings, and we all knew it because we're telepathic or something. That's cromulent enough.",
         upvote_count: 4,
-        passage_id: passages[3].id,
+        passage_id: passages[4].id,
         annotator_id: users[1].id,
         start_idx: 0,
         end_idx: 159,
     },
-    # {
-    #     body: "I like chicken, I like liver, meow mix meow mix please deliver.",
-    #     upvote_count: 10000,
-    #     passage_id: passages[2].id,
-    #     annotator_id: users[0].id,
-    #     start_idx: 560,
-    #     end_idx: 750,
-    # },
+    {
+        body: "Hey, it's the intro from that one episode of Breaking Bad!",
+        upvote_count: 0,
+        passage_id: passages[0].id,
+        annotator_id: users[2].id,
+        start_idx: 0,
+        end_idx: 97,
+    },
     # {
     #     body: "You put the lime in the coconut, you drink the bowl up",
     #     upvote_count: 71,

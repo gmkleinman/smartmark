@@ -22,7 +22,9 @@ class PassageIndex extends React.Component {
                             <Link key={`${passage.id}`} id='passage-index-row' to={`/passages/${passage.id}`}>
                                 <div className='index-line-item'>
                                     <span className='index-item-count'>{i+1}</span>
-                                    <span className='index-item-image'><img src={`${passage.image_url}`} /></span>
+                                    <span className='index-item-image'>
+                                        <img className='author-small' src={`${passage.image_url}`} />
+                                    </span>
                                     <span className='index-item-title'> {passage.title}</span>
                                     <span className='index-item-author'>{passage.author}</span>
                                 </div>

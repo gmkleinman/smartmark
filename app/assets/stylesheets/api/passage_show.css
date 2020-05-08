@@ -17,13 +17,20 @@
 .passage-internal-header {
     display: flex;
     align-items: center;
-    min-width: 680px;
-    padding-right: 300px;
-    padding-bottom: 75px;
+    justify-content: start;
+    justify-items: start;
+    min-width: 980px;
 }
 
-.test {
-    /* width: 100px; */
+.passage-info {
+    padding-bottom: 75px;
+    /* padding-right: 00px; */
+}
+
+.author-large {
+    height: 150px;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
 .header-sides {

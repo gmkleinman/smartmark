@@ -11,15 +11,12 @@ class NavBar extends React.Component {
             this.props.currentUser ? (
                 <span id='nav-right-loggedin' className='nav-container'>
                     <div className='spacing-placeholder'></div>
-                    {/* <span className='greeting-text'>Hi, {this.props.currentUser.username}</span> */}
-                    <button className='greeting-text' onClick={this.props.logout}>LOG OUT</button>
-
-                    <span><img src='/app/assets/images/default_avatar.jpg'/></span>
-                    <span><img src='/app/assets/images/robert_frost.jpg'/></span>
-                    <span><img src='/assets/images/robert_frost.jpg'/></span>
-                    <span><img src='/assets/images/default_avatar.jpg'/></span>
-                    <span><img src='default_avatar.jpg'/></span>
-                    <span><img src='robert_frost.jpg'/></span>
+                    <div className="dropdown">
+                    <img className='avatar' src={window.avatar}/>
+                        <div className="dropdown-content">
+                            <button className='greeting-text' onClick={this.props.logout}>Sign Out</button>
+                        </div>
+                    </div>
                     
                 </span>
             ) : (
