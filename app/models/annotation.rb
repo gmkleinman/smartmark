@@ -10,7 +10,7 @@ class Annotation < ApplicationRecord
         class_name: :User
     
     def self.annotations_for_user_id(user_id)
-        Artwork
+        Passage
             .joins(:users)
             .where('user_id = passages.annotator_id')
     end
