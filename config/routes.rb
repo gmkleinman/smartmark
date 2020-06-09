@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :passages, only: [:index, :show, :create, :update, :destroy] do
       resources :annotations, only: [:index, :show, :create, :update, :destroy]
+      resources :comments, only: [:show, :create, :update, :destroy]
     end
   end
 end
