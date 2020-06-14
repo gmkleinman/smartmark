@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show, :index]
     resource :session, only: [:create, :destroy]
     resources :passages, only: [:index, :show, :create, :update, :destroy] do
-      resources :annotations, only: [:index, :show, :create, :update, :destroy]
+      resources :annotations, only: [:index, :show, :create, :update, :destroy] do
+        resources :likes, only: [:create, :destroy]
+      end
       resources :comments, only: [:show, :create, :update, :destroy]
     end
   end
