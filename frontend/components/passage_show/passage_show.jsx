@@ -1,5 +1,8 @@
 import React from 'react'
 import ModalContainer from '../modal/modal_container'
+import CommentShowContainer from '../comments/comment_show_container'
+import CommentNewContainer from '../comments/comment_new_container'
+
 
 class PassageShow extends React.Component {
     constructor(props){
@@ -207,6 +210,16 @@ class PassageShow extends React.Component {
                             endIdx={this.state.selectionEnd}
                             annotationId={this.clickedAnnotationId}
                         />
+                    </div>
+                    <br/>
+                    <div>
+                        Show Container
+                        <CommentShowContainer />
+                    </div>
+
+                    <div>
+                        New Container
+                        {/* <CommentNewContainer /> */}
                     </div>
 
                     <div className='passage-sides'></div>

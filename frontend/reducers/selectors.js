@@ -7,3 +7,13 @@ export const selectAnnotationsByPassageId = (state, passageId) => {
     return filtered_annotations;
 
 };
+
+export const selectCommentsByPassageId = (state, passageId) => {
+    let filtered_comments = [];
+    Object.values(state.entities.comments).forEach(comment => {
+        if(comment.passage_id === passageId) return filtered_comments.push(comment)
+    });
+
+    return filtered_comments;
+
+};
