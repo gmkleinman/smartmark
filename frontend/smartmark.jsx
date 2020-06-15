@@ -4,8 +4,8 @@ import configureStore from './store/store'
 import Root from './components/root'
 
 //test imports
-// import * as AnnotationApiUtil from './util/annotation_api_util'
-// import * as UserApiUtil from './util/user_api_util'
+import * as CommentApiUtil from './util/comment_api_util'
+import * as UserApiUtil from './util/user_api_util'
 //end test imports
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -26,10 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     //tests
-    // window.store = store;
-    // window.getState = store.getState;
-    // window.fetchUser = UserApiUtil.fetchUser
-    // window.fetchUsers = UserApiUtil.fetchUsers
+    window.store = store;
+    window.getState = store.getState;
+    window.fetchUser = UserApiUtil.fetchUser
+    window.fetchUsers = UserApiUtil.fetchUsers
+    window.fetchComments = CommentApiUtil.fetchComments
+    window.fetchComment = CommentApiUtil.fetchComment
     //end tests
     
 

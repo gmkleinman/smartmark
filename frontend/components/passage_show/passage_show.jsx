@@ -1,6 +1,6 @@
 import React from 'react'
 import ModalContainer from '../modal/modal_container'
-import CommentShowContainer from '../comments/comment_show_container'
+import CommentIndexContainer from '../comments/comment_index_container'
 import CommentNewContainer from '../comments/comment_new_container'
 
 
@@ -213,12 +213,12 @@ class PassageShow extends React.Component {
                     </div>
                     <br/>
                     <div>
-                        Show Container
-                        <CommentShowContainer />
+                        Index
+                        <CommentIndexContainer />
                     </div>
 
                     <div>
-                        New Container
+                        New
                         {/* <CommentNewContainer /> */}
                     </div>
 

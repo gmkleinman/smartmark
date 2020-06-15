@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       resources :annotations, only: [:index, :show, :create, :update, :destroy] do
         resources :likes, only: [:create, :destroy]
       end
-      resources :comments, only: [:show, :create, :update, :destroy]
+      resources :comments, only: [:index, :show, :create, :update, :destroy]
     end
   end
 end
