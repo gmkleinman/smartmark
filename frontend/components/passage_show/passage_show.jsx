@@ -211,18 +211,15 @@ class PassageShow extends React.Component {
                             annotationId={this.clickedAnnotationId}
                         />
                     </div>
-                    <br/>
-                    <div>
-                        Index
-                        <CommentIndexContainer />
-                    </div>
-
-                    <div>
-                        New
-                        {/* <CommentNewContainer /> */}
-                    </div>
-
                     <div className='passage-sides'></div>
+
+                    </div>
+                <div>
+                    <CommentIndexContainer passageId={this.props.passage.id}/>
+                </div>
+
+                <div>
+                    <CommentNewContainer passageId={this.props.passage.id}/>
                 </div>
             </div>
         )

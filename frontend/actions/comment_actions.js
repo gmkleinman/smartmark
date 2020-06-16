@@ -25,21 +25,21 @@ export const fetchComments = () => dispatch => (
 )
 
 export const fetchComment = commentId => dispatch => (
-    commentApiUtil.fetchComment(commentId)
+    CommentApiUtil.fetchComment(commentId)
         .then(comment => dispatch(receiveComment(comment)))
 )
 
 export const createComment = comment => dispatch => (
-    commentApiUtil.createComment(comment)
+    CommentApiUtil.createComment(comment)
         .then(comment => dispatch(receiveComment(comment)))
 )
 
 export const updateComment = comment => dispatch => (
-    commentApiUtil.updateComment(comment)
+    CommentApiUtil.updateComment(comment)
         .then(comment => dispatch(receiveComment(comment)))
 )
 
 export const deleteComment = commentId => dispatch => (
-    commentApiUtil.deleteComment(commentId)
+    CommentApiUtil.deleteComment(commentId)
         .then(() => dispatch(removeComment(commentId)))
 )

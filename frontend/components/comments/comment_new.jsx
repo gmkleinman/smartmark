@@ -6,11 +6,19 @@ class CommentNew extends React.Component {
         
         this.state = {
             body: '',
-            passage_id: this.props.passageId,
-            commenter_id: this.props.currentUser.id, 
+            passage_id: null,
+            commenter_id: null,
         }
-        
+
+        this.commented = false;
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    componentDidMount() {
+        this.setState({
+            passage_id: this.props.passageId,
+            commenter_id: this.props.currentUser.id,
+        })
     }
 
     update(field) {
@@ -22,16 +30,26 @@ class CommentNew extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createComment(this.state);
+        this.commented = true;
+        this.setState({
+            body: ''
+        })
     }
 
     render() {
         if(!this.props.createComment) return null;
-        if(!this.props.comment) return null;
+        if(!this.props.currentUser) return null;
+        if(this.commented) return null;
+        
+        // if(!this.props.comment) return null;
 
         return(
             <div>
                 <div>
                     <form>
+                        Current user is: {this.props.currentUser.id}  
+                        pssage:{this.props.passageId}  
+                        commtener:{this.props.currentUser.id}  
                         <label className='form-field'>
                             <textarea
                                 className='anno-textarea'
