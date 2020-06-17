@@ -15,6 +15,7 @@ class CommentNew extends React.Component {
     }
 
     componentDidMount() {
+        if(!this.props.currentUser) return null
         this.setState({
             passage_id: this.props.passageId,
             commenter_id: this.props.currentUser.id,
@@ -47,14 +48,14 @@ class CommentNew extends React.Component {
             <div>
                 <div>
                     <form>
-                        Current user is: {this.props.currentUser.id}  
+                        {/* Current user is: {this.props.currentUser.id}  
                         pssage:{this.props.passageId}  
-                        commtener:{this.props.currentUser.id}  
+                        commtener:{this.props.currentUser.id}   */}
                         <label className='form-field'>
                             <textarea
                                 className='anno-textarea'
-                                rows='12'
-                                cols='45'
+                                rows='4'
+                                cols='60'
                                 value={this.state.body}
                                 onChange={this.update('body')}
                                 placeholder='Type your comment in here!'

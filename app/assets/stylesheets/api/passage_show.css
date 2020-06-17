@@ -54,7 +54,7 @@
 }
 
 #passage-container {
-    min-width: 680px;
+    width: 70%;
     padding-right: 300px;
     padding-bottom: 75px;
     padding-top: 50px;
@@ -62,7 +62,7 @@
 
 .passage-sides {
     background-color: #ecf0f3;
-    width: 20%;
+    width: 15%;
 }
 
 #passage {

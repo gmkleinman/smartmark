@@ -1,0 +1,20 @@
+.comment-line-item {
+    display: flex;
+    flex-direction: column;
+    border-bottom: .15rem solid rgb(161, 213, 255);
+    min-height: 77px;
+    /* align-content: center; */
+    /* justify-content: center; */
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+}
+
+.comment-index-container {
+    padding: 20px;
+}
+
+#comment-container {
+    width: 70%;
+    padding-right: 300px;
+}

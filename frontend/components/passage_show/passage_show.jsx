@@ -214,13 +214,27 @@ class PassageShow extends React.Component {
                     <div className='passage-sides'></div>
 
                     </div>
-                <div>
-                    <CommentIndexContainer passageId={this.props.passage.id}/>
+                <div id='passage-show-container'>
+
+                    <div className='passage-sides'></div>
+
+                    <div id='comment-container'>
+                        <CommentNewContainer passageId={this.props.passage.id}/>
+                    </div>
+
+                    <div className='passage-sides'></div>
                 </div>
 
-                <div>
-                    <CommentNewContainer passageId={this.props.passage.id}/>
+                <div id='passage-show-container'>
+
+                    <div className='passage-sides'></div>
+                    <div id='comment-container'>
+                        <CommentIndexContainer passageId={this.props.passage.id}/>
+                    </div>
+
+                    <div className='passage-sides'></div>
                 </div>
+
             </div>
         )
     }

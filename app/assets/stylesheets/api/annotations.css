@@ -16,7 +16,9 @@
   left: 70%;
   transform: translate(-50%, -50%);
   border-left: 4px solid #99a7ee;
-  width: 375px;
+  min-width: 500px;
+  /* background: white; */
+
 }
 
 .annotation-show-container {
@@ -43,6 +45,8 @@
   font-size: 14px;
   outline: none;
   margin-left: 10px;
+  margin-top: 10px;
+  border: 1px solid black;
 
 }
 

@@ -36,15 +36,22 @@ class CommentIndex extends React.Component {
     }
 
     render() {
+        if(!this.props.users) return null
+        if(!this.props.comments) return null
         return(
-            <div id='index-page'>
-                <div className='index-container'>
+            <div>
+                <div className='comment-index-container'>
                     <div>
                         {this.props.comments.map((comment, i) => (
-                            <div className='index-line-item' key={comment.id}>
-                                <span className='index-item-title'>ID: {comment.commenter_id}</span>
+                            <div className='comment-line-item' key={comment.id}>
+                                {/* <span className='index-item-title'>{this.props.users[comment.commenter_id].username}:</span><br/><br/>
                                 <span className='index-item-author'>Body: {comment.body}</span>
-                                <span className='index-item-author'>Passage Id: {comment.passage_id}</span>
+                                {this.addOwnerButtons(comment.commenter_id, comment.id)} */}
+
+                                <span className='annotator'>{this.props.users[comment.commenter_id].username}</span>
+                                <div className='index-item-author'>
+                                    {comment.body}
+                                </div> <br />
                                 {this.addOwnerButtons(comment.commenter_id, comment.id)}
                             </div>
                         ))}

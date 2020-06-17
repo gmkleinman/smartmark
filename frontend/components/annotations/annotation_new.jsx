@@ -38,7 +38,7 @@ class AnnotationNew extends React.Component {
                             <textarea
                                 className='anno-textarea'
                                 rows='12'
-                                cols='45'
+                                cols='40'
                                 value={this.state.body}
                                 onChange={this.update('body')}
                                 placeholder='Type your annotation in here!'

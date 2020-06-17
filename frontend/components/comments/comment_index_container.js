@@ -10,6 +10,7 @@ const mSTP = (state, ownProps) => {
             comments: selectCommentsByPassageId(state, parseInt(ownProps.passageId)),
             passageId: ownProps.passageId,
             currentUser: state.entities.users[state.session.id],
+            users: state.users,
         }
     )
 }
