@@ -45,7 +45,8 @@ class AnnotationShow extends React.Component {
                 <div className='annotation'>
                     {this.props.annotation.body}
                 </div>
-                {/* Number of upvotes: {this.props.annotation.upvote_count} <br /> */}
+                Upvotes {this.props.annotation.upvote_count}
+                <button className='upvote-button'>Upvote!</button>
                 {this.addOwnerButtons()}
             </div>
         )
