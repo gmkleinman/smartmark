@@ -1,13 +1,17 @@
 import React from 'react'
-import { fetchUser } from '../../actions/user_actions';
 
 class AnnotationShow extends React.Component {
     constructor(props){
         super(props)
+        this.state = {
+            likeCount: 0,
+        }
+        this.addLike = this.addLike.bind(this)
+        this.unLike = this.unLike.bind(this)
     }
     
     componentDidMount() {
-        // fetchUser(this.props.annotation.annotator_id);
+        this.props.fetchLikes();
     }
 
     handleDeleteClick(){
@@ -37,6 +41,39 @@ class AnnotationShow extends React.Component {
         return null;
     }
 
+    addLike() {
+        if(!this.props.currentUser) return null
+        this.props.createLike({
+            annotation_id: this.props.annotation.id,
+            upvoter_id: this.props.currentUser.id
+        })
+        this.likeCount();
+    }
+
+    unLike() {
+        if(!this.props.currentUser) return null
+        let likeId = null; 
+        let likes = Object.values(this.props.likes)
+        likes.forEach(like => {
+            if(like.upvoter_id === this.props.currentUser.id) likeId = like.id;            
+        });
+
+        if(likeId) {
+            this.props.deleteLike(likeId)
+        }
+        this.likeCount();
+    }
+
+    likeCount() {
+        if(!this.props.likes) return null;
+        let likeCount = 0;
+        let likes = Object.values(this.props.likes)
+        likes.forEach(like => {
+            if(like.annotation_id === this.props.annotation.id) likeCount += 1;
+        });
+        this.setState({likeCount: likeCount});
+    }
+
     render() {
         if(!this.props.annotation) return null;
         return(
@@ -45,8 +82,9 @@ class AnnotationShow extends React.Component {
                 <div className='annotation'>
                     {this.props.annotation.body}
                 </div>
-                Upvotes {this.props.annotation.upvote_count}
-                <button className='upvote-button'>Upvote!</button>
+                Upvotes: {this.state.likeCount}
+                <button className='upvote-button' onClick={() => this.addLike()}>Upvote!</button>
+                <button className='upvote-button' onClick={() => this.unLike()}>Delete Upvote</button>
                 {this.addOwnerButtons()}
             </div>
         )

@@ -1,0 +1,1 @@
+json.extract! like, :id, :upvoter_id, :annotation_id

@@ -1,6 +1,13 @@
 class Api::AnnotationsController < ApplicationController
     def index
         @annotations = Annotation.all 
+        # @annotations = Annotation.find_by_sql("
+        #     SELECT annotations.*
+        #     FROM annotations
+        #     LEFT OUTER JOIN likes
+        #     ON annotations.id = likes.annotation_id
+        #     WHERE annotations.passage_id = '#{params[:passage_id]}'
+        #     ")
         render :index
     end
     
