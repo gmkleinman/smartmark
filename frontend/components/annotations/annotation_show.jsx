@@ -11,7 +11,7 @@ class AnnotationShow extends React.Component {
     }
     
     componentDidMount() {
-        this.props.fetchLikes();
+        // this.props.fetchLikes();
     }
 
     handleDeleteClick(){
@@ -82,9 +82,9 @@ class AnnotationShow extends React.Component {
                 <div className='annotation'>
                     {this.props.annotation.body}
                 </div>
-                Upvotes: {this.state.likeCount}
+                {/* Upvotes: {this.state.likeCount}
                 <button className='upvote-button' onClick={() => this.addLike()}>Upvote!</button>
-                <button className='upvote-button' onClick={() => this.unLike()}>Delete Upvote</button>
+                <button className='upvote-button' onClick={() => this.unLike()}>Delete Upvote</button> */}
                 {this.addOwnerButtons()}
             </div>
         )
