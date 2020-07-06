@@ -2,6 +2,8 @@ import { connect } from 'react-redux'
 import CommentShow from './comment_show'
 import { fetchComment, fetchComments, deleteComment } from '../../actions/comment_actions'
 import { selectCommentsByPassageId } from '../../reducers/selectors'
+import { fetchUsers } from '../../actions/user_actions'
+
 
 const mSTP = (state, ownProps) => {
     let commentId = ownProps.commentId;
@@ -27,6 +29,7 @@ const mDTP = dispatch => ({
     fetchComment: commentId => dispatch(fetchComment(commentId)),
     fetchComments: () => dispatch(fetchComments()),
     deleteComment: commentId => dispatch(deleteComment(commentId)),
+    fetchUsers: () => dispatch(fetchUsers()),
 })
 
 export default connect(mSTP, mDTP)(CommentShow);

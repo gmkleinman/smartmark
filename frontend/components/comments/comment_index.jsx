@@ -8,6 +8,7 @@ class CommentIndex extends React.Component {
 
     componentDidMount(){
         this.props.fetchComments();
+        this.props.fetchUsers();
     }
 
     handleDeleteClick(){

@@ -2,6 +2,8 @@ import { connect } from 'react-redux';
 import CommentIndex from './comment_index';
 import { fetchComments, deleteComment, updateComment } from '../../actions/comment_actions';
 import { selectCommentsByPassageId } from '../../reducers/selectors'
+import { fetchUsers } from '../../actions/user_actions'
+
 
 
 const mSTP = (state, ownProps) => {
@@ -19,6 +21,8 @@ const mDTP = dispatch => ({
     fetchComments: () => dispatch(fetchComments()),
     deleteComment: commentId => dispatch(deleteComment(commentId)),
     updateComment: commentId => dispatch(updateComment(commentId)),
+    fetchUsers: () => dispatch(fetchUsers()),
+
 
 })
 
