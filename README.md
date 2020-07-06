@@ -19,4 +19,4 @@ Smartmark is a clone of Genius. Its primary functionality is allowing users to h
 * Add comments
 * Delete comments
 
-![](highlight_demo.gif)
+![](highlighting_demo.gif)
