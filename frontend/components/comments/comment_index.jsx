@@ -36,6 +36,11 @@ class CommentIndex extends React.Component {
         return null;
     }
 
+    addAnnotator(commenter_id) {
+        if(commenter_id) return commenter_id.username
+        return null
+    }
+
     render() {
         if(!this.props.users) return null
         if(!this.props.comments) return null
@@ -49,7 +54,8 @@ class CommentIndex extends React.Component {
                                 <span className='index-item-author'>Body: {comment.body}</span>
                                 {this.addOwnerButtons(comment.commenter_id, comment.id)} */}
 
-                                <span className='annotator'>{this.props.users[comment.commenter_id].username}</span>
+                                {/* <span className='annotator'>{this.props.users[comment.commenter_id].username}</span> */}
+                                <span className='annotator'>{this.addAnnotator(this.props.users[comment.commenter_id])}</span>
                                 <div className='index-item-author'>
                                     {comment.body}
                                 </div> <br />
