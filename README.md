@@ -16,9 +16,7 @@ Smartmark is a clone of Genius. Its primary functionality is allowing users to h
 * Highlight text to create annotations
 * Update annotations
 * Delete annotations
+* Add comments
+* Delete comments
 
-## In-Progress Features
-
-* Comments on passages
-* Like annotations and comments
-* Search
+![](highlighting_demo.gif)
